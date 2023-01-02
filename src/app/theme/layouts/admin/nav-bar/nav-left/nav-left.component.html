@@ -1,0 +1,41 @@
+<ul class="list-unstyled">
+  <!-- ======= Menu collapse Icon ===== -->
+  <li class="pc-h-item pc-sidebar-collapse">
+    <a
+      href="javascript:"
+      class="pc-head-link ms-0"
+      id="sidebar-hide"
+      [ngClass]="{ on: navCollapsed }"
+      id="sidebar-hide mobile-collapse"
+      (click)="navCollapse()"
+    >
+      <i class="ti ti-menu-2"></i>
+    </a>
+  </li>
+  <li class="pc-h-item pc-sidebar-popup">
+    <a href="javascript:" class="pc-head-link ms-0" id="mobile-collapse1" (click)="this.onNavCollapsedMob.emit()">
+      <i class="ti ti-menu-2"></i>
+    </a>
+  </li>
+  <li class="dropdown pc-h-item d-inline-flex d-md-none" ngbDropdown>
+    <a class="pc-head-link dropdown-toggle arrow-none m-0" data-bs-toggle="dropdown" ngbDropdownToggle>
+      <i class="ti ti-search"></i>
+    </a>
+    <div class="dropdown-menu dropdowm-menu-end pc-h-dropdown drp-search" ngbDropdownMenu>
+      <form class="px-3">
+        <div class="form-group mb-0 d-flex align-items-center">
+          <i class="ti ti-search"></i>
+          <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
+        </div>
+      </form>
+    </div>
+  </li>
+  <li class="pc-h-item d-none d-md-inline-flex">
+    <form class="header-search">
+      <div class="search-btn">
+        <i class="ti ti-search"></i>
+      </div>
+      <input type="search" class="form-control" placeholder="Search here. . ." />
+    </form>
+  </li>
+</ul>

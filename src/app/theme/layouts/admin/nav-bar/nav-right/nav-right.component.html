@@ -1,0 +1,133 @@
+<!-- [Mobile Media Block end] -->
+<ul class="list-unstyled">
+  <li class="pc-h-item header-user-profile">
+    <a class="arrow-none me-0" href="https://github.com/codedthemes/mantis-free-angular-admin-template" target="_blank">
+      <img src="assets/images/github.svg" alt="">
+    </a>
+  </li>
+  <li class="dropdown pc-h-item" ngbDropdown>
+    <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" ngbDropdownToggle>
+      <i class="ti ti-bell"></i>
+      <span class="badge bg-success pc-h-badge">3</span>
+    </a>
+    <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
+      <div class="dropdown-header d-flex align-items-center justify-content-between">
+        <h5 class="m-0">Notification</h5>
+        <a href="javascript:" class="pc-head-link bg-transparent"><i class="ti ti-circle-check text-success"></i></a>
+      </div>
+      <div class="dropdown-divider"></div>
+      <ng-scrollbar style="height: calc(100vh - 300px)" visibility="hover">
+        <div class="dropdown-header px-0 text-wrap header-notification-scroll">
+          <div class="list-group list-group-flush w-100">
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avtar bg-light-success">
+                    <i class="ti ti-gift"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-1">
+                  <span class="float-end text-muted">3:00 AM</span>
+                  <p class="text-body mb-1"> It's <b>Cristina danny's</b> birthday today. </p>
+                  <span class="text-muted">2 min ago</span>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avtar bg-light-primary">
+                    <i class="ti ti-message-circle"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-1">
+                  <span class="float-end text-muted">6:00 PM</span>
+                  <p class="text-body mb-1"> <b>Aida Burg</b> commented your post. </p>
+                  <span class="text-muted">5 August</span>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avtar bg-light-danger">
+                    <i class="ti ti-settings"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-1">
+                  <span class="float-end text-muted">2:45 PM</span>
+                  <p class="text-body mb-1"> Your Profile is Complete &nbsp;<b>60%</b> </p>
+                  <span class="text-muted">7 hours ago</span>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avtar bg-light-primary">
+                    <i class="ti ti-headset"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-1">
+                  <span class="float-end text-muted">9:10 PM</span>
+                  <p class="text-body mb-1"> <b>Cristina Danny </b> invited to join <b> Meeting.</b> </p>
+                  <span class="text-muted">Daily scrum meeting time</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </ng-scrollbar>
+      <div class="dropdown-divider"></div>
+      <div class="text-center py-2">
+        <a href="javascript:" class="link-primary">View all</a>
+      </div>
+    </div>
+  </li>
+  <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
+    <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" ngbDropdownToggle data-bs-auto-close="outside">
+      <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar" />
+      <span>Stebin Ben</span>
+    </a>
+    <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
+      <div class="dropdown-header">
+        <div class="d-flex mb-1">
+          <div class="flex-shrink-0">
+            <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35" />
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <h6 class="mb-1">Stebin Ben</h6>
+            <span>UI/UX Designer</span>
+          </div>
+          <a href="javascript:" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
+        </div>
+      </div>
+      <ul ngbNav #nav="ngbNav" class="nav drp-tabs nav-fill nav-tabs">
+        <li ngbNavItem="1">
+          <a ngbNavLink><i class="ti ti-user"></i> Profile</a>
+          <ng-template ngbNavContent>
+            <div *ngFor="let task of profile">
+              <a href="javascript:" class="dropdown-item">
+                <i class="{{ task.icon }}"></i>
+                <span>{{ task.title }}</span>
+              </a>
+            </div>
+          </ng-template>
+        </li>
+        <li ngbNavItem="2">
+          <a ngbNavLink><i class="ti ti-settings"></i> Setting</a>
+          <ng-template ngbNavContent>
+            <div *ngFor="let task of setting">
+              <a href="javascript:" class="dropdown-item">
+                <i class="{{ task.icon }}"></i>
+                <span>{{ task.title }}</span>
+              </a>
+            </div>
+          </ng-template>
+        </li>
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+    </div>
+  </li>
+</ul>
+<!-- [Mobile Media Block end] -->

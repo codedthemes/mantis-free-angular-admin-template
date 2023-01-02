@@ -1,0 +1,10 @@
+<header class="pc-header">
+  <div class="header-wrapper">
+    <div class="pc-mob-drp">
+      <app-nav-left [navCollapsed]="navCollapsed" (onNavCollapse)="navCollapse()" (onNavCollapsedMob)="navCollapseMob()"></app-nav-left>
+    </div>
+    <div>
+      <app-nav-right (onCustomize)="customize()"></app-nav-right>
+    </div>
+  </div>
+</header>

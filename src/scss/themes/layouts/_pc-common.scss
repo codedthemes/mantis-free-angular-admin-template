@@ -1,0 +1,220 @@
+// ============================
+//     Common layout css start
+// ============================
+
+body {
+  background-color: $sidebar-background;
+}
+
+.pc-container {
+  $temp: $header-height + 61;
+  position: relative;
+  top: $header-height;
+  margin-left: $sidebar-width;
+  min-height: calc(100vh - #{$temp});
+  background: $body-bg;
+
+  .coded-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+
+  .page-header + .row {
+    padding-top: 24px;
+  }
+  .page-header + .coded-content {
+    padding-top: calc(30px + 55px);
+  }
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  top: $header-height;
+  left: $sidebar-width;
+  right: 0;
+  z-index: 1023;
+  min-height: 55px;
+  box-shadow: $card-shadow;
+  background: transparent;
+  border-radius: $border-radius;
+  padding: 13px 0px;
+
+  .page-block {
+    width: 100%;
+  }
+
+  .page-header-title {
+    display: inline-block;
+  }
+
+  h5 {
+    margin-bottom: 0;
+    margin-right: 8px;
+    padding-right: 8px;
+    font-weight: 500;
+  }
+
+  .breadcrumb {
+    padding: 0;
+    display: inline-flex;
+    margin-bottom: 0;
+    background: transparent;
+    font-size: 13px;
+
+    a {
+      color: $body-color;
+    }
+
+    .breadcrumb-item {
+      a:hover {
+        color: $primary;
+      }
+
+      + .breadcrumb-item::before {
+        position: relative;
+        top: 2px;
+      }
+
+      &:last-child {
+        opacity: 0.75;
+      }
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      vertical-align: baseline;
+    }
+  }
+}
+
+.upgrade-card {
+  .card-body {
+    padding-bottom: 100px;
+    z-index: 1;
+    position: relative;
+  }
+
+  > .container {
+    z-index: 5;
+    position: relative;
+    margin-top: -60px;
+  }
+
+  .up-price-table {
+    td {
+      border-color: $body-bg;
+    }
+
+    th {
+      border: none;
+
+      + th {
+        border-radius: 5px 5px 0 0;
+        padding: 20px 0;
+      }
+    }
+
+    tbody {
+      tr {
+        &:first-child td {
+          border-top: none;
+        }
+      }
+    }
+
+    td,
+    th {
+      text-align: right;
+
+      + td,
+      + th {
+        text-align: center;
+      }
+
+      + td {
+        border-left: 1px solid $body-bg;
+      }
+    }
+  }
+}
+
+// ======= Burgur menu End
+@media (max-width: 1024px) {
+  .pc-container {
+    margin-left: 0px;
+    margin-right: 0px;
+    .page-header + .row,
+    .page-header + .coded-content,
+    .coded-content {
+      padding-top: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .page-header {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .pc-container {
+    .coded-content {
+      padding: 15px;
+    }
+
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .page-header {
+    padding: 13px 20px;
+
+    h5 {
+      padding-bottom: 5px;
+      margin-bottom: 0;
+      border-right: none;
+      font-size: 14px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      margin-bottom: 0;
+      font-size: 11px;
+    }
+
+    .text-md-right {
+      margin-top: 5px;
+    }
+  }
+}
+
+.navbar-content {
+  position: relative;
+}
+
+.user-group {
+  img {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.1s ease-in-out;
+    border: 2px solid $card-bg;
+    + img {
+      margin-left: -14px;
+    }
+    &:hover {
+      z-index: 5;
+    }
+  }
+}

@@ -1,0 +1,442 @@
+// ============================
+//     header css start
+// ============================
+
+.pc-header {
+  background: $header-background;
+  color: $header-color;
+  min-height: $header-height;
+  box-shadow: $header-shadow;
+  position: fixed;
+  left: $sidebar-width;
+  right: 0;
+  z-index: 1025;
+  display: flex;
+
+  ul {
+    margin-bottom: 0;
+    display: inline-flex;
+  }
+
+  .m-header {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $sidebar-width;
+    padding: 16px 10px 16px 24px;
+  }
+
+  .header-wrapper {
+    display: flex;
+    padding: 0 20px;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .header-search {
+    position: relative;
+
+    .search-btn {
+      position: absolute;
+      top: 8px;
+      left: 9px;
+      font-size: 14px;
+    }
+
+    .form-control {
+      border-radius: $border-radius;
+      padding: 0.344rem 1.8rem;
+      width: 200px;
+      max-width: 100%;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+    }
+
+    .icon-search {
+      position: absolute;
+      top: 11px;
+      left: 11px;
+      width: 12px;
+      height: 12px;
+    }
+
+    .btn-search {
+      position: absolute;
+      top: 7px;
+      right: 9px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: $border-radius;
+    }
+  }
+
+  .pc-h-item {
+    min-height: $header-height;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .pc-head-link {
+    margin: 0 16px;
+    position: relative;
+    font-weight: 500;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: $border-radius;
+    color: $header-color;
+    background: $border-color;
+
+    > i {
+      font-size: 20px;
+      color: $header-color;
+    }
+
+    &:hover {
+      color: $primary;
+
+      > i {
+        color: $primary;
+      }
+    }
+    > svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: $secondary;
+      background: shift-color($secondary, $soft-bg-level);
+
+      .hamburger {
+        .hamburger-inner {
+          background-color: $secondary;
+
+          &::after,
+          &::before {
+            background-color: $secondary;
+          }
+        }
+      }
+
+      i.material-icons-two-tone {
+        background-color: $secondary;
+      }
+    }
+
+    .pc-h-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      border-radius: 50%;
+      font-size: 9px;
+      &.dots {
+        width: 9px;
+        height: 9px;
+        top: 7px;
+        right: 16px;
+        padding: 0;
+      }
+    }
+
+    .user-desc,
+    .user-name {
+      display: block;
+      line-height: 1;
+    }
+
+    .user-name {
+      margin-bottom: 5px;
+
+      font: {
+        size: 15px;
+        weight: 600;
+      }
+    }
+
+    .user-desc {
+      font: {
+        size: 12px;
+        weight: 400;
+      }
+
+      color: transparentize($header-color, 0.3);
+    }
+  }
+
+  .pc-h-dropdown {
+    .ti-circle {
+      font-size: 7px;
+      vertical-align: middle;
+    }
+
+    transform: none !important;
+    top: 100% !important;
+
+    &.dropdown-menu-end {
+      right: 0 !important;
+      left: auto !important;
+    }
+  }
+
+  .pc-level-menu {
+    position: relative;
+
+    &:hover {
+      > .dropdown-menu {
+        display: block;
+        left: 100%;
+        top: -18px !important;
+      }
+    }
+  }
+
+  .drp-search {
+    min-width: 20rem;
+  }
+
+  .user-avtar {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .header-user-profile {
+    .pc-head-link {
+      width: auto;
+      padding: 7px;
+      background: transparent;
+
+      > span > i {
+        font-size: 22px;
+        margin-right: 8px;
+      }
+
+      .user-avtar {
+        width: 24px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 40px;
+
+        .user-avtar {
+          margin-right: 0;
+        }
+
+        > span,
+        > span > i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .dropdown-user-profile {
+    min-width: 290px;
+    max-width: 100%;
+    .drp-tabs {
+      border-bottom: 0;
+      display: flex;
+      margin-bottom: 10px;
+      .nav-item {
+        margin-bottom: -0px;
+        .nav-link {
+          position: relative;
+          padding: 0.7rem;
+          font-weight: 500;
+          color: $body-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            font-size: 18px;
+            margin: 0 4px;
+          }
+          .material-icons-two-tone {
+            font-size: 20px;
+          }
+          &:after {
+            content: '';
+            background: $primary;
+            position: absolute;
+            transition: all 0.3s ease-in-out;
+            left: 50%;
+            right: 50%;
+            bottom: -1px;
+            height: 2px;
+            border-radius: 2px 2px 0 0;
+          }
+        }
+      }
+
+      .nav-link:hover {
+        border-color: transparent;
+        color: $primary;
+        .material-icons-two-tone {
+          background-color: $primary;
+        }
+      }
+
+      .nav-item.show .nav-link,
+      .nav-link.active {
+        border-color: transparent;
+        color: $primary;
+        .material-icons-two-tone {
+          background-color: $primary;
+        }
+        &:after {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .dropdown-notification {
+    min-width: 420px;
+    max-width: 100%;
+
+    .list-group-item-action {
+      &:active,
+      &:hover,
+      &:focus {
+        background: shift-color($primary, $soft-bg-level);
+      }
+
+      .user-avtar,
+      h5 {
+        cursor: pointer;
+      }
+    }
+
+    .badge {
+      font-size: 0.8125rem;
+      padding: 0.43em 1em;
+    }
+
+    .user-avtar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    .notification-file {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 20px;
+        margin-right: 16px;
+      }
+    }
+    @media (max-width: 575.98px) {
+      min-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .pc-header {
+    top: 0;
+    left: 0;
+    transition: all 0.15s ease-in-out;
+
+    .m-header {
+      display: none;
+    }
+    .pc-head-link {
+      .user-desc,
+      .user-name {
+        display: none;
+      }
+    }
+
+    .pcm-logo {
+      margin-left: 30px;
+
+      img {
+        max-width: 160px;
+      }
+    }
+
+    .pc-md-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .pc-level-menu .dropdown-menu {
+      left: 0;
+      display: block;
+      padding-left: 30px;
+    }
+
+    .pc-mob-drp {
+      &.mob-drp-active {
+        .pc-h-item {
+          display: block;
+          min-height: auto;
+          position: relative;
+
+          .pc-head-link {
+            display: block;
+            margin: 5px 10px !important;
+          }
+
+          .dropdown-menu {
+            position: relative !important;
+            width: 100%;
+            float: none;
+            box-shadow: none;
+          }
+        }
+
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .pc-header {
+    .pc-head-link {
+      padding: 0.65rem;
+      margin: 0 5px;
+    }
+
+    .pc-h-item {
+      position: static;
+
+      .pc-h-dropdown {
+        left: 0 !important;
+        right: 0 !important;
+      }
+    }
+  }
+}
+
+// header css end

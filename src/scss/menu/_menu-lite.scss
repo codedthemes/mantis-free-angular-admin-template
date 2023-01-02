@@ -1,0 +1,851 @@
+.navbar-collapsed {
+  .mobile-menu {
+    transform: rotateY(-90deg);
+    transform-origin: 0 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    .mobile-menu {
+      transition-delay: 0.3s;
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
+}
+
+.coded-navbar {
+  display: block;
+  z-index: 1029;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  .scroll-div.navbar-content {
+    height: calc(100vh - #{$header-height});
+  }
+
+  .version {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 8px;
+      padding-right: 8px;
+      white-space: nowrap;
+      background-color: rgb(250, 250, 250);
+      color: rgb(158, 158, 158);
+      border-radius: 16px;
+    }
+  }
+
+  .header-logo {
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    float: left;
+    height: $header-height;
+    text-align: center;
+    width: $sidebar-width;
+    margin-right: 0;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+
+    .logo-dark {
+      display: none;
+    }
+
+    .logo-thumb {
+      transform: rotateY(-90deg);
+      opacity: 0;
+      position: absolute;
+      transition: unset;
+    }
+
+    + .scroll-div {
+      float: left;
+      display: inline-block;
+    }
+  }
+
+  .mobile-menu {
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 2.8px;
+      background-color: $sidebar-color;
+      transition: all 0.3s ease-in-out;
+      backface-visibility: hidden;
+      border-radius: 2px;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 2.8px;
+        background-color: $sidebar-color;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+        border-radius: 2px;
+      }
+
+      &:after {
+        top: 5px;
+        width: 70%;
+      }
+
+      &:before {
+        top: -5px;
+        width: 40%;
+      }
+    }
+
+    &.on {
+      span {
+        background-color: transparent;
+
+        &:after,
+        &:before {
+          height: 2px;
+          width: 100%;
+        }
+
+        &:before {
+          transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        &:after {
+          transform: rotate(-45deg) translate(3px, -3px);
+        }
+      }
+    }
+  }
+
+  .coded-badge {
+    font-size: 75%;
+    position: absolute;
+    right: 30px;
+    top: 12px;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .coded-inner-navbar {
+    flex-direction: column;
+
+    li {
+      position: relative;
+      padding-bottom: 2px;
+
+      > a {
+        padding: 10px 24px;
+        display: block;
+        border-radius: 5px;
+        position: relative;
+
+        .coded-mtext {
+          position: relative;
+        }
+
+        > .coded-micon {
+          font-size: 18px;
+          align-items: center;
+          margin-right: 15px;
+          height: 24px;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+
+          + .coded-mtext {
+            position: relative;
+            vertical-align: middle;
+            text-align: center;
+          }
+        }
+      }
+
+      &.coded-hasmenu {
+        > a {
+          &:after {
+            content: '\e844';
+            font-family: 'feather';
+            font-size: 15px;
+            border: none;
+            position: absolute;
+            top: 11px;
+            right: 20px;
+            transition: 0.3s ease-in-out;
+          }
+        }
+
+        &.coded-trigger {
+          > a {
+            &:after {
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        .coded-submenu {
+          display: none;
+        }
+
+        &.coded-trigger.active {
+          > .coded-submenu {
+            display: block;
+          }
+
+          > a {
+            position: relative;
+          }
+        }
+
+        .coded-submenu {
+          > app-nav-item,
+          > app-nav-collapse {
+            li {
+              > a {
+                text-align: left;
+                padding: 10px 30px 10px 55px;
+                margin: 0;
+                display: block;
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 2px;
+                  height: 100%;
+                }
+              }
+
+              .coded-submenu {
+                > app-nav-item li {
+                  > a {
+                    padding: 10px 30px 10px 75px;
+                  }
+                }
+              }
+            }
+            ul {
+              app-nav-collapse {
+                li {
+                  > a {
+                    padding: 10px 30px 10px 75px;
+                  }
+                }
+                .coded-submenu {
+                  > app-nav-item li {
+                    > a {
+                      padding: 10px 30px 10px 95px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.coded-menu-caption {
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 24px 24px 12px;
+        text-transform: capitalize;
+        position: relative;
+        color: $sidebar-caption;
+      }
+
+      &.disabled {
+        > a {
+          cursor: default;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    > app-nav-group > app-nav-item {
+      li {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 2px;
+          height: 100%;
+        }
+      }
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: $pc-secondary;
+    }
+  }
+
+  // for navbar
+  width: $sidebar-width;
+  height: 100vh;
+  background: $sidebar-background;
+  color: $sidebar-color;
+
+  a {
+    color: $sidebar-color;
+  }
+
+  .navbar-content,
+  .navbar-wrapper {
+    width: 100%;
+    height: 100%;
+
+    .logo-white {
+      display: none;
+    }
+  }
+
+  &.navbar-collapsed {
+    width: $sidebar-collapsed-width;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+
+    .mobile-menu {
+      transform: rotateY(-90deg);
+      transform-origin: 0 0;
+      opacity: 0;
+    }
+
+    .navbar-content {
+      &.ps {
+        overflow: visible;
+      }
+    }
+
+    .coded-menu-caption {
+      position: relative;
+      width: 100%;
+      height: auto;
+      white-space: nowrap;
+      overflow: hidden;
+
+      > label {
+        transform: rotateY(-90deg);
+        transform-origin: 0 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        width: calc(100% - 30px);
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .coded-inner-navbar {
+      app-nav-item > li,
+      > app-nav-group > app-nav-collapse > li {
+        > a {
+          z-index: 1026;
+          padding: 7px 25px;
+
+          > .coded-mtext {
+            transform: rotateY(-90deg);
+            transform-origin: 0 0;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        &.coded-hasmenu {
+          > a {
+            &:after {
+              right: 12px;
+            }
+          }
+
+          .coded-submenu {
+            display: none;
+          }
+        }
+      }
+
+      > app-nav-group > app-nav-collapse > li {
+        &.coded-trigger {
+          .coded-submenu {
+            &:after {
+              content: '';
+              position: absolute;
+              top: 5px;
+              left: calc(calc(#{$sidebar-collapsed-width} / 2) - 3px);
+              width: 2px;
+              height: calc(100% - 5px);
+              background: transparentize($sidebar-color, 0.9);
+            }
+
+            li {
+              a {
+                color: transparent;
+                white-space: nowrap;
+              }
+            }
+
+            .coded-submenu {
+              li {
+                a:before {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ~ .coded-header {
+      width: calc(100% - #{$sidebar-collapsed-width});
+    }
+
+    ~ .pc-footer {
+      margin-left: 20px;
+    }
+
+    ~ .pc-container {
+      margin-left: 0px;
+    }
+
+    ~ app-nav-bar .pc-header {
+      left: 0px;
+    }
+
+    .coded-badge {
+      transform: rotateX(-90deg);
+      transform-origin: 50% 50%;
+      opacity: 0;
+      transition: all 0.15s ease-in-out;
+    }
+  }
+
+  .coded-menu-caption {
+    color: #212121;
+  }
+
+  .coded-inner-navbar {
+    > app-nav-collapse li {
+      &.active,
+      &:focus,
+      &:hover {
+        > a {
+          color: $primary;
+        }
+      }
+
+      .coded-submenu > app-nav-item li {
+        &.active {
+          > a {
+            background: transparentize($primary, 0.9);
+            &:before {
+              background: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    > app-nav-group > app-nav-item > li.nav-item {
+      &.active {
+        background: transparentize($primary, 0.9);
+        > a {
+          color: $primary;
+        }
+        &:before {
+          background: $primary;
+        }
+      }
+    }
+
+    > app-nav-group > app-nav-collapse li {
+      &.active,
+      &:focus,
+      &:hover {
+        > a {
+          color: $primary;
+        }
+      }
+
+      .coded-submenu > app-nav-item li {
+        &.active {
+          > a {
+            background: transparentize($primary, 0.9);
+            &:before {
+              background: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    > .coded-menu-caption {
+      &.active,
+      &.coded-trigger {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  .pc-compact-submenu {
+    .coded-submenu {
+      padding: 35px 0px;
+      app-nav-collapse li,
+      app-nav-item li {
+        &.active,
+        &:focus,
+        &:hover {
+          > a {
+            color: $secondary;
+          }
+        }
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: $pc-secondary;
+      }
+    }
+
+    .coded-submenu > app-nav-item li {
+      &.active,
+      &:focus,
+      &:hover {
+        > a {
+          &:before {
+            background: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.coded-navbar {
+  .coded-inner-navbar {
+    app-bc-nav-item {
+      li {
+        &.active {
+          background: transparentize($primary, 0.9);
+          color: $primary;
+          &:before {
+            background: $primary;
+          }
+        }
+        > a {
+          padding: 12px 25px;
+          border: none;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 2px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.coded-navbar {
+  &.mob-open,
+  &.navbar-collapsed {
+    ~ .coded-header,
+    ~ .coded-main-container {
+      margin-left: $sidebar-collapsed-width;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// main content end
+// ==========================    Responsive Menu  start   ======================
+@media only screen and (max-width: 1024px) {
+  .pc-sidebar {
+    margin-left: -#{$sidebar-width};
+    position: absolute;
+    height: 100%;
+    box-shadow: none;
+
+    .scroll-div.navbar-content {
+      height: 100%;
+    }
+
+    ~ .full-screen {
+      display: none;
+    }
+
+    ~ .coded-header,
+    ~ .coded-main-container {
+      margin-left: 0;
+    }
+
+    ~ .coded-header {
+      width: 100%;
+    }
+
+    .navbar-brand {
+      display: none;
+    }
+
+    &.mob-open {
+      margin-left: 0;
+
+      ~ .coded-header,
+      ~ .coded-main-container {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .coded-navbar {
+    .header-logo {
+      transition: none;
+    }
+
+    &.navbar-collapsed {
+      transition: none;
+
+      .header-logo {
+        img {
+          transition: none;
+        }
+      }
+
+      .coded-menu-caption {
+        > label {
+          transition: none;
+        }
+      }
+
+      .coded-inner-navbar {
+        > li {
+          > a {
+            > .coded-mtext {
+              transition: none;
+            }
+          }
+
+          &.coded-hasmenu {
+            > a {
+              &:after {
+                transition: none;
+                transition-delay: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .coded-badge {
+        transition: none;
+      }
+
+      &:hover {
+        .coded-badge {
+          transition-delay: 0;
+        }
+      }
+    }
+  }
+}
+
+.coded-content {
+  position: relative;
+  display: block;
+}
+
+.pc-container .page-header + .row {
+  padding-top: 24px;
+}
+
+.coded-header:before,
+.coded-main-container:before {
+  content: '';
+  transition: all 0.3s ease-in-out;
+}
+
+.coded-main-container {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  clear: both;
+  float: unset;
+  right: 0;
+  margin-left: $sidebar-width;
+  min-height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+//-----------------------Angular------------------//@at-root
+
+.navbar-collapsed:hover .mobile-menu {
+  transform: rotateY(0deg) !important;
+  opacity: 1 !important;
+}
+.coded-navbar {
+  &.navbar-collapsed {
+    .coded-inner-navbar app-nav-item > li.coded-hasmenu .coded-submenu,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-hasmenu .coded-submenu {
+      display: block;
+    }
+  }
+
+  .coded-inner-navbar {
+    app-nav-item > li.active:after {
+      top: 0 !important;
+      height: 100% !important;
+    }
+
+    li {
+      &.coded-hasmenu {
+        position: relative;
+
+        .coded-submenu {
+          opacity: 0;
+          visibility: hidden;
+          transform-origin: 50% 50%;
+          transition: transform 0.3s, opacity 0.3s;
+          transform-style: preserve-3d;
+          transform: rotateX(-90deg);
+          position: absolute;
+          display: block;
+        }
+
+        &.coded-trigger {
+          > .coded-submenu {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transform: rotateX(0deg);
+          }
+        }
+      }
+    }
+  }
+  .pc-compact-submenu {
+    .coded-submenu {
+      li {
+        &.coded-hasmenu {
+          position: relative;
+          .coded-submenu {
+            opacity: 0;
+            visibility: visible;
+            transform-origin: 50% 50%;
+            transition: transform 0.3s, opacity 0.3s;
+            transform-style: preserve-3d;
+            transform: rotateX(-90deg);
+            position: absolute;
+            display: block;
+          }
+
+          &.coded-trigger {
+            > .coded-submenu {
+              position: relative;
+              opacity: 1;
+              transform: rotateX(0deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//============= Horizontal =======//
+
+.coded-navbar {
+  &.menu-light {
+    .coded-inner-navbar app-nav-item > li.active a,
+    .coded-inner-navbar app-nav-item > li.coded-trigger a,
+    .coded-inner-navbar app-nav-item > li:hover a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.active a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-trigger a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li:hover a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-trigger > a {
+      background: transparent;
+    }
+  }
+
+  &.menu-light {
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-trigger > a {
+      background: #f1f1f1 !important;
+      color: #111 !important;
+    }
+  }
+}
+
+// ===================================================================================================
+// ==========================    Different types of Navbar Layout Styles end     ======================
+// ===================================================================================================
+
+.coded-navbar {
+  &.menu-light {
+    .coded-inner-navbar app-nav-item > li.active a,
+    .coded-inner-navbar app-nav-item > li.coded-trigger a,
+    .coded-inner-navbar app-nav-item > li:hover a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.active a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-trigger a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li:hover a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-trigger > a {
+      background: transparent;
+    }
+  }
+
+  &.menu-light {
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li.coded-trigger > a {
+      background: #f1f1f1 !important;
+      color: #111 !important;
+    }
+  }
+}
+
+.coded-navbar.navbar-collapsed {
+  &:not(:hover) {
+    .coded-inner-navbar app-nav-item > li > a,
+    .coded-inner-navbar > app-nav-group > app-nav-collapse > li > a {
+      width: 80px;
+    }
+  }
+}
