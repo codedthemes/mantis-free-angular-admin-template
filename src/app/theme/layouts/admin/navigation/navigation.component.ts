@@ -8,8 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavigationComponent {
   // public props
-  @Output() onNavCollapsedMob = new EventEmitter();
-  @Output() onSubmenuCollapse = new EventEmitter();
+  @Output() NavCollapsedMob = new EventEmitter();
+  @Output() SubmenuCollapse = new EventEmitter();
   navCollapsedMob;
   windowWidth: number;
   subMenuCollapsed: boolean;
@@ -24,11 +24,11 @@ export class NavigationComponent {
   // public method
   navCollapseMob() {
     if (this.windowWidth < 1025) {
-      this.onNavCollapsedMob.emit();
+      this.NavCollapsedMob.emit();
     }
   }
 
   navSubmenuCollapse() {
-    this.onSubmenuCollapse.emit();
+    this.SubmenuCollapse.emit();
   }
 }

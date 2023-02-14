@@ -4,10 +4,10 @@
     'navbar-collapsed': navCollapsed,
     'mob-open': navCollapsedMob
   }"
-  (onNavCollapse)="this.navCollapsed = !this.navCollapsed"
-  (onNavCollapsedMob)="navMobClick()"
+  (NavCollapse)="this.navCollapsed = !this.navCollapsed"
+  (NavCollapsedMob)="navMobClick()"
 ></app-navigation>
-<app-nav-bar (onNavCollapsedMob)="navMobClick()" (onNavCollapse)="this.navCollapsed = !this.navCollapsed"></app-nav-bar>
+<app-nav-bar (NavCollapsedMob)="navMobClick()" (NavCollapse)="this.navCollapsed = !this.navCollapsed"></app-nav-bar>
 <div class="pc-container">
   <div class="coded-wrapper">
     <div class="coded-content">

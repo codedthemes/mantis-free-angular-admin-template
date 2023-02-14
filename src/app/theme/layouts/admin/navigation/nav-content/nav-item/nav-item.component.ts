@@ -22,7 +22,7 @@ export class NavItemComponent {
   }
 
   // public method
-  closeOtherMenu(event: any) {
+  closeOtherMenu(event) {
     if (MantisConfig.layout === 'vertical') {
       const ele = event.target;
       if (ele !== null && ele !== undefined) {

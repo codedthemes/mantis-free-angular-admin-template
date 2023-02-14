@@ -1,6 +1,8 @@
 // Angular import
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 // project import
@@ -8,30 +10,29 @@ import { NavigationItem } from 'src/app/theme/layouts/admin/navigation/navigatio
 
 @Component({
   selector: 'app-breadcrumb',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent {
   // public props
   @Input() type: string;
-  navigation: any;
-  breadcrumbList: Array<any> = [];
-  navigationList: any;
+  navigation;
+  breadcrumbList: Array<string> = [];
+  navigationList;
 
   // Constructor
   constructor(private _router: Router, public nav: NavigationItem, private titleService: Title) {
     this.navigation = this.nav.get();
     this.setBreadcrumb();
-    this.type = 'theme2';
+    this.type = 'theme1';
   }
-
-  // Life cycle events
-  ngOnInit() {}
 
   // public method
   setBreadcrumb() {
     let routerUrl: string;
-    this._router.events.subscribe((router: any) => {
+    this._router.events.subscribe((router: NavigationEnd) => {
       routerUrl = router.urlAfterRedirects;
       if (routerUrl && typeof routerUrl === 'string') {
         this.breadcrumbList.length = 0;
@@ -41,10 +42,10 @@ export class BreadcrumbComponent implements OnInit {
     });
   }
 
-  filterNavigation(activeLink: any) {
-    let result: any;
+  filterNavigation(activeLink) {
+    let result: object;
     let title = 'Welcome';
-    this.navigation.forEach(function (a: any) {
+    this.navigation.forEach(function (a) {
       if (a.type === 'item' && 'url' in a && a.url === activeLink) {
         result = [
           {
@@ -57,7 +58,7 @@ export class BreadcrumbComponent implements OnInit {
         title = a.title;
       } else {
         if (a.type === 'group' && 'children' in a) {
-          a.children.forEach(function (b: any) {
+          a.children.forEach(function (b) {
             if (b.type === 'item' && 'url' in b && b.url === activeLink) {
               result = [
                 {
@@ -76,7 +77,7 @@ export class BreadcrumbComponent implements OnInit {
               title = b.title;
             } else {
               if (b.type === 'collapse' && 'children' in b) {
-                b.children.forEach(function (c: any) {
+                b.children.forEach(function (c) {
                   if (c.type === 'item' && 'url' in c && c.url === activeLink) {
                     result = [
                       {
@@ -95,7 +96,7 @@ export class BreadcrumbComponent implements OnInit {
                     title = c.title;
                   } else {
                     if (c.type === 'collapse' && 'children' in c) {
-                      c.children.forEach(function (d: any) {
+                      c.children.forEach(function (d) {
                         if (d.type === 'item' && 'url' in d && d.url === activeLink) {
                           result = [
                             {
@@ -124,6 +125,6 @@ export class BreadcrumbComponent implements OnInit {
       }
     });
     this.navigationList = result;
-    this.titleService.setTitle(title + ' | mantis Angular Template');
+    this.titleService.setTitle(title + ' | Mantis Angular Template');
   }
 }

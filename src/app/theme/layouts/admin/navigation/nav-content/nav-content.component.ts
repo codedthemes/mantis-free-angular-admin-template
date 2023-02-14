@@ -1,5 +1,5 @@
 // Angular import
-import { AfterViewInit, Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
+import {Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // project import
@@ -12,21 +12,21 @@ import { environment } from 'src/environments/environment';
   templateUrl: './nav-content.component.html',
   styleUrls: ['./nav-content.component.scss']
 })
-export class NavContentComponent implements OnInit, AfterViewInit {
+export class NavContentComponent implements OnInit {
   // public props
-  @Output() onNavCollapsedMob: EventEmitter<any> = new EventEmitter();
+  @Output() NavCollapsedMob: EventEmitter<string> = new EventEmitter();
 
   // version
   title = 'Demo application for version numbering';
   currentApplicationVersion = environment.appVersion;
 
-  config: any;
-  navigation: any;
+  config: object;
+  navigation;
   prevDisabled: string;
   nextDisabled: string;
   contentWidth: number;
-  wrapperWidth: any;
-  scrollWidth: any;
+  wrapperWidth: number;
+  scrollWidth: number;
   windowWidth: number;
   themeLayout: string;
 
@@ -55,9 +55,6 @@ export class NavContentComponent implements OnInit, AfterViewInit {
       }, 500);
     }
   }
-
-  // public method
-  ngAfterViewInit() {}
 
   fireOutClick() {
     let current_url = this.location.path();
@@ -92,7 +89,7 @@ export class NavContentComponent implements OnInit, AfterViewInit {
 
   navMob() {
     if (this.windowWidth < 1025 && document.querySelector('app-navigation.coded-navbar').classList.contains('mob-open')) {
-      this.onNavCollapsedMob.emit();
+      this.NavCollapsedMob.emit();
     }
   }
 }

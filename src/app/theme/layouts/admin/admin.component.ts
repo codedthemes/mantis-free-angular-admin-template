@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  navCollapsed: any;
+  navCollapsed;
   navCollapsedMob: boolean;
   windowWidth: number;
 

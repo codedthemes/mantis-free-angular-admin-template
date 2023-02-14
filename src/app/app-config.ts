@@ -1,5 +1,5 @@
 export class MantisConfig {
-  static layout: string = 'vertical';
-  static isCollapseMenu: boolean = false;
-  static font_family: string = 'public-sans'; // public-sans, Roboto, Poppins, Inter
+  static layout = 'vertical';
+  static isCollapseMenu = false;
+  static font_family = 'public-sans'; // public-sans, Roboto, Poppins, Inter
 }

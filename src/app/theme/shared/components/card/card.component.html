@@ -9,12 +9,12 @@
         </button>
         <ul class="list-unstyled card-option dropdown-menu dropdown-menu-end" ngbDropdownMenu>
           <li class="dropdown-item full-card" (click)="fullCardToggle(toAnimate, '', true)">
-            <a href="javascript:"
+            <a
               ><span><i class="feather" [ngClass]="fullIcon"></i> {{ this.cardClass === 'full-card' ? 'Restore' : 'Maximize' }}</span></a
             >
           </li>
-          <li class="dropdown-item minimize-card" (click)="collapsedCardToggle($event)">
-            <a href="javascript:"
+          <li class="dropdown-item minimize-card" (click)="collapsedCardToggle()">
+            <a
               ><span
                 ><i class="feather" [ngClass]="collapsedIcon"></i>
                 {{ this.collapsedCard === 'collapsed' ? 'Expand' : 'Collapse' }}
@@ -23,10 +23,10 @@
             ></a>
           </li>
           <li class="dropdown-item reload-card" (click)="cardRefresh()">
-            <a href="javascript:"><i class="feather icon-refresh-cw"></i> Reload</a>
+            <a><i class="feather icon-refresh-cw"></i> Reload</a>
           </li>
           <li class="dropdown-item close-card" (click)="cardRemoveAction()">
-            <a href="javascript:"><i class="feather icon-trash"></i> Remove</a>
+            <a><i class="feather icon-trash"></i> Remove</a>
           </li>
         </ul>
       </div>

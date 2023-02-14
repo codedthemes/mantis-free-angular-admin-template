@@ -5,26 +5,24 @@
         <div class="col-md-12">
           <ul class="breadcrumb">
             <li class="breadcrumb-item">
-              <a [routerLink]="['/dashboard/default']" *ngIf="type === 'theme3'">Home</a>
-              <a [routerLink]="['/dashboard/default']" *ngIf="type === 'theme2'">Home</a>
-              <a [routerLink]="['/dashboard/default']" *ngIf="type === 'theme1'">Home</a>
+              <a [routerLink]="['/sample-page']" *ngIf="type === 'theme1'">Home</a>
             </li>
             <ng-container *ngFor="let breadcrumb of navigationList">
               <li class="breadcrumb-item" *ngIf="breadcrumb.url !== false">
                 <a [routerLink]="breadcrumb.url">{{ breadcrumb.title }}</a>
               </li>
               <li class="breadcrumb-item" *ngIf="breadcrumb.url === false">
-                <a href="javascript:">{{ breadcrumb.title }}</a>
+                <a>{{ breadcrumb.title }}</a>
               </li>
             </ng-container>
           </ul>
         </div>
         <div class="page-header-title">
-          <ng-container *ngFor="let breadcrumb of navigationList; let last = last"
-            ><h2 class="mb-0" *ngIf="last">
+          <ng-container *ngFor="let breadcrumb of navigationList; let last = last">
+            <h2 class="mb-0" *ngIf="last">
               {{ breadcrumb.title }}
-            </h2></ng-container
-          >
+            </h2>
+          </ng-container>
         </div>
       </div>
     </div>

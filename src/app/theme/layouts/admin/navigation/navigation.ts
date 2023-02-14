@@ -13,7 +13,6 @@ export interface NavigationItem {
   external?: boolean;
   target?: boolean;
   breadcrumbs?: boolean;
-  function?: any;
   badge?: {
     title?: string;
     type?: string;

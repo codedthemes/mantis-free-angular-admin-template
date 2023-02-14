@@ -22,7 +22,7 @@ import { MantisConfig } from 'src/app/app-config';
 })
 export class NavCollapseComponent {
   // public props
-  @Output() toggle: EventEmitter<any> = new EventEmitter();
+  @Output() toggle: EventEmitter<string> = new EventEmitter();
   @Input() item!: NavigationItem;
 
   visible;
@@ -37,7 +37,7 @@ export class NavCollapseComponent {
   }
 
   // public method
-  navCollapse(e: any) {
+  navCollapse(e) {
     this.visible = !this.visible;
 
     let parent = e.target;
