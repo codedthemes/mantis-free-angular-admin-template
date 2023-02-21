@@ -32,7 +32,6 @@ export class NavCollapseComponent {
   // Constructor
   constructor() {
     this.visible = false;
-    this.themeLayout = MantisConfig.layout;
     this.windowWidth = window.innerWidth;
   }
 

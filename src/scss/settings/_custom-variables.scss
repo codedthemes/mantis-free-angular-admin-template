@@ -650,7 +650,6 @@ $card-img-overlay-padding: 1.25rem;
 
 $card-group-margin: calc($grid-gutter-width / 2);
 
-
 // Badges
 $badge-font-size: 0.75em;
 $badge-font-weight: 500;
@@ -737,4 +736,3 @@ $pre-color: null;
 
 // scss-docs-start theme-colors-rgb
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
-

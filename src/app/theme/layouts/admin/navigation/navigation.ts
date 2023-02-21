@@ -24,7 +24,6 @@ export interface Navigation extends NavigationItem {
   children?: NavigationItem[];
 }
 const NavigationItems = [
-  
   {
     id: 'dashboard',
     title: 'Dashboard',

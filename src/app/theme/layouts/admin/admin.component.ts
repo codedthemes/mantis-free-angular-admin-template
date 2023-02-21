@@ -18,13 +18,6 @@ export class AdminComponent {
       current_url = this.location['_baseHref'] + this.location.path();
     }
 
-    if (
-      current_url === this.location['_baseHref'] + '/layout/collapse-menu' ||
-      current_url === this.location['_baseHref'] + '/layout/box'
-    ) {
-      MantisConfig.isCollapseMenu = true;
-    }
-
     this.windowWidth = window.innerWidth;
     this.navCollapsed = this.windowWidth >= 1024 ? MantisConfig.isCollapseMenu : false;
     this.navCollapsedMob = false;

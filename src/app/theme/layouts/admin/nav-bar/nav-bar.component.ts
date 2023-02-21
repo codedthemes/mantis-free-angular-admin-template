@@ -11,7 +11,6 @@ export class NavBarComponent {
   // public props
   @Output() NavCollapse = new EventEmitter();
   @Output() NavCollapsedMob = new EventEmitter();
-  @Output() Customize = new EventEmitter();
 
   navCollapsed;
   windowWidth: number;
@@ -36,9 +35,5 @@ export class NavBarComponent {
     if (this.windowWidth < 1025) {
       this.NavCollapsedMob.emit();
     }
-  }
-
-  customize() {
-    this.Customize.emit();
   }
 }

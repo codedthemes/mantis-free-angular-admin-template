@@ -9,7 +9,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class NavigationComponent {
   // public props
   @Output() NavCollapsedMob = new EventEmitter();
-  @Output() SubmenuCollapse = new EventEmitter();
   navCollapsedMob;
   windowWidth: number;
   subMenuCollapsed: boolean;
@@ -26,9 +25,5 @@ export class NavigationComponent {
     if (this.windowWidth < 1025) {
       this.NavCollapsedMob.emit();
     }
-  }
-
-  navSubmenuCollapse() {
-    this.SubmenuCollapse.emit();
   }
 }

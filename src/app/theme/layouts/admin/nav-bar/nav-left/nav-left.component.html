@@ -5,6 +5,7 @@
       href="javascript:"
       class="pc-head-link ms-0"
       id="sidebar-hide"
+      title="click to menu Collapse"
       [ngClass]="{ on: navCollapsed }"
       id="sidebar-hide mobile-collapse"
       (click)="navCollapse()"
@@ -13,7 +14,7 @@
     </a>
   </li>
   <li class="pc-h-item pc-sidebar-popup">
-    <a href="javascript:" class="pc-head-link ms-0" id="mobile-collapse1" (click)="this.NavCollapsedMob.emit()">
+    <a href="javascript:" title="click to menu open" class="pc-head-link ms-0" id="mobile-collapse1" (click)="this.NavCollapsedMob.emit()">
       <i class="ti ti-menu-2"></i>
     </a>
   </li>

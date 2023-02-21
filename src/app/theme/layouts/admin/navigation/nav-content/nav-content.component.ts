@@ -1,5 +1,5 @@
 // Angular import
-import {Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, NgZone, OnInit, Output } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // project import
@@ -22,28 +22,13 @@ export class NavContentComponent implements OnInit {
 
   config: object;
   navigation;
-  prevDisabled: string;
-  nextDisabled: string;
-  contentWidth: number;
-  wrapperWidth: number;
-  scrollWidth: number;
   windowWidth: number;
   themeLayout: string;
 
-  @ViewChild('navbarContent', { static: false }) navbarContent!: ElementRef;
-  @ViewChild('navbarWrapper', { static: false }) navbarWrapper!: ElementRef;
-
   // Constructor
   constructor(public nav: NavigationItem, private zone: NgZone, private location: Location, private locationStrategy: LocationStrategy) {
-    this.config = MantisConfig;
     this.windowWidth = window.innerWidth;
-    this.themeLayout = MantisConfig.layout;
-
     this.navigation = this.nav.get();
-    this.prevDisabled = 'disabled';
-    this.nextDisabled = '';
-    this.scrollWidth = 0;
-    this.contentWidth = 0;
   }
 
   // Life cycle events

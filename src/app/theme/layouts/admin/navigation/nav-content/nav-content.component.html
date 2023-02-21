@@ -1,5 +1,5 @@
 <!-- Vertical layout -->
-<ng-scrollbar *ngIf="this.config['layout'] === 'vertical'" style="height: calc(100vh - 88px)" id="nav-ps-mantis" visibility="hover">
+<ng-scrollbar style="height: calc(100vh - 88px)" id="nav-ps-mantis" visibility="hover">
   <div class="navbar-content">
     <ul class="nav coded-inner-navbar" (clickOutside)="fireOutClick()" (mouseleave)="navMob()">
       <ng-container *ngFor="let item of navigation">
