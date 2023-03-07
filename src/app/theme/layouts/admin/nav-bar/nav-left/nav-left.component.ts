@@ -9,8 +9,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class NavLeftComponent {
   // public props
   @Input() navCollapsed: boolean;
-  @Output() onNavCollapse = new EventEmitter();
-  @Output() onNavCollapsedMob = new EventEmitter();
+  @Output() NavCollapse = new EventEmitter();
+  @Output() NavCollapsedMob = new EventEmitter();
   windowWidth: number;
 
   // Constructor
@@ -20,6 +20,6 @@ export class NavLeftComponent {
 
   // public method
   navCollapse() {
-    this.onNavCollapse.emit();
+    this.NavCollapse.emit();
   }
 }

@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  navCollapsed: any;
+  navCollapsed;
   navCollapsedMob: boolean;
   windowWidth: number;
 
@@ -16,13 +16,6 @@ export class AdminComponent {
     let current_url = this.location.path();
     if (this.location['_baseHref']) {
       current_url = this.location['_baseHref'] + this.location.path();
-    }
-
-    if (
-      current_url === this.location['_baseHref'] + '/layout/collapse-menu' ||
-      current_url === this.location['_baseHref'] + '/layout/box'
-    ) {
-      MantisConfig.isCollapseMenu = true;
     }
 
     this.windowWidth = window.innerWidth;

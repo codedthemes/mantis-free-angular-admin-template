@@ -1,5 +1,6 @@
 // Angular import
 import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular/animations';
 
 // bootstrap import
@@ -7,6 +8,8 @@ import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   providers: [NgbDropdownConfig],
@@ -115,7 +118,7 @@ export class CardComponent implements OnInit {
     }, 500);
   }
 
-  collapsedCardToggle(event: any) {
+  collapsedCardToggle() {
     this.collapsedCard = this.collapsedCard === 'collapsed' ? 'expanded' : 'collapsed';
     this.collapsedIcon = this.collapsedCard === 'collapsed' ? 'icon-plus' : 'icon-minus';
   }

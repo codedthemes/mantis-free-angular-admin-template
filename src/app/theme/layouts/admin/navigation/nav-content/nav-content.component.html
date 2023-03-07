@@ -1,11 +1,11 @@
 <!-- Vertical layout -->
-<ng-scrollbar *ngIf="this.config['layout'] === 'vertical'" style="height: calc(100vh - 88px)" id="nav-ps-mantis" visibility="hover">
+<ng-scrollbar style="height: calc(100vh - 88px)" id="nav-ps-mantis" visibility="hover">
   <div class="navbar-content">
     <ul class="nav coded-inner-navbar" (clickOutside)="fireOutClick()" (mouseleave)="navMob()">
       <ng-container *ngFor="let item of navigation">
-        <app-nav-group *ngIf="item.type == 'group'" [item]="item"></app-nav-group>
-        <app-nav-collapse *ngIf="item.type == 'collapse'" [item]="item"></app-nav-collapse>
-        <app-nav-item *ngIf="item.type == 'item'" [item]="item"></app-nav-item>
+        <app-nav-group *ngIf="item.type === 'group'" [item]="item"></app-nav-group>
+        <app-nav-collapse *ngIf="item.type === 'collapse'" [item]="item"></app-nav-collapse>
+        <app-nav-item *ngIf="item.type === 'item'" [item]="item"></app-nav-item>
       </ng-container>
     </ul>
     <div class="card text-center">
@@ -13,7 +13,7 @@
         <img src="assets/images/avatar-group.png" alt="images" class="img-fluid mb-2" />
         <h5>Mantis Pro</h5>
         <p>Checkout pro features</p>
-        <a href="javascript:" target="_blank" class="btn btn-success">Pro</a>
+        <a href="https://codedthemes.com/item/mantis-angular-admin-template/" target="_blank" class="btn btn-success">Pro</a>
       </div>
     </div>
     <div class="version">

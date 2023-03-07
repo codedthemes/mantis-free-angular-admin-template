@@ -1,5 +1,5 @@
 // Angular import
-import { AfterViewInit, Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, NgZone, OnInit, Output } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // project import
@@ -12,38 +12,23 @@ import { environment } from 'src/environments/environment';
   templateUrl: './nav-content.component.html',
   styleUrls: ['./nav-content.component.scss']
 })
-export class NavContentComponent implements OnInit, AfterViewInit {
+export class NavContentComponent implements OnInit {
   // public props
-  @Output() onNavCollapsedMob: EventEmitter<any> = new EventEmitter();
+  @Output() NavCollapsedMob: EventEmitter<string> = new EventEmitter();
 
   // version
   title = 'Demo application for version numbering';
   currentApplicationVersion = environment.appVersion;
 
-  config: any;
-  navigation: any;
-  prevDisabled: string;
-  nextDisabled: string;
-  contentWidth: number;
-  wrapperWidth: any;
-  scrollWidth: any;
+  config: object;
+  navigation;
   windowWidth: number;
   themeLayout: string;
 
-  @ViewChild('navbarContent', { static: false }) navbarContent!: ElementRef;
-  @ViewChild('navbarWrapper', { static: false }) navbarWrapper!: ElementRef;
-
   // Constructor
   constructor(public nav: NavigationItem, private zone: NgZone, private location: Location, private locationStrategy: LocationStrategy) {
-    this.config = MantisConfig;
     this.windowWidth = window.innerWidth;
-    this.themeLayout = MantisConfig.layout;
-
     this.navigation = this.nav.get();
-    this.prevDisabled = 'disabled';
-    this.nextDisabled = '';
-    this.scrollWidth = 0;
-    this.contentWidth = 0;
   }
 
   // Life cycle events
@@ -55,9 +40,6 @@ export class NavContentComponent implements OnInit, AfterViewInit {
       }, 500);
     }
   }
-
-  // public method
-  ngAfterViewInit() {}
 
   fireOutClick() {
     let current_url = this.location.path();
@@ -92,7 +74,7 @@ export class NavContentComponent implements OnInit, AfterViewInit {
 
   navMob() {
     if (this.windowWidth < 1025 && document.querySelector('app-navigation.coded-navbar').classList.contains('mob-open')) {
-      this.onNavCollapsedMob.emit();
+      this.NavCollapsedMob.emit();
     }
   }
 }

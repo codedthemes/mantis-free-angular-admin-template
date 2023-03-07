@@ -3,8 +3,8 @@
     <label>{{ item.title }}</label>
   </li>
   <ng-container *ngFor="let item of item.children">
-    <app-nav-group *ngIf="item.type == 'group'" [item]="item"></app-nav-group>
-    <app-nav-collapse *ngIf="item.type == 'collapse'" [item]="item"></app-nav-collapse>
-    <app-nav-item *ngIf="item.type == 'item'" [item]="item"></app-nav-item>
+    <app-nav-group *ngIf="item.type === 'group'" [item]="item"></app-nav-group>
+    <app-nav-collapse *ngIf="item.type === 'collapse'" [item]="item"></app-nav-collapse>
+    <app-nav-item *ngIf="item.type === 'item'" [item]="item"></app-nav-item>
   </ng-container>
 </ng-container>

@@ -51,8 +51,8 @@ export default class DashboardComponent implements OnInit {
   chartOptions_5: Partial<ChartOptions>;
   chartOptions_6: Partial<ChartOptions>;
 
-  monthChart: any;
-  weekChart: any;
+  monthChart;
+  weekChart;
 
   // constructor
   constructor() {

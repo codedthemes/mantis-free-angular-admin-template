@@ -19,7 +19,7 @@
   <div class="col-md-12 col-xl-8">
     <div class="d-flex align-items-center justify-content-between mb-3">
       <h5 class="mb-0">Unique Visitor</h5>
-      <ul ngbNav #nav="ngbNav" class="nav-pills justify-content-end mb-0" (navChange)="onNavChange($event)">
+      <ul ngbNav aria-busy="true" #nav="ngbNav" class="nav-pills justify-content-end mb-0" (navChange)="onNavChange($event)">
         <li [ngbNavItem]="1">
           <a ngbNavLink>Week</a>
           <ng-template ngbNavContent>
