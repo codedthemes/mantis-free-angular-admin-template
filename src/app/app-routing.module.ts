@@ -25,6 +25,18 @@ const routes: Routes = [
         loadComponent: () => import('./demo/ui-component/typography/typography.component')
       },
       {
+        path: 'card',
+        loadComponent: () => import('./demo/component/card/card.component')
+      },
+      {
+        path: 'breadcrumb',
+        loadComponent: () => import('./demo/component/breadcrumb/breadcrumb.component')
+      },
+      {
+        path: 'spinner',
+        loadComponent: () => import('./demo/component/spinner/spinner.component')
+      },
+      {
         path: 'color',
         loadComponent: () => import('./demo/ui-component/ui-color/ui-color.component')
       },

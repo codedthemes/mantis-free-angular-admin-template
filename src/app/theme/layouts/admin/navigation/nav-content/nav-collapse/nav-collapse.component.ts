@@ -1,5 +1,5 @@
 // Angular import
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 // project import
 import { NavigationItem } from '../../navigation';

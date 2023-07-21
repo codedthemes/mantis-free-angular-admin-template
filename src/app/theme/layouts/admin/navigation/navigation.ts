@@ -49,6 +49,30 @@ const NavigationItems = [
         icon: 'ti ti-typography'
       },
       {
+        id: 'card',
+        title: 'Card',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/card',
+        icon: 'ti ti-credit-card'
+      },
+      {
+        id: 'breadcrumb',
+        title: 'Breadcrumb',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/breadcrumb',
+        icon: 'ti ti-hierarchy-2'
+      },
+      {
+        id: 'spinner',
+        title: 'spinner',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/spinner',
+        icon: 'ti ti-loader'
+      },
+      {
         id: 'color',
         title: 'Colors',
         type: 'item',

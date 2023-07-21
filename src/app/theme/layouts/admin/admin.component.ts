@@ -12,15 +12,7 @@ export class AdminComponent {
   navCollapsedMob: boolean;
   windowWidth: number;
 
-  constructor(
-    private zone: NgZone,
-    private location: Location
-  ) {
-    let current_url = this.location.path();
-    if (this.location['_baseHref']) {
-      current_url = this.location['_baseHref'] + this.location.path();
-    }
-
+  constructor() {
     this.windowWidth = window.innerWidth;
     this.navCollapsed = this.windowWidth >= 1024 ? MantisConfig.isCollapseMenu : false;
     this.navCollapsedMob = false;
