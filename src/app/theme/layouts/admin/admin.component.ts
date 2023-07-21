@@ -12,7 +12,10 @@ export class AdminComponent {
   navCollapsedMob: boolean;
   windowWidth: number;
 
-  constructor(private zone: NgZone, private location: Location) {
+  constructor(
+    private zone: NgZone,
+    private location: Location
+  ) {
     let current_url = this.location.path();
     if (this.location['_baseHref']) {
       current_url = this.location['_baseHref'] + this.location.path();

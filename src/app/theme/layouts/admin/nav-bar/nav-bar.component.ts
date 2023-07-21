@@ -14,19 +14,16 @@ export class NavBarComponent {
 
   navCollapsed;
   windowWidth: number;
-  navCollapsedMob;
 
   // Constructor
   constructor() {
     this.windowWidth = window.innerWidth;
     this.navCollapsed = this.windowWidth >= 1025 ? MantisConfig.isCollapseMenu : false;
-    this.navCollapsedMob = false;
   }
 
   // public method
   navCollapse() {
     if (this.windowWidth >= 1025) {
-      this.navCollapsed = !this.navCollapsed;
       this.NavCollapse.emit();
     }
   }

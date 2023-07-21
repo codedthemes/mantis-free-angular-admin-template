@@ -9,16 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class NavigationComponent {
   // public props
   @Output() NavCollapsedMob = new EventEmitter();
-  navCollapsedMob;
-  windowWidth: number;
-  subMenuCollapsed: boolean;
-  themeLayout: string;
-
-  // Constructor
-  constructor() {
-    this.windowWidth = window.innerWidth;
-    this.navCollapsedMob = false;
-  }
+  windowWidth = window.innerWidth;
 
   // public method
   navCollapseMob() {

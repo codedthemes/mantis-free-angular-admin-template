@@ -11,12 +11,7 @@ export class NavLeftComponent {
   @Input() navCollapsed: boolean;
   @Output() NavCollapse = new EventEmitter();
   @Output() NavCollapsedMob = new EventEmitter();
-  windowWidth: number;
-
-  // Constructor
-  constructor() {
-    this.windowWidth = window.innerWidth;
-  }
+  windowWidth = window.innerWidth;
 
   // public method
   navCollapse() {
