@@ -23,10 +23,13 @@ export class BreadcrumbComponent {
   navigationList;
 
   // Constructor
-  constructor(private _router: Router, public nav: NavigationItem, private titleService: Title) {
+  constructor(
+    private _router: Router,
+    public nav: NavigationItem,
+    private titleService: Title
+  ) {
     this.navigation = this.nav.get();
     this.setBreadcrumb();
-    this.type = 'theme1';
   }
 
   // public method

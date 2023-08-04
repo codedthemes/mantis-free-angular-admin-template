@@ -4,19 +4,12 @@ export interface NavigationItem {
   id: string;
   title: string;
   type: 'item' | 'collapse' | 'group';
-  translate?: string;
   icon?: string;
-  hidden?: boolean;
   url?: string;
   classes?: string;
-  exactMatch?: boolean;
   external?: boolean;
   target?: boolean;
   breadcrumbs?: boolean;
-  badge?: {
-    title?: string;
-    type?: string;
-  };
   children?: Navigation[];
 }
 
@@ -54,6 +47,30 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '/typography',
         icon: 'ti ti-typography'
+      },
+      {
+        id: 'card',
+        title: 'Card',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/card',
+        icon: 'ti ti-credit-card'
+      },
+      {
+        id: 'breadcrumb',
+        title: 'Breadcrumb',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/breadcrumb',
+        icon: 'ti ti-hierarchy-2'
+      },
+      {
+        id: 'spinner',
+        title: 'spinner',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/spinner',
+        icon: 'ti ti-loader'
       },
       {
         id: 'color',

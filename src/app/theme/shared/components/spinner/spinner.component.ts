@@ -20,7 +20,10 @@ export class SpinnerComponent implements OnDestroy {
   @Input() spinner = Spinkit.skLine;
 
   // Constructor
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
+  ) {
     this.router.events.subscribe(
       (event) => {
         if (event instanceof NavigationStart) {
