@@ -18,7 +18,8 @@ Mantis is a free angular admin dashboard template built with Angular and latest 
 | -                                                       | ✓ TypeScript version                                                             |
 | -                                                       | ✓ 6+ color Options                                                               |
 | -                                                       | ✓ RTL                                                                            |
-| -                                                       | ✓ [More components](https://codedthemes.com/item/mantis-angular-admin-template/) |
+| -                                                       | ✓ [More components](https://mantisdashboard.io/angular/default/components/basic/alert) |
+| ✓ MIT License                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/) 
 
 ## Why Mantis?
 
@@ -33,12 +34,22 @@ Mantis offers everything you need to create dashboards. We have included the fol
 
 ## Free Mantis Angular version
 
-- [Preview](https://mantisdashboard.io/angular/free/)
-- [Download from Github](https://github.com/codedthemes/mantis-free-angular-admin-template)
+#### Preview
+
+- [Demo](https://mantisdashboard.io/angular/free/)
+
+#### Download
+
+- [Download from GitHub](https://github.com/codedthemes/mantis-free-angular-admin-template)
 
 ## Mantis Pro version
 
-- [Preview](https://mantisdashboard.io/angular/default)
+#### Preview
+
+- [Demo](https://mantisdashboard.io/angular/default)
+
+#### Purchase
+
 - [Purchase from CodedThemes](https://codedthemes.com/item/mantis-angular-admin-template/)
 
 ## Table of contents
@@ -80,7 +91,7 @@ npm run start
 ## Technology Stack
 
 - Bootstrap 5
-- Angular 15
+- Angular 17
 
 ## Author
 
@@ -115,9 +126,9 @@ To report a bug, please submit an [issue](https://github.com/codedthemes/mantis-
 
 ## Follow us
 
-- [Website](https://mantisdashboard.io/angular/)
-- [Blog](https://blog.mantisdashboard.io)
-- [CodedThemes](https://codedthemes.com)
-- [Dribbble](https://dribbble.com/codedthemes)
-- [Facebook](https://www.facebook.com/codedthemes)
-- [Twitter](https://twitter.com/codedthemes)
+- Website [https://mantisdashboard.io/angular/](https://mantisdashboard.io/angular/)
+- Blog [https://blog.mantisdashboard.io](https://blog.mantisdashboard.io)
+- CodedThemes [https://codedthemes.com](https://codedthemes.com)
+- Dribbble [https://dribbble.com/codedthemes](https://dribbble.com/codedthemes)
+- Facebook [https://www.facebook.com/codedthemes](https://www.facebook.com/codedthemes)
+- Twitter [https://twitter.com/codedthemes](https://twitter.com/codedthemes)
