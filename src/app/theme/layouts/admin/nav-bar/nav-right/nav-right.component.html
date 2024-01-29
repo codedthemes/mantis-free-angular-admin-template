@@ -1,6 +1,6 @@
 <!-- [Mobile Media Block end] -->
 <ul class="list-unstyled">
-  <li class="pc-h-item header-user-profile">
+  <li class="pc-h-item header-user-profile github">
     <a class="arrow-none me-0" title="Github" href="https://github.com/codedthemes/mantis-free-angular-admin-template" target="_blank">
       <img src="assets/images/github.svg" alt="github icon" />
     </a>
@@ -106,23 +106,27 @@
         <li ngbNavItem="1">
           <a ngbNavLink><i class="ti ti-user"></i> Profile</a>
           <ng-template ngbNavContent>
-            <div *ngFor="let task of profile">
-              <a href="javascript:" class="dropdown-item">
-                <i class="{{ task.icon }}"></i>
-                <span>{{ task.title }}</span>
-              </a>
-            </div>
+            @for (task of profile; track task) {
+              <div>
+                <a href="javascript:" class="dropdown-item">
+                  <i class="{{ task.icon }}"></i>
+                  <span>{{ task.title }}</span>
+                </a>
+              </div>
+            }
           </ng-template>
         </li>
         <li ngbNavItem="2">
           <a ngbNavLink><i class="ti ti-settings"></i> Setting</a>
           <ng-template ngbNavContent>
-            <div *ngFor="let task of setting">
-              <a href="javascript:" class="dropdown-item">
-                <i class="{{ task.icon }}"></i>
-                <span>{{ task.title }}</span>
-              </a>
-            </div>
+            @for (task of setting; track task) {
+              <div>
+                <a href="javascript:" class="dropdown-item">
+                  <i class="{{ task.icon }}"></i>
+                  <span>{{ task.title }}</span>
+                </a>
+              </div>
+            }
           </ng-template>
         </li>
       </ul>

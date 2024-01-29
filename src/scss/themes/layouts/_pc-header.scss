@@ -110,6 +110,7 @@
         color: $primary;
       }
     }
+
     > svg {
       width: 20px;
       height: 20px;
@@ -145,6 +146,7 @@
       right: 2px;
       border-radius: 50%;
       font-size: 9px;
+
       &.dots {
         width: 9px;
         height: 9px;
@@ -244,17 +246,26 @@
         }
       }
     }
+
+    @media (max-width: 576px) {
+      &.github {
+        padding: 0.65rem;
+      }
+    }
   }
 
   .dropdown-user-profile {
     min-width: 290px;
     max-width: 100%;
+
     .drp-tabs {
       border-bottom: 0;
       display: flex;
       margin-bottom: 10px;
+
       .nav-item {
         margin-bottom: -0px;
+
         .nav-link {
           position: relative;
           padding: 0.7rem;
@@ -263,13 +274,16 @@
           display: flex;
           align-items: center;
           justify-content: center;
+
           i {
             font-size: 18px;
             margin: 0 4px;
           }
+
           .material-icons-two-tone {
             font-size: 20px;
           }
+
           &:after {
             content: '';
             background: $primary;
@@ -287,6 +301,7 @@
       .nav-link:hover {
         border-color: transparent;
         color: $primary;
+
         .material-icons-two-tone {
           background-color: $primary;
         }
@@ -296,9 +311,11 @@
       .nav-link.active {
         border-color: transparent;
         color: $primary;
+
         .material-icons-two-tone {
           background-color: $primary;
         }
+
         &:after {
           left: 0;
           right: 0;
@@ -347,6 +364,7 @@
         margin-right: 16px;
       }
     }
+
     @media (max-width: 575.98px) {
       min-width: 100%;
     }
@@ -362,6 +380,7 @@
     .m-header {
       display: none;
     }
+
     .pc-head-link {
       .user-desc,
       .user-name {

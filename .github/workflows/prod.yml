@@ -28,7 +28,7 @@ jobs:
           node-version: '18'
 
       - name: 🔨 Build Project
-        run: |       
+        run: |
           npm i --legacy-peer-deps
           npm run build-prod
       - name: 📂 Deploy to Server

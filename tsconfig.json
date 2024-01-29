@@ -21,10 +21,7 @@
     "target": "es2022",
     "module": "es2020",
     "useDefineForClassFields": false,
-    "lib": [
-      "es2022",
-      "dom"
-    ],
+    "lib": ["es2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

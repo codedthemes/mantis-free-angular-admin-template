@@ -1,10 +1,9 @@
 // Angular import
-import { Component, EventEmitter, NgZone, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // project import
-import { NavigationItem } from '../navigation';
-import { MantisConfig } from 'src/app/app-config';
+import { NavigationItems } from '../navigation';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -20,18 +19,14 @@ export class NavContentComponent implements OnInit {
   title = 'Demo application for version numbering';
   currentApplicationVersion = environment.appVersion;
 
-  navigation;
+  navigation = NavigationItems;
   windowWidth = window.innerWidth;
 
   // Constructor
   constructor(
-    public nav: NavigationItem,
     private location: Location,
     private locationStrategy: LocationStrategy
-  ) {
-    this.windowWidth;
-    this.navigation = this.nav.get();
-  }
+  ) {}
 
   // Life cycle events
   ngOnInit() {

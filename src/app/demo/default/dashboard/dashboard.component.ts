@@ -1,6 +1,5 @@
 // angular import
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // project import
 import tableData from 'src/fake-data/default-data.json';
@@ -41,18 +40,20 @@ export type ChartOptions = {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, NgApexchartsModule, SharedModule],
+  imports: [NgApexchartsModule, SharedModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export default class DashboardComponent implements OnInit {
+  // public props
   @ViewChild('chart') chart: ChartComponent;
   chartOptions_4: Partial<ChartOptions>;
   chartOptions_5: Partial<ChartOptions>;
   chartOptions_6: Partial<ChartOptions>;
-
-  monthChart;
-  weekChart;
+  // eslint-disable-next-line
+  monthChart: any;
+  // eslint-disable-next-line
+  weekChart: any;
 
   // constructor
   constructor() {

@@ -1,20 +1,22 @@
 <div class="row">
   <!-- [ sample-page ] start -->
-  <div class="col-md-6 col-xl-3" *ngFor="let task of card">
-    <div class="card">
-      <div class="card-body">
-        <h6 class="mb-2 f-w-400 text-muted">{{ task.title }}</h6>
-        <h4 class="mb-3">
-          {{ task.amount }}
-          <span class="badge {{ task.background }} border {{ task.border }} "><i class="{{ task.icon }}"></i> {{ task.percentage }}</span>
-        </h4>
-        <p class="mb-0 text-muted text-sm">
-          You made an extra
-          <span class="{{ task.color }}">{{ task.number }}</span> this year
-        </p>
+  @for (task of card; track task) {
+    <div class="col-md-6 col-xl-3">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="mb-2 f-w-400 text-muted">{{ task.title }}</h6>
+          <h4 class="mb-3">
+            {{ task.amount }}
+            <span class="badge {{ task.background }} border {{ task.border }} "><i class="{{ task.icon }}"></i> {{ task.percentage }}</span>
+          </h4>
+          <p class="mb-0 text-muted text-sm">
+            You made an extra
+            <span class="{{ task.color }}">{{ task.number }}</span> this year
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  }
 
   <div class="col-md-12 col-xl-8">
     <div class="d-flex align-items-center justify-content-between mb-3">
@@ -72,22 +74,24 @@
                 <th>TRACKING NO.</th>
                 <th>PRODUCT NAME</th>
                 <th class="text-end">TOTAL ORDER</th>
-                <th>STATUS</th>
+                <th class="px-5">STATUS</th>
                 <th class="text-end">TOTAL AMOUNT</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let task of tables">
-                <td>
-                  <a href="javascript:" class="text-muted">{{ task.id }}</a>
-                </td>
-                <td>{{ task.name }}</td>
-                <td class="text-end">{{ task.order }}</td>
-                <td>
-                  <span class="px-4 d-block"><i class="{{ task.status_type }} m-r-5"></i>{{ task.status }}</span>
-                </td>
-                <td class="text-end">{{ task.amount }}</td>
-              </tr>
+              @for (task of tables; track task) {
+                <tr>
+                  <td>
+                    <a href="javascript:" class="text-muted">{{ task.id }}</a>
+                  </td>
+                  <td>{{ task.name }}</td>
+                  <td class="text-end">{{ task.order }}</td>
+                  <td>
+                    <span class="px-4 d-block"><i class="{{ task.status_type }} m-r-5"></i>{{ task.status }}</span>
+                  </td>
+                  <td class="text-end">{{ task.amount }}</td>
+                </tr>
+              }
             </tbody>
           </table>
         </div>
@@ -146,23 +150,25 @@
     <h5 class="mb-3">Transaction History</h5>
     <div class="card">
       <div class="list-group list-group-flush">
-        <a href="javascript:" class="list-group-item list-group-item-action" *ngFor="let history of transaction">
-          <div class="d-flex">
-            <div class="flex-shrink-0">
-              <div class="avtar avtar-s rounded-circle {{ history.background }}">
-                <i class="{{ history.icon }} f-18"></i>
+        @for (history of transaction; track history) {
+          <a href="javascript:" class="list-group-item list-group-item-action">
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <div class="avtar avtar-s rounded-circle {{ history.background }}">
+                  <i class="{{ history.icon }} f-18"></i>
+                </div>
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <h6 class="mb-1">{{ history.title }}</h6>
+                <p class="mb-0 text-muted">{{ history.time }}</p>
+              </div>
+              <div class="flex-shrink-0 text-end">
+                <h6 class="mb-1">{{ history.amount }}</h6>
+                <p class="mb-0 text-muted">{{ history.percentage }}</p>
               </div>
             </div>
-            <div class="flex-grow-1 ms-3">
-              <h6 class="mb-1">{{ history.title }}</h6>
-              <p class="mb-0 text-muted">{{ history.time }}</p>
-            </div>
-            <div class="flex-shrink-0 text-end">
-              <h6 class="mb-1">{{ history.amount }}</h6>
-              <p class="mb-0 text-muted">{{ history.percentage }}</p>
-            </div>
-          </div>
-        </a>
+          </a>
+        }
       </div>
     </div>
     <div class="card">
