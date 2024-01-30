@@ -126,7 +126,7 @@ To report a bug, please submit an [issue](https://github.com/codedthemes/mantis-
 
 ## Follow us
 
-- Website [https://mantisdashboard.io/angular/](https://mantisdashboard.io/angular/)
+- Website [https://mantisdashboard.io/angular/default/](https://mantisdashboard.io/angular/default/)
 - Blog [https://blog.mantisdashboard.io](https://blog.mantisdashboard.io)
 - CodedThemes [https://codedthemes.com](https://codedthemes.com)
 - Dribbble [https://dribbble.com/codedthemes](https://dribbble.com/codedthemes)
