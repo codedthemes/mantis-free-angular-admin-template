@@ -1,10 +1,9 @@
 // Angular import
-import { Component, EventEmitter, NgZone, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // project import
-import { NavigationItem } from '../navigation';
-import { MantisConfig } from 'src/app/app-config';
+import { NavigationItems } from '../navigation';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -20,24 +19,19 @@ export class NavContentComponent implements OnInit {
   title = 'Demo application for version numbering';
   currentApplicationVersion = environment.appVersion;
 
-  config: object;
-  navigation;
-  windowWidth: number;
-  themeLayout: string;
+  navigation = NavigationItems;
+  windowWidth = window.innerWidth;
 
   // Constructor
-  constructor(public nav: NavigationItem, private zone: NgZone, private location: Location, private locationStrategy: LocationStrategy) {
-    this.windowWidth = window.innerWidth;
-    this.navigation = this.nav.get();
-  }
+  constructor(
+    private location: Location,
+    private locationStrategy: LocationStrategy
+  ) {}
 
   // Life cycle events
   ngOnInit() {
     if (this.windowWidth < 1025) {
-      setTimeout(() => {
-        (document.querySelector('.coded-navbar') as HTMLDivElement).classList.add('menupos-static');
-        (document.querySelector('#nav-ps-mantis') as HTMLElement).style.maxHeight = '100%';
-      }, 500);
+      (document.querySelector('.coded-navbar') as HTMLDivElement).classList.add('menupos-static');
     }
   }
 
@@ -54,19 +48,13 @@ export class NavContentComponent implements OnInit {
       const up_parent = parent?.parentElement?.parentElement;
       const last_parent = up_parent?.parentElement;
       if (parent?.classList.contains('coded-hasmenu')) {
-        if (MantisConfig.layout === 'vertical') {
-          parent.classList.add('coded-trigger');
-        }
+        parent.classList.add('coded-trigger');
         parent.classList.add('active');
       } else if (up_parent?.classList.contains('coded-hasmenu')) {
-        if (MantisConfig.layout === 'vertical') {
-          up_parent.classList.add('coded-trigger');
-        }
+        up_parent.classList.add('coded-trigger');
         up_parent.classList.add('active');
       } else if (last_parent?.classList.contains('coded-hasmenu')) {
-        if (MantisConfig.layout === 'vertical') {
-          last_parent.classList.add('coded-trigger');
-        }
+        last_parent.classList.add('coded-trigger');
         last_parent.classList.add('active');
       }
     }

@@ -1,6 +1,5 @@
 // angular import
 import { Component, Output, EventEmitter } from '@angular/core';
-import { MantisConfig } from 'src/app/app-config';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,21 +11,12 @@ export class NavBarComponent {
   @Output() NavCollapse = new EventEmitter();
   @Output() NavCollapsedMob = new EventEmitter();
 
-  navCollapsed;
-  windowWidth: number;
-  navCollapsedMob;
-
-  // Constructor
-  constructor() {
-    this.windowWidth = window.innerWidth;
-    this.navCollapsed = this.windowWidth >= 1025 ? MantisConfig.isCollapseMenu : false;
-    this.navCollapsedMob = false;
-  }
+  navCollapsed: boolean;
+  windowWidth = window.innerWidth;
 
   // public method
   navCollapse() {
     if (this.windowWidth >= 1025) {
-      this.navCollapsed = !this.navCollapsed;
       this.NavCollapse.emit();
     }
   }

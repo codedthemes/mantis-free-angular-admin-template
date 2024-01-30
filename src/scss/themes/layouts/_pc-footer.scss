@@ -21,6 +21,15 @@
   @media (max-width: 1024px) {
     margin-left: 0;
   }
+
+  @media (max-width: 576px) {
+    .footer-wrapper > div {
+      justify-content: center;
+      > div {
+        text-align: center;
+      }
+    }
+  }
 }
 
 // header css end

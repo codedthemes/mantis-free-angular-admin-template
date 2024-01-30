@@ -1,5 +1,3 @@
-import { Injectable } from '@angular/core';
-
 export interface NavigationItem {
   id: string;
   title: string;
@@ -9,21 +7,17 @@ export interface NavigationItem {
   hidden?: boolean;
   url?: string;
   classes?: string;
+  groupClasses?: string;
   exactMatch?: boolean;
   external?: boolean;
   target?: boolean;
   breadcrumbs?: boolean;
-  badge?: {
-    title?: string;
-    type?: string;
-  };
-  children?: Navigation[];
+  children?: NavigationItem[];
+  link?: string;
+  description?: string;
 }
 
-export interface Navigation extends NavigationItem {
-  children?: NavigationItem[];
-}
-const NavigationItems = [
+export const NavigationItems: NavigationItem[] = [
   {
     id: 'dashboard',
     title: 'Dashboard',
@@ -54,6 +48,30 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '/typography',
         icon: 'ti ti-typography'
+      },
+      {
+        id: 'card',
+        title: 'Card',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/card',
+        icon: 'ti ti-credit-card'
+      },
+      {
+        id: 'breadcrumb',
+        title: 'Breadcrumb',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/breadcrumb',
+        icon: 'ti ti-hierarchy-2'
+      },
+      {
+        id: 'spinner',
+        title: 'spinner',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/spinner',
+        icon: 'ti ti-loader'
       },
       {
         id: 'color',
@@ -120,10 +138,3 @@ const NavigationItems = [
     ]
   }
 ];
-
-@Injectable()
-export class NavigationItem {
-  get() {
-    return NavigationItems;
-  }
-}

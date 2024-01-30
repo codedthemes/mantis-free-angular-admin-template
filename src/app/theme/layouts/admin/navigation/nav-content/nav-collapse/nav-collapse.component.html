@@ -1,28 +1,22 @@
-<ng-container *ngIf="!item.hidden">
-  <!-- Vertical Layout -->
-  <li data-username="mantis free dashboard" class="nav-item coded-hasmenu" [routerLinkActive]="['active']">
-    <a [routerLinkActive]="['active']" href="javascript:" class="nav-link" (click)="navCollapse($event)">
-      <ng-container *ngTemplateOutlet="itemContent"></ng-container>
-    </a>
-    <ng-container *ngTemplateOutlet="subMenuContent"></ng-container>
-  </li>
-
-  <!-- all layout common -->
-  <ng-template #itemContent>
-    <span class="coded-micon" *ngIf="item.icon">
-      <i class="{{ item.icon }}"></i>
-    </span>
-    <span *ngIf="item.badge" class="coded-badge label" [ngClass]="item.badge.type!">
-      {{ item.badge.title }}
-    </span>
-  </ng-template>
-  <ng-template #subMenuContent>
-    <ul class="coded-submenu" [routerLinkActive]="['active']" [ngClass]="item.classes!">
-      <ng-container *ngFor="let item of item.children">
-        <app-nav-group *ngIf="item.type === 'group'" [item]="item"></app-nav-group>
-        <app-nav-collapse *ngIf="item.type === 'collapse'" [item]="item"></app-nav-collapse>
-        <app-nav-item *ngIf="item.type === 'item'" [item]="item"></app-nav-item>
-      </ng-container>
-    </ul>
-  </ng-template>
-</ng-container>
+<li data-username="mantis free dashboard" class="nav-item coded-hasmenu" [routerLinkActive]="['active']">
+  <a [routerLinkActive]="['active']" href="javascript:" class="nav-link" (click)="navCollapse($event)">
+    @if (item.icon) {
+      <span class="coded-micon">
+        <i class="{{ item.icon }}"></i>
+      </span>
+    }
+  </a>
+  <ul class="coded-submenu" [routerLinkActive]="['active']" [ngClass]="item.classes!">
+    @for (item of item.children; track item) {
+      @if (item.type === 'group') {
+        <app-nav-group [item]="item"></app-nav-group>
+      }
+      @if (item.type === 'collapse') {
+        <app-nav-collapse [item]="item"></app-nav-collapse>
+      }
+      @if (item.type === 'item') {
+        <app-nav-item [item]="item"></app-nav-item>
+      }
+    }
+  </ul>
+</li>

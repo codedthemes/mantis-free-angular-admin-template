@@ -1,12 +1,19 @@
 // Angular import
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule, Event } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 // project import
-import { NavigationItem } from 'src/app/theme/layouts/admin/navigation/navigation';
+import { NavigationItem, NavigationItems } from 'src/app/theme/layouts/admin/navigation/navigation';
+
+interface titleType {
+  // eslint-disable-next-line
+  url: string | boolean | any;
+  title: string;
+  breadcrumbs: unknown;
+  type: string;
+}
 
 @Component({
   selector: 'app-breadcrumb',
@@ -18,113 +25,62 @@ import { NavigationItem } from 'src/app/theme/layouts/admin/navigation/navigatio
 export class BreadcrumbComponent {
   // public props
   @Input() type: string;
-  navigation;
+  navigations: NavigationItem[];
+  ComponentNavigations: NavigationItem[];
   breadcrumbList: Array<string> = [];
-  navigationList;
+  navigationList!: titleType[];
+  componentList!: titleType[];
 
-  // Constructor
-  constructor(private _router: Router, public nav: NavigationItem, private titleService: Title) {
-    this.navigation = this.nav.get();
-    this.setBreadcrumb();
+  // constructor
+  constructor(
+    private route: Router,
+    private titleService: Title
+  ) {
+    this.navigations = NavigationItems;
     this.type = 'theme1';
+    this.setBreadcrumb();
   }
 
   // public method
   setBreadcrumb() {
-    let routerUrl: string;
-    this._router.events.subscribe((router: NavigationEnd) => {
-      routerUrl = router.urlAfterRedirects;
-      if (routerUrl && typeof routerUrl === 'string') {
-        this.breadcrumbList.length = 0;
+    this.route.events.subscribe((router: Event) => {
+      if (router instanceof NavigationEnd) {
         const activeLink = router.url;
-        this.filterNavigation(activeLink);
+        const breadcrumbList = this.filterNavigation(this.navigations, activeLink);
+        this.navigationList = breadcrumbList;
+        this.componentList = this.filterNavigation(this.ComponentNavigations, activeLink);
+        const title = breadcrumbList[breadcrumbList.length - 1]?.title || 'Welcome';
+        this.titleService.setTitle(title + ' | Mantis  Angular Admin Template');
       }
     });
   }
 
-  filterNavigation(activeLink) {
-    let result: object;
-    let title = 'Welcome';
-    this.navigation.forEach(function (a) {
-      if (a.type === 'item' && 'url' in a && a.url === activeLink) {
-        result = [
+  filterNavigation(navItems: NavigationItem[], activeLink: string): titleType[] {
+    for (const navItem of navItems) {
+      if (navItem.type === 'item' && 'url' in navItem && navItem.url === activeLink) {
+        return [
           {
-            url: 'url' in a ? a.url : false,
-            title: a.title,
-            breadcrumbs: 'breadcrumbs' in a ? a.breadcrumbs : true,
-            type: a.type
+            url: 'url' in navItem ? navItem.url : false,
+            title: navItem.title,
+            breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
+            type: navItem.type
           }
         ];
-        title = a.title;
-      } else {
-        if (a.type === 'group' && 'children' in a) {
-          a.children.forEach(function (b) {
-            if (b.type === 'item' && 'url' in b && b.url === activeLink) {
-              result = [
-                {
-                  url: 'url' in a ? a.url : false,
-                  title: a.title,
-                  breadcrumbs: 'breadcrumbs' in a ? a.breadcrumbs : true,
-                  type: a.type
-                },
-                {
-                  url: 'url' in b ? b.url : false,
-                  title: b.title,
-                  breadcrumbs: 'breadcrumbs' in b ? b.breadcrumbs : true,
-                  type: b.type
-                }
-              ];
-              title = b.title;
-            } else {
-              if (b.type === 'collapse' && 'children' in b) {
-                b.children.forEach(function (c) {
-                  if (c.type === 'item' && 'url' in c && c.url === activeLink) {
-                    result = [
-                      {
-                        url: 'url' in b ? b.url : false,
-                        title: b.title,
-                        breadcrumbs: 'breadcrumbs' in b ? b.breadcrumbs : true,
-                        type: b.type
-                      },
-                      {
-                        url: 'url' in c ? c.url : false,
-                        title: c.title,
-                        breadcrumbs: 'breadcrumbs' in c ? c.breadcrumbs : true,
-                        type: c.type
-                      }
-                    ];
-                    title = c.title;
-                  } else {
-                    if (c.type === 'collapse' && 'children' in c) {
-                      c.children.forEach(function (d) {
-                        if (d.type === 'item' && 'url' in d && d.url === activeLink) {
-                          result = [
-                            {
-                              url: 'url' in c ? c.url : false,
-                              title: c.title,
-                              breadcrumbs: 'breadcrumbs' in c ? c.breadcrumbs : true,
-                              type: c.type
-                            },
-                            {
-                              url: 'url' in d ? d.url : false,
-                              title: d.title,
-                              breadcrumbs: 'breadcrumbs' in d ? d.breadcrumbs : true,
-                              type: d.type
-                            }
-                          ];
-                          title = d.title;
-                        }
-                      });
-                    }
-                  }
-                });
-              }
-            }
+      }
+      if ((navItem.type === 'group' || navItem.type === 'collapse') && 'children' in navItem) {
+        // eslint-disable-next-line
+        const breadcrumbList = this.filterNavigation(navItem.children!, activeLink);
+        if (breadcrumbList.length > 0) {
+          breadcrumbList.unshift({
+            url: 'url' in navItem ? navItem.url : false,
+            title: navItem.title,
+            breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
+            type: navItem.type
           });
+          return breadcrumbList;
         }
       }
-    });
-    this.navigationList = result;
-    this.titleService.setTitle(title + ' | Mantis Angular Template');
+    }
+    return [];
   }
 }

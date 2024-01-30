@@ -25,7 +25,6 @@ export class NavItemComponent {
         sections[i].classList.remove('active');
         sections[i].classList.remove('coded-trigger');
       }
-
       if (parent.classList.contains('coded-hasmenu')) {
         parent.classList.add('coded-trigger');
         parent.classList.add('active');

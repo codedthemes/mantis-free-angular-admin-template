@@ -32,35 +32,20 @@
             <span>Login with</span>
           </div>
           <div class="row">
-            <div class="col-4">
-              <div class="d-grid">
-                <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
-                  <img src="assets/images/authentication/google.svg" alt="google img" />
-                  <span class="d-none d-sm-inline-block"> Google</span>
-                </button>
+            @for (item of SignInOptions; track item) {
+              <div class="col-4">
+                <div class="d-grid">
+                  <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
+                    <img src="{{ item.image }}" alt="google img" />
+                    <span class="d-none d-sm-inline-block"> {{ item.name }}</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="col-4">
-              <div class="d-grid">
-                <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
-                  <img src="assets/images/authentication/twitter.svg" alt="twitter img" />
-                  <span class="d-none d-sm-inline-block"> Twitter</span>
-                </button>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="d-grid">
-                <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
-                  <img src="assets/images/authentication/facebook.svg" alt="facebook img" />
-                  <span class="d-none d-sm-inline-block"> Facebook</span>
-                </button>
-              </div>
-            </div>
+            }
           </div>
         </div>
       </div>
       <div class="auth-footer row">
-        <!-- <div class=""> -->
         <div class="col my-1">
           <p class="m-0">Copyright © <a href="https://codedthemes.com/" target="_blank">CodedThemes</a></p>
         </div>
@@ -71,7 +56,6 @@
             <li class="list-inline-item"><a href="https://codedthemes.support-hub.io/" target="_blank">Contact us</a></li>
           </ul>
         </div>
-        <!-- </div> -->
       </div>
     </div>
   </div>

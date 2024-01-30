@@ -1,6 +1,5 @@
-import { Component, NgZone } from '@angular/core';
-import { MantisConfig } from 'src/app/app-config';
-import { Location } from '@angular/common';
+// angular import
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -8,21 +7,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  navCollapsed;
-  navCollapsedMob: boolean;
-  windowWidth: number;
+  // public props
+  navCollapsed: boolean;
+  navCollapsedMob: boolean = false;
 
-  constructor(private zone: NgZone, private location: Location) {
-    let current_url = this.location.path();
-    if (this.location['_baseHref']) {
-      current_url = this.location['_baseHref'] + this.location.path();
-    }
-
-    this.windowWidth = window.innerWidth;
-    this.navCollapsed = this.windowWidth >= 1024 ? MantisConfig.isCollapseMenu : false;
-    this.navCollapsedMob = false;
-  }
-
+  // public method
   navMobClick() {
     if (this.navCollapsedMob && !document.querySelector('app-navigation.coded-navbar').classList.contains('mob-open')) {
       this.navCollapsedMob = !this.navCollapsedMob;
