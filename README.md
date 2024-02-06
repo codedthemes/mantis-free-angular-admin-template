@@ -8,6 +8,8 @@ Mantis is a free angular admin dashboard template built with Angular and latest 
 
 :star: :star: :star: Do not forget to star (Top right of this page) it if you like the theme :star: :star: :star:
 
+![IMG_8566.jpg](https://org-public-assets.s3.us-west-2.amazonaws.com/Free-Version-Banners/GITHUB-FREE-ANGULAR-REPO%20-%20Mantis.jpg)
+
 [Pro version](https://mantisdashboard.io/angular/default) of Mantis Angular Dashboard template contains features like TypeScript, Apps, Authentication Methods (i.e. JWT), Advance Components, Form Plugins, Layouts, Widgets, and many more.
 
 | [Mantis Free](https://mantisdashboard.io/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/)            |
