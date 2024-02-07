@@ -105,7 +105,7 @@ To report a bug, please submit an [issue](https://github.com/codedthemes/mantis-
 
 ## License
 
-- Licensed cover under [MIT](https://github.com/codedthemes/datta-able-bootstrap-dashboard/blob/master/LICENSE)
+- Licensed cover under [MIT](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/master/LICENSE)
 
 ## Mantis - React version
 
