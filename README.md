@@ -1,4 +1,4 @@
-# Mantis Free Angular Bootstrap Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20Mantis%20Angular%20-%20The%20most%20beautiful%20Material%20designed%20Admin%20Dashboard%20Template%20&url=https://mantisdashboard.io&via=codedthemes&hashtags=angular,webdev,developers,javascript)
+# Mantis Free Angular Bootstrap Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20Mantis%20Angular%20-%20The%20most%20Beautiful%20Bootstrap%20Designed%20Admin%20Dashboard%20Template%20&url=https://mantisdashboard.io&via=codedthemes&hashtags=angular,webdev,developers,javascript)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/main/LICENSE)
@@ -10,9 +10,9 @@ Mantis is a free angular admin dashboard template built with Angular and latest 
 
 ![IMG_8566.jpg](https://org-public-assets.s3.us-west-2.amazonaws.com/Free-Version-Banners/GITHUB-FREE-ANGULAR-REPO%20-%20Mantis.jpg)
 
-[Pro version](https://mantisdashboard.io/angular/default) of Mantis Angular Dashboard template contains features like TypeScript, Apps, Authentication Methods (i.e. JWT), Advance Components, Form Plugins, Layouts, Widgets, and many more.
+[Pro version](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) of Mantis Angular Dashboard template contains features like TypeScript, Apps, Authentication Methods (i.e. JWT), Advance Components, Form Plugins, Layouts, Widgets, and many more.
 
-| [Mantis Free](https://mantisdashboard.io/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/)            |
+| [Mantis Free](https://mantisdashboard.io/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)            |
 | ------------------------------------------------------- | :------------------------------------------------------------------------------- |
 | **9** Demo pages                                        | **45+** demo pages                                                               |
 | -                                                       | ✓ Multi-language                                                                 |
@@ -21,7 +21,7 @@ Mantis is a free angular admin dashboard template built with Angular and latest 
 | -                                                       | ✓ 6+ color Options                                                               |
 | -                                                       | ✓ RTL                                                                            |
 | -                                                       | ✓ [More components](https://mantisdashboard.io/angular/default/components/basic/alert) |
-| ✓ MIT License                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/) 
+| ✓ MIT License                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) |
 
 ## Why Mantis?
 
@@ -52,7 +52,7 @@ Mantis offers everything you need to create dashboards. We have included the fol
 
 #### Purchase
 
-- [Purchase from CodedThemes](https://codedthemes.com/item/mantis-angular-admin-template/)
+- [Purchase from CodedThemes](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)
 
 ## Table of contents
 
@@ -121,10 +121,10 @@ To report a bug, please submit an [issue](https://github.com/codedthemes/mantis-
 
 ## More Premium Angular Dashboard Templates
 
-- [Datta Able Angular Pro](https://codedthemes.com/item/datta-able-angular/)
-- [Gradient Able Angular Pro](https://codedthemes.com/item/gradient-able-angular-admin-template/)
+- [Datta Able Angular Pro](https://codedthemes.com/item/datta-able-angular/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)
+- [Gradient Able Angular Pro](https://codedthemes.com/item/gradient-able-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)
 - [Next Angular Pro](https://codedthemes.com/item/next-angular-admin-template/)
-- [Berry Angular Pro](https://codedthemes.com/item/berry-angular-admin-dashboard-template/)
+- [Berry Angular Pro](https://codedthemes.com/item/berry-angular-admin-dashboard-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)
 
 ## Follow us
 
