@@ -1,18 +1,24 @@
 <ng-scrollbar style="height: calc(100vh - 88px)" id="nav-ps-mantis" visibility="hover">
   <div class="navbar-content">
     <ul class="nav coded-inner-navbar" (clickOutside)="fireOutClick()" (mouseleave)="navMob()">
-      <ng-container *ngFor="let item of navigation">
-        <app-nav-group *ngIf="item.type === 'group'" [item]="item"></app-nav-group>
-        <app-nav-collapse *ngIf="item.type === 'collapse'" [item]="item"></app-nav-collapse>
-        <app-nav-item *ngIf="item.type === 'item'" [item]="item"></app-nav-item>
-      </ng-container>
+      @for (item of navigation; track item) {
+        @if (item.type === 'group') {
+          <app-nav-group [item]="item"></app-nav-group>
+        }
+        @if (item.type === 'collapse') {
+          <app-nav-collapse [item]="item"></app-nav-collapse>
+        }
+        @if (item.type === 'item') {
+          <app-nav-item [item]="item"></app-nav-item>
+        }
+      }
     </ul>
     <div class="card text-center">
       <div class="card-body">
         <img src="assets/images/avatar-group.png" alt="images" class="img-fluid mb-2" />
         <h5>Mantis Pro</h5>
-        <p>Checkout pro features</p>
-        <a href="https://codedthemes.com/item/mantis-angular-admin-template/" target="_blank" class="btn btn-success">Pro</a>
+        <p>Checkout Mantis Premium Features</p>
+        <a href="https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium" target="_blank" class="btn btn-success">Download Premium</a>
       </div>
     </div>
     <div class="version">

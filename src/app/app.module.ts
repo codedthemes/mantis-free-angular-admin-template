@@ -17,7 +17,6 @@ import { NavContentComponent } from './theme/layouts/admin/navigation/nav-conten
 import { NavCollapseComponent } from './theme/layouts/admin/navigation/nav-content/nav-collapse/nav-collapse.component';
 import { NavGroupComponent } from './theme/layouts/admin/navigation/nav-content/nav-group/nav-group.component';
 import { NavItemComponent } from './theme/layouts/admin/navigation/nav-content/nav-item/nav-item.component';
-import { NavigationItem } from './theme/layouts/admin/navigation/navigation';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { NavigationItem } from './theme/layouts/admin/navigation/navigation';
     NavItemComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule],
-  providers: [NavigationItem],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

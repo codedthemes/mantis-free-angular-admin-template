@@ -12,7 +12,6 @@ import { NavigationItem } from '../../navigation';
 export class NavCollapseComponent {
   // public props
   @Input() item!: NavigationItem;
-  windowWidth = window.innerWidth;
 
   // public method
   navCollapse(e) {
