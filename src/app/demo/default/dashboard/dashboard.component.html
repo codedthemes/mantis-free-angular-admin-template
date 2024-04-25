@@ -1,161 +1,78 @@
 <div class="row">
-  <!-- [ sample-page ] start -->
-  @for (task of card; track task) {
+  @for (analytic of AnalyticEcommerce; track analytic) {
     <div class="col-md-6 col-xl-3">
-      <div class="card">
-        <div class="card-body">
-          <h6 class="mb-2 f-w-400 text-muted">{{ task.title }}</h6>
-          <h4 class="mb-3">
-            {{ task.amount }}
-            <span class="badge {{ task.background }} border {{ task.border }} "><i class="{{ task.icon }}"></i> {{ task.percentage }}</span>
-          </h4>
-          <p class="mb-0 text-muted text-sm">
-            You made an extra
-            <span class="{{ task.color }}">{{ task.number }}</span> this year
-          </p>
-        </div>
-      </div>
+      <app-card [showHeader]="false" blockClass="dashboard-card">
+        <h6 class="mb-2 f-w-400 text-muted">{{ analytic.title }}</h6>
+        <h4 class="mb-3">
+          {{ analytic.amount }}
+          <span class="badge {{ analytic.background }} border {{ analytic.border }} ">
+            <i antIcon type="{{ analytic.icon }}" theme="outline"></i>
+            {{ analytic.percentage }}</span
+          >
+        </h4>
+        <p class="mb-0 text-muted text-sm">
+          You made an extra <span class="{{ analytic.color }}">{{ analytic.number }}</span> this year
+        </p>
+      </app-card>
     </div>
   }
-
   <div class="col-md-12 col-xl-8">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-      <h5 class="mb-0">Unique Visitor</h5>
-      <ul ngbNav aria-busy="true" #nav="ngbNav" class="nav-pills justify-content-end mb-0" (navChange)="onNavChange($event)">
-        <li [ngbNavItem]="1">
-          <a ngbNavLink>Week</a>
-          <ng-template ngbNavContent>
-            <div id="visitor-chart"></div>
-          </ng-template>
-        </li>
-        <li [ngbNavItem]="2">
-          <a ngbNavLink>Month</a>
-          <ng-template ngbNavContent>
-            <div id="visitor-chart-1"></div>
-          </ng-template>
-        </li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <div [ngbNavOutlet]="nav"></div>
-      </div>
-    </div>
+    <app-monthly-bar-chart />
   </div>
   <div class="col-md-12 col-xl-4">
-    <h5 class="mb-3">Income Overview</h5>
-    <div class="card">
-      <div class="card-body">
-        <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
-        <h3 class="mb-3">$7,650</h3>
-        <apx-chart
-          [series]="chartOptions_4.series"
-          [chart]="chartOptions_4.chart"
-          [plotOptions]="chartOptions_4.plotOptions"
-          [dataLabels]="chartOptions_4.dataLabels"
-          [xaxis]="chartOptions_4.xaxis"
-          [colors]="chartOptions_4.colors"
-          [stroke]="chartOptions_4.stroke"
-          [yaxis]="chartOptions_4.yaxis"
-          [grid]="chartOptions_4.grid"
-        ></apx-chart>
-      </div>
-    </div>
+    <app-income-overview-chart />
   </div>
 
   <div class="col-md-12 col-xl-8">
     <h5 class="mb-3">Recent Orders</h5>
     <div class="card tbl-card">
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-hover table-borderless mb-0">
-            <thead>
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead>
+            <tr>
+              <th>TRACKING NO.</th>
+              <th>PRODUCT NAME</th>
+              <th>STATUS</th>
+              <th class="text-end">TOTAL ORDER</th>
+              <th class="text-end">TOTAL AMOUNT</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (order of recentOrder; track order) {
               <tr>
-                <th>TRACKING NO.</th>
-                <th>PRODUCT NAME</th>
-                <th class="text-end">TOTAL ORDER</th>
-                <th class="px-5">STATUS</th>
-                <th class="text-end">TOTAL AMOUNT</th>
+                <td
+                  ><a href="javascript:" class="text-muted">{{ order.id }}</a></td
+                >
+                <td>{{ order.name }}</td>
+                <td
+                  ><span class="d-block"><i class="badge-circle {{ order.status_type }} f-10 m-r-5"></i>{{ order.status }}</span></td
+                >
+                <td class="text-end">{{ order.quantity }}</td>
+                <td class="text-end">{{ order.amount }}</td>
               </tr>
-            </thead>
-            <tbody>
-              @for (task of tables; track task) {
-                <tr>
-                  <td>
-                    <a href="javascript:" class="text-muted">{{ task.id }}</a>
-                  </td>
-                  <td>{{ task.name }}</td>
-                  <td class="text-end">{{ task.order }}</td>
-                  <td>
-                    <span class="px-4 d-block"><i class="{{ task.status_type }} m-r-5"></i>{{ task.status }}</span>
-                  </td>
-                  <td class="text-end">{{ task.amount }}</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
   <div class="col-md-12 col-xl-4">
-    <h5 class="mb-3">Analytics Report</h5>
-    <div class="card">
-      <div class="list-group list-group-flush">
-        <a href="javascript:" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
-          Company Finance Growth<span class="h5 mb-0">+45.14%</span>
-        </a>
-        <a href="javascript:" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
-          Company Expenses Ratio<span class="h5 mb-0">0.58%</span>
-        </a>
-        <a href="javascript:" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
-          >Business Risk Cases<span class="h5 mb-0">Low</span>
-        </a>
-      </div>
-      <div class="card-body px-2">
-        <apx-chart
-          [series]="chartOptions_5.series"
-          [chart]="chartOptions_5.chart"
-          [plotOptions]="chartOptions_5.plotOptions"
-          [xaxis]="chartOptions_5.xaxis"
-          [colors]="chartOptions_5.colors"
-          [stroke]="chartOptions_5.stroke"
-          [yaxis]="chartOptions_5.yaxis"
-          [grid]="chartOptions_5.grid"
-        ></apx-chart>
-      </div>
-    </div>
+    <app-analytics-chart />
   </div>
 
   <div class="col-md-12 col-xl-8">
-    <h5 class="mb-3">Sales Report</h5>
-    <div class="card">
-      <div class="card-body">
-        <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
-        <h3 class="mb-0">$7,650</h3>
-        <apx-chart
-          [series]="chartOptions_6.series"
-          [chart]="chartOptions_6.chart"
-          [dataLabels]="chartOptions_6.dataLabels"
-          [legend]="chartOptions_6.legend"
-          [xaxis]="chartOptions_6.xaxis"
-          [colors]="chartOptions_6.colors"
-          [stroke]="chartOptions_6.stroke"
-          [plotOptions]="chartOptions_6.plotOptions"
-        ></apx-chart>
-      </div>
-    </div>
+    <app-sales-report-chart />
   </div>
   <div class="col-md-12 col-xl-4">
     <h5 class="mb-3">Transaction History</h5>
     <div class="card">
       <div class="list-group list-group-flush">
         @for (history of transaction; track history) {
-          <a href="javascript:" class="list-group-item list-group-item-action">
+          <a href="javascript:" class="list-group-item list-group-item-action px-3">
             <div class="d-flex">
               <div class="flex-shrink-0">
-                <div class="avtar avtar-s rounded-circle {{ history.background }}">
-                  <i class="{{ history.icon }} f-18"></i>
+                <div class="avatar avatar-s rounded-circle {{ history.background }}">
+                  <i class="f-16" antIcon type="{{ history.icon }}" theme="outline"></i>
                 </div>
               </div>
               <div class="flex-grow-1 ms-3">

@@ -1,0 +1,111 @@
+// =======================================
+//     List of variables for layout
+// =======================================
+:root {
+  // body
+  --#{$variable-prefix}body-bg: #{$body-bg};
+  --bs-body-bg-rgb: #{to-rgb($body-bg)};
+
+  --pc-heading-color: #{$gray-800};
+  --pc-active-background: #{$gray-200};
+
+  // Navbar
+  --pc-sidebar-background: #{$white};
+  --pc-sidebar-color: #262626;
+  --pc-sidebar-color-rgb: #{to-rgb(#262626)};
+  --pc-sidebar-active-color: var(--bs-primary);
+  --pc-sidebar-shadow: none;
+  --pc-sidebar-caption-color: #{$gray-700};
+
+  // header
+  --pc-header-background: #{$white};
+  --pc-header-color: #262626;
+  --pc-header-shadow: 0 1px 0 0px rgb(240 240 240);
+
+  // card
+  --pc-card-box-shadow: none;
+
+  // horizontal menu
+  --pc-header-submenu-background: #{$white};
+  --pc-header-submenu-color: #{$gray-600};
+}
+
+$header-height: 60px;
+$sidebar-width: 260px;
+$sidebar-collapsed-width: 60px;
+$sidebar-collapsed-active-width: 300px;
+$sidebar-tab-width: 75px;
+$sidebar-tab-navbar-width: 320px;
+
+// horizontal menu
+$topbar-height: 60px;
+
+$soft-bg-level: -90%;
+
+// =====================================
+//      Variables for dark layouts
+// =====================================
+
+$dark-layout-color: #121212;
+$dark-layout-color-light: #1e1e1e;
+// header
+$dark-header-color: #d6d6d6;
+$dark-header-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+
+// Menu
+$dark-sidebar-color: #bfbfbf;
+$dark-sidebar-caption: #d6d6d6;
+$dark-sidebar-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+
+// card block
+$dark-card-shadow: inset 0 0 0 1px #262626;
+
+// =====================================
+//      Variables for bootstrap color
+// =====================================
+
+$blue: $blue-500;
+$secondary: $gray-600;
+$indigo: $indigo-500;
+$purple: $purple-500;
+$pink: $pink-500;
+$red: $red-500;
+$orange: $orange-500;
+$yellow: $yellow-500;
+$green: $green-500;
+$teal: $teal-500;
+$cyan: $cyan-500;
+$dark: #262626;
+
+$primary-text: $blue-600;
+$secondary-text: $gray-600;
+$success-text: $green-600;
+$info-text: $cyan-700;
+$warning-text: $yellow-700;
+$danger-text: $red-600;
+$light-text: $gray-600;
+$dark-text: $gray-700;
+
+$primary-bg-subtle: $blue-100;
+$secondary-bg-subtle: $gray-100;
+$success-bg-subtle: $green-100;
+$info-bg-subtle: $cyan-100;
+$warning-bg-subtle: $yellow-100;
+$danger-bg-subtle: $red-100;
+$light-bg-subtle: mix($gray-100, $white);
+$dark-bg-subtle: $gray-400;
+
+$primary-border-subtle: $blue-200;
+$secondary-border-subtle: $gray-200;
+$success-border-subtle: $green-200;
+$info-border-subtle: $cyan-200;
+$warning-border-subtle: $yellow-200;
+$danger-border-subtle: $red-200;
+$light-border-subtle: $gray-200;
+$dark-border-subtle: $gray-500;
+
+$preset-colors: (
+  preset-1: (
+    primary: #1677ff
+  )
+);

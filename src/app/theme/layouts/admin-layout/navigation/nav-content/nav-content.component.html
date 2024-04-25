@@ -1,0 +1,33 @@
+<!-- Vertical layout -->
+<ng-scrollbar style="height: calc(100vh - 60px)" visibility="hover" id="nav-ps-mantis">
+  <div class="navbar-content">
+    <ul class="nav coded-inner-navbar" (clickOutside)="fireOutClick()" (mouseleave)="navMob()">
+      @for (item of navigations; track item) {
+        @if (item.type === 'group') {
+          <app-nav-group [item]="item"></app-nav-group>
+        }
+      }
+    </ul>
+    <div class="m-4 mb-0">
+      <div class="card nav-card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center">
+            <img src="assets/images/avatar-group.png" alt="user" class="img-fluid" />
+            <div class="m-t-20 text-center">
+              <h5 class="mb-0">Mantis Pro</h5>
+              <span class="text-muted">Checkout pro features</span>
+            </div>
+            <div class="m-t-20 text-center">
+              <a
+                href="https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium"
+                target="_blank"
+                class="btn btn-primary text-white"
+                >Pro</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-scrollbar>

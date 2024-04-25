@@ -1,0 +1,10 @@
+<li class="nav-item coded-menu-caption">
+  <label>{{ item.title }}</label>
+</li>
+@for (item of item.children; track item) {
+  @if (item.type === 'collapse') {
+    <app-nav-collapse [item]="item"></app-nav-collapse>
+  } @else if (item.type === 'item') {
+    <app-nav-item [item]="item"></app-nav-item>
+  }
+}

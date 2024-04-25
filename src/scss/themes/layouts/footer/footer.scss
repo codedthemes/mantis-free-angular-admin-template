@@ -1,0 +1,23 @@
+.pc-footer {
+  position: relative;
+  z-index: 995;
+  margin-left: $sidebar-width;
+  margin-top: $header-height;
+  padding: 15px 0;
+  background: rgb(250, 250, 251);
+  padding: 12px 48px;
+
+  .footer-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer-link {
+    .list-inline-item:not(:last-child) {
+      margin-right: 0.9rem;
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-left: 0;
+  }
+}

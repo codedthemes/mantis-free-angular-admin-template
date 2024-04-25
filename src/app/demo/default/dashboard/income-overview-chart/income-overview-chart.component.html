@@ -1,0 +1,17 @@
+<h5 class="mb-3 mt-2">Income Overview</h5>
+<app-card [showHeader]="false">
+  <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
+  <h3 class="mb-3">$7,650</h3>
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [plotOptions]="chartOptions.plotOptions"
+    [dataLabels]="chartOptions.dataLabels"
+    [xaxis]="chartOptions.xaxis"
+    [colors]="chartOptions.colors"
+    [stroke]="chartOptions.stroke"
+    [yaxis]="chartOptions.yaxis"
+    [grid]="chartOptions.grid"
+    [tooltip]="chartOptions.tooltip"
+  ></apx-chart>
+</app-card>

@@ -1,0 +1,39 @@
+.table {
+  &.table-align-center {
+    td,
+    th {
+      vertical-align: middle;
+    }
+  }
+  thead th {
+    padding: 0.9rem 0.75rem;
+  }
+  td,
+  th {
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: 24px;
+    }
+    &:last-child {
+      padding-right: 24px;
+    }
+  }
+  &.table-borderless {
+    td,
+    th {
+      border: none !important;
+    }
+  }
+  thead th {
+    background-color: $gray-100;
+    border-top: 1px solid $gray-300;
+    border-bottom: 2px solid $gray-300;
+    font-size: 12px;
+  }
+}
+
+.table-hover tbody tr:hover {
+  // background-color: transparentize($primary, 0.97);
+  background-color: $gray-200;
+}

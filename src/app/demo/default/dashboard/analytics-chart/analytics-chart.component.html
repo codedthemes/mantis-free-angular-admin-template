@@ -1,0 +1,26 @@
+<h5 class="mb-3">Analytics Report</h5>
+<div class="card">
+  <div class="list-group list-group-flush">
+    <a href="javascript:" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+      Company Finance Growth<span class="h5 mb-0">+45.14%</span>
+    </a>
+    <a href="javascript:" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+      Company Expenses Ratio<span class="h5 mb-0">0.58%</span>
+    </a>
+  </div>
+  <div class="card-body px-2">
+    <div class="chart">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [plotOptions]="chartOptions.plotOptions"
+        [xaxis]="chartOptions.xaxis"
+        [colors]="chartOptions.colors"
+        [stroke]="chartOptions.stroke"
+        [yaxis]="chartOptions.yaxis"
+        [grid]="chartOptions.grid"
+        [tooltip]="chartOptions.tooltip"
+      ></apx-chart>
+    </div>
+  </div>
+</div>

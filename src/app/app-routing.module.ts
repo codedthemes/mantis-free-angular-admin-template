@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Project import
-import { AdminComponent } from './theme/layouts/admin/admin.component';
+import { AdminComponent } from './theme/layouts/admin-layout/admin-layout.component';
 import { GuestComponent } from './theme/layouts/guest/guest.component';
 
 const routes: Routes = [
@@ -18,23 +18,11 @@ const routes: Routes = [
       },
       {
         path: 'dashboard/default',
-        loadComponent: () => import('./demo/default/dashboard/dashboard.component')
+        loadComponent: () => import('./demo/default/dashboard/dashboard.component').then((c) => c.DefaultComponent)
       },
       {
         path: 'typography',
         loadComponent: () => import('./demo/ui-component/typography/typography.component')
-      },
-      {
-        path: 'card',
-        loadComponent: () => import('./demo/component/card/card.component')
-      },
-      {
-        path: 'breadcrumb',
-        loadComponent: () => import('./demo/component/breadcrumb/breadcrumb.component')
-      },
-      {
-        path: 'spinner',
-        loadComponent: () => import('./demo/component/spinner/spinner.component')
       },
       {
         path: 'color',

@@ -2,81 +2,81 @@
   {
     "id": "84564564",
     "name": "Camera Lens",
-    "order": "40",
+    "quantity": "40",
     "status": "Rejected",
-    "status_type": "ti ti-circle-x text-danger",
+    "status_type": "bg-danger",
     "amount": "$40,570"
   },
   {
     "id": "84564786",
     "name": "Laptop",
-    "order": "300",
+    "quantity": "300",
     "status": "Pending",
-    "status_type": "ti ti-alert-circle text-warning",
+    "status_type": "bg-warning",
     "amount": "$180,139"
   },
   {
     "id": "84564522",
     "name": "Mobile",
-    "order": "355",
+    "quantity": "355",
     "status": "Approved",
-    "status_type": "ti ti-circle-check text-success",
+    "status_type": "bg-success",
     "amount": "$50,139"
   },
   {
     "id": "84564564",
     "name": "Camera Lens",
-    "order": "40",
+    "quantity": "40",
     "status": "Rejected",
-    "status_type": "ti ti-circle-x text-danger",
+    "status_type": "bg-danger",
     "amount": "$40,570"
   },
   {
     "id": "84564786",
     "name": "Laptop",
-    "order": "300",
+    "quantity": "300",
     "status": "Pending",
-    "status_type": "ti ti-alert-circle text-warning",
+    "status_type": "bg-warning",
     "amount": "$180,139"
   },
   {
     "id": "84564522",
     "name": "Mobile",
-    "order": "355",
+    "quantity": "355",
     "status": "Approved",
-    "status_type": "ti ti-circle-check text-success",
+    "status_type": "bg-success",
     "amount": "$50,139"
   },
   {
     "id": "84564564",
     "name": "Camera Lens",
-    "order": "40",
+    "quantity": "40",
     "status": "Rejected",
-    "status_type": "ti ti-circle-x text-danger",
+    "status_type": "bg-danger",
     "amount": "$40,570"
   },
   {
     "id": "84564786",
     "name": "Laptop",
-    "order": "300",
+    "quantity": "300",
     "status": "Pending",
-    "status_type": "ti ti-alert-circle text-warning",
+    "status_type": "bg-warning",
     "amount": "$180,139"
   },
   {
     "id": "84564522",
     "name": "Mobile",
-    "order": "355",
+    "quantity": "355",
     "status": "Approved",
-    "status_type": "ti ti-circle-check text-success",
+    "status_type": "bg-success",
     "amount": "$50,139"
   },
   {
     "id": "84564786",
     "name": "Laptop",
-    "order": "300",
+    "quantity": "300",
     "status": "Pending",
-    "status_type": "ti ti-alert-circle text-warning",
+    "status_type": "bg-warning",
     "amount": "$180,139"
   }
 ]

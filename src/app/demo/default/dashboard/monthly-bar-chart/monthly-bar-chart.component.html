@@ -1,0 +1,24 @@
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h5 class="mb-0">Unique Visitor</h5>
+  <div class="d-flex gap-2 chart-income">
+    <div class="chart-income month" (click)="toggleActive('month')">Month</div>
+    <div class="chart-income week" (click)="toggleActive('week')">Week</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [xaxis]="chartOptions.xaxis"
+        [colors]="chartOptions.colors"
+        [stroke]="chartOptions.stroke"
+        [yaxis]="chartOptions.yaxis"
+        [grid]="chartOptions.grid"
+        [theme]="chartOptions.theme"
+      ></apx-chart>
+    </div>
+  </div>
+</div>

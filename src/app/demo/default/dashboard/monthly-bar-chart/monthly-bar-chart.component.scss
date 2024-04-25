@@ -1,0 +1,19 @@
+.chart-income {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  padding: 4px 5px;
+  border-radius: 4px;
+  color: var(--bs-gray);
+  .active {
+    outline: 0px;
+    margin: 0px;
+    padding: 3px 9px;
+    border: 1px solid var(--bs-primary);
+    color: var(--bs-primary);
+  }
+}

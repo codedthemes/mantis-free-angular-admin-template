@@ -1,10 +1,16 @@
 <div class="card" [ngClass]="cardClass">
-  @if (!hidHeader) {
-    <div class="card-header" [ngClass]="headerClass">
-      <h5>{{ cardTitle }}</h5>
+  @if (showHeader) {
+    <div class="card-header d-flex align-items-center justify-content-between" [ngClass]="headerClass">
+      <div>
+        <h5>{{ cardTitle }}</h5>
+        <ng-container *ngTemplateOutlet="headerTitleTemplate"></ng-container>
+      </div>
+      <ng-container *ngTemplateOutlet="headerOptionsTemplate"></ng-container>
     </div>
   }
-  <div class="card-block" [ngClass]="blockClass">
-    <ng-content></ng-content>
-  </div>
+  @if (showContent) {
+    <div class="card-body" [ngClass]="blockClass" [style.padding.px]="padding">
+      <ng-content></ng-content>
+    </div>
+  }
 </div>

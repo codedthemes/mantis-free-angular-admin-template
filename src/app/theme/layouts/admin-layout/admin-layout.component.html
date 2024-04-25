@@ -1,0 +1,41 @@
+<app-navigation
+  class="pc-sidebar"
+  [ngClass]="{
+    'navbar-collapsed': navCollapsed,
+    'mob-open': navCollapsedMob
+  }"
+  (NavCollapse)="this.navCollapsed = !this.navCollapsed"
+/>
+<app-nav-bar (NavCollapsedMob)="navMobClick()" (NavCollapse)="this.navCollapsed = !this.navCollapsed" />
+<div class="pc-container">
+  <div class="coded-wrapper">
+    <div class="coded-content">
+      <div class="coded-inner-content">
+        <app-breadcrumb />
+        <div class="main-body">
+          <div class="page-wrapper">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="pc-footer">
+  <div class="footer-wrapper container-fluid">
+    <div class="row">
+      <div class="col my-1">
+        <p class="m-0"> Copyright &copy; <a href="https://codedthemes.com" target="_blank">CodedThemes</a> </p>
+      </div>
+      <div class="col-auto my-1">
+        <ul class="list-inline footer-link mb-0">
+          <li class="list-inline-item"><a href="https://codedthemes.com/" target="_blank">Home</a></li>
+          <li class="list-inline-item">
+            <a href="https://codedthemes.com/privacy-policy/" target="_blank">Privacy Policy</a>
+          </li>
+          <li class="list-inline-item"><a href="https://codedthemes.support-hub.io/" target="_blank">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
