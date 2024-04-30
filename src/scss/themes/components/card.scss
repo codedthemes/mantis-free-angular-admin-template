@@ -1,0 +1,58 @@
+.card {
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s ease-in-out;
+
+  .card-header {
+    border-bottom: 1px solid $border-color;
+
+    h5 {
+      margin-bottom: 0;
+      color: $headings-color;
+      font-size: 0.875rem;
+      font-weight: 600;
+
+      + p,
+      + small {
+        margin-top: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    transition: box-shadow 0.2s ease-in-out;
+    border-top: 1px solid $border-color;
+  }
+
+  &:hover {
+    .card-footer[class*='bg-'] {
+      box-shadow: none;
+    }
+  }
+
+  .card-body {
+    &.pc-component {
+      position: relative;
+      padding: 25px;
+      border: 1px solid rgba(215, 223, 233, 0.5);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .card {
+    margin-bottom: 20px;
+    .card-header {
+      padding: 20px;
+      h5 {
+        font-size: 0.875rem;
+      }
+    }
+    .card-body {
+      padding: 20px;
+    }
+  }
+}

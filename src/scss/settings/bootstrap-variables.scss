@@ -1,0 +1,735 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+$grays: (
+  '100': $gray-100,
+  '200': $gray-200,
+  '300': $gray-300,
+  '400': $gray-400,
+  '500': $gray-500,
+  '600': $gray-600,
+  '700': $gray-700,
+  '800': $gray-800,
+  '900': $gray-900
+);
+
+// scss-docs-start colors-map
+$colors: (
+  'blue': $blue,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'black': $black,
+  'white': $white,
+  'gray': $gray-600,
+  'gray-dark': $gray-800
+);
+// scss-docs-end colors-map
+
+$primary: $blue; // change
+$secondary: $secondary; // change
+$success: $green; // change
+$info: $cyan; // change
+$warning: $yellow; // change
+$danger: $red; // change
+$light: $gray-100; // change
+$dark: $dark; // change
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark
+);
+// scss-docs-end theme-colors-map
+
+// scss-docs-start theme-colors-rgb
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+// scss-docs-end theme-colors-rgb
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 1.55;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark: $body-color;
+$color-contrast-light: $white;
+
+// fusv-disable
+$blues: (
+  'blue-100': $blue-100,
+  'blue-200': $blue-200,
+  'blue-300': $blue-300,
+  'blue-400': $blue-400,
+  'blue-500': $blue-500,
+  'blue-600': $blue-600,
+  'blue-700': $blue-700,
+  'blue-800': $blue-800,
+  'blue-900': $blue-900
+);
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (('<', '%3c'), ('>', '%3e'), ('#', '%23'), ('(', '%28'), (')', '%29'));
+
+$variable-prefix: bs-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix;
+
+// Gradient
+
+$gradient: linear-gradient(180deg, rgba($white, 0.15), rgba($white, 0));
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3
+);
+// scss-docs-end spacer-variables-maps
+
+// Position
+//
+// Define the edge positioning anchors of the position utilities.
+
+// scss-docs-start position-map
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+);
+// scss-docs-end position-map
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: #fafafb; // change
+$body-color: $gray-900; // change
+$body-text-align: null;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $primary;
+$link-decoration: none;
+$link-shade-percentage: 20%;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+$link-hover-decoration: underline;
+
+$stretched-link-pseudo-element: after;
+$stretched-link-z-index: 1;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: 1rem;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+// scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+// scss-docs-end container-max-widths
+
+@include _assert-ascending($container-max-widths, '$container-max-widths');
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+// Container padding
+
+$container-padding-x: $grid-gutter-width;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+// scss-docs-start border-variables
+$border-width: 1px;
+$border-widths: (
+  0: 0,
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+
+$border-style: solid;
+$border-color: #e6ebf1;
+$border-color-translucent: rgba($black, 0.175);
+
+$border-radius: 4px; // change
+$border-radius-lg: 6px; // change
+$border-radius-sm: 2px; // change
+$border-radius-pill: 50rem;
+// scss-docs-end border-radius-variables
+
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075);
+
+$component-active-color: $white;
+$component-active-bg: var(--bs-primary);
+
+// scss-docs-start caret-variables
+$caret-width: 0.3em;
+$caret-vertical-align: $caret-width * 0.85;
+$caret-spacing: $caret-width * 0.85;
+// scss-docs-end caret-variables
+
+$transition-base: all 0.2s ease-in-out;
+$transition-fade: opacity 0.15s linear;
+// scss-docs-start collapse-transition
+$transition-collapse: height 0.35s ease;
+$transition-collapse-width: width 0.35s ease;
+
+// stylelint-disable function-disallowed-list
+// scss-docs-start aspect-ratios
+$aspect-ratios: (
+  '1x1': 100%,
+  '4x3': calc(3 / 4 * 100%),
+  '16x9': calc(9 / 16 * 100%),
+  '21x9': calc(9 / 21 * 100%)
+);
+// scss-docs-end aspect-ratios
+// stylelint-enable function-disallowed-list
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: 'Public Sans', sans-serif; // change
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+// stylelint-enable value-keyword-case
+$font-family-base: var(--#{$variable-prefix}font-sans-serif);
+$font-family-code: var(--#{$variable-prefix}font-monospace);
+
+$font-size-root: null;
+$font-size-base: 0.875rem;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.25;
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: 40px; // change
+$h2-font-size: 30px; // change
+$h3-font-size: 24px; // change
+$h4-font-size: 20px; // change
+$h5-font-size: 16px; // change
+$h6-font-size: 14px; // change
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+// scss-docs-end font-sizes
+
+// scss-docs-end font-sizes
+h1,
+h2 {
+  font-weight: 700;
+}
+
+$headings-margin-bottom: calc($spacer / 2);
+$headings-font-family: null;
+$headings-font-style: null;
+$headings-font-weight: 600;
+$headings-line-height: 1.2;
+$headings-color: #262626;
+$label-color: $gray-900;
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+$display-font-weight: 300;
+$display-line-height: $headings-line-height;
+// scss-docs-end display-headings
+
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: 300;
+
+$small-font-size: 80%;
+
+$sub-sup-font-size: 0.75em;
+
+$text-muted: $gray-600;
+
+$hr-margin-y: $spacer;
+$hr-color: inherit;
+$hr-height: $border-width;
+$hr-opacity: 0.13;
+
+$legend-margin-bottom: 0.5rem;
+$legend-font-size: 1.5rem;
+$legend-font-weight: null;
+
+$mark-padding: 0.2em;
+
+$dt-font-weight: $font-weight-bold;
+
+$nested-kbd-font-weight: $font-weight-bold;
+
+$list-inline-padding: 0.5rem;
+
+$mark-bg: #fcf8e3;
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+// scss-docs-start table-variables
+$table-cell-padding-y: 0.9rem;
+$table-cell-padding-x: 0.75rem;
+$table-cell-padding-y-sm: 0.3rem;
+$table-cell-padding-x-sm: 0.3rem;
+
+$table-cell-vertical-align: top;
+
+$table-color: $body-color;
+$table-bg: transparent;
+$table-accent-bg: transparent;
+
+$table-th-font-weight: null;
+$table-striped-color: $table-color;
+$table-striped-bg-factor: 0.05;
+$table-striped-bg: rgba($black, $table-striped-bg-factor);
+
+$table-active-color: $table-color;
+$table-active-bg-factor: 0.1;
+$table-active-bg: rgba($black, $table-active-bg-factor);
+
+$table-hover-color: $table-color;
+$table-hover-bg-factor: 0.02;
+$table-hover-bg: rgba($primary, $table-hover-bg-factor);
+
+$table-border-factor: 0.1;
+$table-border-width: $border-width;
+$table-border-color: $border-color;
+
+$table-striped-order: odd;
+
+$table-group-seperator-color: currentColor;
+$table-caption-color: $text-muted;
+
+$table-bg-scale: -80%;
+
+$table-variants: (
+  'primary': shift-color($primary, $table-bg-scale),
+  'secondary': shift-color($secondary, $table-bg-scale),
+  'success': shift-color($success, $table-bg-scale),
+  'info': shift-color($info, $table-bg-scale),
+  'warning': shift-color($warning, $table-bg-scale),
+  'danger': shift-color($danger, $table-bg-scale),
+  'light': $light,
+  'dark': $dark
+);
+// scss-docs-end table-variables
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y: 0.407rem;
+$input-btn-padding-x: 1rem;
+$input-btn-font-family: null;
+$input-btn-font-size: 0.875rem;
+$input-btn-line-height: $line-height-base;
+
+$input-btn-focus-width: 0.2rem;
+$input-btn-focus-color-opacity: 0.25;
+$input-btn-focus-color: rgba($component-active-bg, $input-btn-focus-color-opacity);
+$input-btn-focus-blur: 0;
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+$input-btn-padding-y-sm: 0.25rem;
+$input-btn-padding-x-sm: 0.5rem;
+$input-btn-font-size-sm: $font-size-sm;
+
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 1.3rem;
+$input-btn-font-size-lg: $font-size-lg;
+
+$input-btn-border-width: 1px;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+$btn-font-family: $input-btn-font-family;
+$btn-font-size: $input-btn-font-size;
+$btn-line-height: $input-btn-line-height;
+$btn-white-space: null; // Set to `nowrap` to prevent text wrapping
+
+$btn-padding-y-sm: $input-btn-padding-y-sm;
+$btn-padding-x-sm: $input-btn-padding-x-sm;
+$btn-font-size-sm: $input-btn-font-size-sm;
+
+$btn-padding-y-lg: $input-btn-padding-y-lg;
+$btn-padding-x-lg: $input-btn-padding-x-lg;
+$btn-font-size-lg: $input-btn-font-size-lg;
+
+$btn-border-width: $input-btn-border-width;
+
+$btn-font-weight: 400;
+$btn-box-shadow:
+  inset 0 1px 0 rgba($white, 0.15),
+  0 1px 1px rgba($black, 0.075);
+$btn-focus-width: $input-btn-focus-width;
+$btn-focus-box-shadow: $input-btn-focus-box-shadow;
+$btn-disabled-opacity: 0.65;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125);
+
+$btn-link-color: $link-color;
+$btn-link-hover-color: $link-hover-color;
+$btn-link-disabled-color: $gray-600;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: 4px;
+$btn-border-radius-sm: 2px;
+$btn-border-radius-lg: 6px;
+
+$btn-transition:
+  color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out;
+
+$btn-hover-bg-shade-amount: 15%;
+$btn-hover-bg-tint-amount: 15%;
+$btn-hover-border-shade-amount: 20%;
+$btn-hover-border-tint-amount: 10%;
+$btn-active-bg-shade-amount: 20%;
+$btn-active-bg-tint-amount: 20%;
+$btn-active-border-shade-amount: 25%;
+$btn-active-border-tint-amount: 10%;
+// scss-docs-end btn-variables
+
+// Forms
+
+$form-text-margin-top: 0.25rem;
+$form-text-font-size: $small-font-size;
+$form-text-font-style: null;
+$form-text-font-weight: null;
+$form-text-color: $text-muted;
+
+$form-label-margin-bottom: 0.5rem;
+$form-label-font-size: null;
+$form-label-font-style: null;
+$form-label-font-weight: null;
+$form-label-color: $label-color;
+
+$input-padding-y: 0.65rem;
+$input-padding-x: 0.75rem;
+$input-font-family: $input-btn-font-family;
+$input-font-size: $input-btn-font-size;
+$input-font-weight: $font-weight-base;
+$input-line-height: $input-btn-line-height;
+
+$input-padding-y-sm: 0.375rem;
+$input-padding-x-sm: 0.7rem;
+$input-font-size-sm: $input-btn-font-size-sm;
+
+$input-padding-y-lg: 0.775rem;
+$input-padding-x-lg: 0.85rem;
+$input-font-size-lg: $input-btn-font-size-lg;
+
+$input-bg: $white;
+$input-disabled-bg: $gray-200;
+$input-disabled-border-color: null;
+
+$input-color: $body-color;
+$input-border-color: $gray-400;
+$input-border-width: 1px;
+$input-box-shadow: inset 0 1px 1px rgba($black, 0.075);
+
+$input-border-radius: 4px;
+$input-border-radius-sm: 2px;
+$input-border-radius-lg: 6px;
+
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $primary;
+$input-focus-color: $input-color;
+$input-focus-width: $input-btn-focus-width;
+$input-focus-box-shadow: 0 0 0 2px rgba($component-active-bg, 0.2);
+
+$input-placeholder-color: $gray-600;
+$input-plaintext-color: $headings-color;
+
+$input-height-border: $input-border-width * 2;
+
+$input-height-inner: add($input-line-height * 1em, calc($input-padding-y * 2));
+$input-height-inner-half: add($input-line-height * 0.5em, $input-padding-y);
+$input-height-inner-quarter: add($input-line-height * 0.25em, calc($input-padding-y / 2));
+
+$input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
+$input-height-sm: add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
+$input-height-lg: add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
+
+$input-transition:
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out;
+
+$form-color-width: 3rem;
+// scss-docs-end form-input-variables
+
+// scss-docs-end form-validation-states
+
+// Z-index master list
+
+$zindex-dropdown: 1026;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+
+// Navs
+
+$nav-link-padding-y: 0.5rem;
+$nav-link-padding-x: 1rem;
+$nav-link-font-size: null;
+$nav-link-font-weight: null;
+$nav-link-color: null;
+$nav-link-hover-color: null;
+$nav-link-transition:
+  color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out;
+$nav-link-disabled-color: $gray-600;
+
+$nav-tabs-border-color: $gray-300;
+$nav-tabs-border-width: $border-width;
+$nav-tabs-border-radius: $border-radius;
+$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color;
+$nav-tabs-link-active-color: $gray-700;
+$nav-tabs-link-active-bg: $white; // change
+$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
+
+$nav-pills-border-radius: $border-radius;
+$nav-pills-link-active-color: $component-active-color;
+$nav-pills-link-active-bg: $component-active-bg;
+
+// Navbar
+
+$navbar-padding-y: calc(#{$spacer} / 2);
+$navbar-padding-x: null;
+
+$navbar-nav-link-padding-x: 0.5rem;
+
+$navbar-brand-font-size: $font-size-lg;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$nav-link-height: $font-size-base * $line-height-base + $nav-link-padding-y * 2;
+$navbar-brand-height: $navbar-brand-font-size * $line-height-base;
+$navbar-brand-padding-y: calc(($nav-link-height - $navbar-brand-height) / 2);
+$navbar-brand-margin-end: 1rem;
+
+$navbar-toggler-padding-y: 0.25rem;
+$navbar-toggler-padding-x: 0.75rem;
+$navbar-toggler-font-size: $font-size-lg;
+$navbar-toggler-border-radius: $btn-border-radius;
+$navbar-toggler-focus-width: $btn-focus-width;
+$navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+
+$navbar-dark-color: rgba($white, 0.9);
+$navbar-dark-hover-color: rgba($white, 0.75);
+$navbar-dark-active-color: $white;
+$navbar-dark-disabled-color: rgba($white, 0.25);
+$navbar-dark-toggler-border-color: rgba($white, 0.1);
+
+$navbar-light-color: rgba($black, 0.55);
+$navbar-light-hover-color: rgba($black, 0.7);
+$navbar-light-active-color: rgba($black, 0.9);
+$navbar-light-disabled-color: rgba($black, 0.3);
+$navbar-light-toggler-border-color: rgba($black, 0.1);
+
+$navbar-light-brand-color: $navbar-light-active-color;
+$navbar-light-brand-hover-color: $navbar-light-active-color;
+$navbar-dark-brand-color: $navbar-dark-active-color;
+$navbar-dark-brand-hover-color: $navbar-dark-active-color;
+
+// Dropdowns
+$dropdown-font-size: $font-size-base;
+$dropdown-color: $body-color;
+$dropdown-bg: $white;
+
+// scss-docs-start placeholders
+$placeholder-opacity-max: 0.5;
+$placeholder-opacity-min: 0.2;
+// scss-docs-end placeholders
+
+// Cards
+$card-spacer-y: 25px; // change
+$card-spacer-x: 25px; // change
+$card-title-spacer-y: calc($spacer / 2);
+$card-border-width: 1px; // change
+$card-border-radius: $border-radius;
+$card-border-color: $border-color;
+$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width});
+$card-cap-padding-y: 25px;
+$card-cap-padding-x: 25px;
+$card-cap-bg: transparent;
+$card-cap-color: null;
+$card-height: null;
+$card-color: null;
+$card-bg: $white;
+
+$card-img-overlay-padding: 1.25rem;
+
+$card-group-margin: calc($grid-gutter-width / 2);
+
+// Badges
+$badge-font-size: 0.75em;
+$badge-font-weight: 500;
+$badge-color: $white;
+$badge-padding-y: 0.35em;
+$badge-padding-x: 0.5em;
+$badge-border-radius: 2px;
+
+// List group
+
+$list-group-color: null;
+$list-group-bg: $white;
+$list-group-border-color: $border-color;
+$list-group-border-width: $border-width;
+$list-group-border-radius: $border-radius;
+
+$list-group-item-padding-y: calc($card-spacer-y / 1.5);
+$list-group-item-padding-x: $card-spacer-x;
+$list-group-item-bg-scale: -80%;
+$list-group-item-color-scale: 40%;
+
+$list-group-hover-bg: $gray-100;
+$list-group-active-color: $component-active-color;
+$list-group-active-bg: $component-active-bg;
+$list-group-active-border-color: $list-group-active-bg;
+
+$list-group-disabled-color: $gray-600;
+$list-group-disabled-bg: $list-group-bg;
+
+$list-group-action-color: $gray-700;
+$list-group-action-hover-color: $list-group-action-color;
+
+$list-group-action-active-color: $body-color;
+$list-group-action-active-bg: $gray-200;
+
+// Figures
+
+$figure-caption-font-size: 90%;
+$figure-caption-color: $gray-600;
+
+// Breadcrumbs
+
+$breadcrumb-font-size: null;
+$breadcrumb-padding-y: 2;
+$breadcrumb-padding-x: 0;
+$breadcrumb-item-padding: 0.5rem;
+
+$breadcrumb-margin-bottom: 1rem;
+
+$breadcrumb-bg: null;
+$breadcrumb-divider-color: $gray-600;
+$breadcrumb-active-color: $gray-600;
+$breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='14' height='14' stroke='#{$gray-600}' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+$breadcrumb-divider-flipped: $breadcrumb-divider;
+$breadcrumb-border-radius: null;
+
+// Close
+
+$btn-close-width: 1em;
+$btn-close-height: $btn-close-width;
+$btn-close-padding-x: 0.25em;
+$btn-close-padding-y: $btn-close-padding-x;
+$btn-close-color: $black;
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$btn-close-color}' viewBox='0 0 16 16'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+$btn-close-focus-shadow: $input-btn-focus-box-shadow;
+$btn-close-opacity: 0.5;
+$btn-close-hover-opacity: 0.75;
+$btn-close-focus-opacity: 1;
+$btn-close-disabled-opacity: 0.25;
+$btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+
+// Code
+
+$code-font-size: 87.5%;
+$code-color: $pink;
+
+$kbd-padding-y: 0.2rem;
+$kbd-padding-x: 0.4rem;
+$kbd-font-size: $code-font-size;
+$kbd-color: $white;
+$kbd-bg: $body-color;
+
+$pre-color: null;
+
+// scss-docs-start theme-colors-rgb
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');

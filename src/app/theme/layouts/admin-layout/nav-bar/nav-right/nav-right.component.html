@@ -1,0 +1,133 @@
+<ul class="list-unstyled">
+  <li class="pc-h-item">
+    <a class="pc-head-link me-0 bg-gray-200">
+      <i antIcon type="github" theme="outline"></i>
+    </a>
+  </li>
+  <li class="dropdown pc-h-item" ngbDropdown>
+    <a class="pc-head-link dropdown-toggle arrow-none me-0 bg-gray-200" data-bs-toggle="dropdown" ngbDropdownToggle>
+      <i antIcon type="bell" theme="outline"></i>
+      <span class="badge bg-primary pc-h-badge">3</span>
+    </a>
+    <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
+      <div class="dropdown-header d-flex align-items-center justify-content-between">
+        <h5 class="m-0">Notification</h5>
+        <a class="bg-transparent"><i class="text-success d-flex f-20" antIcon theme="outline" type="check-circle"></i></a>
+      </div>
+      <div class="dropdown-divider"></div>
+      <ng-scrollbar style="min-height: 300px" visibility="hover">
+        <div class="dropdown-header px-0 text-wrap header-notification-scroll">
+          <div class="list-group list-group-flush w-100">
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avatar bg-light-success"><i class="d-flex" antIcon theme="outline" type="gift"></i></div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-muted">3:00 AM</span>
+                  <p class="text-body mb-0">It's <b>Cristina danny's</b> birthday today.</p>
+                  <span class="text-muted">2 min ago</span>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avatar bg-light-primary"><i class="d-flex" antIcon theme="outline" type="message"></i></div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-muted">6:00 PM</span>
+                  <p class="text-body mb-1"><b>Aida Burg</b> commented your post.</p>
+                  <span class="text-muted">5 August</span>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avatar bg-light-danger"><i class="d-flex" antIcon theme="outline" type="setting"></i></div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-muted">2:45 PM</span>
+                  <p class="text-body mb-1">Your Profile is Complete &nbsp;<b>60%</b></p>
+                  <span class="text-muted">7 hours ago</span>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="user-avatar bg-light-primary"><i class="d-flex" antIcon theme="outline" type="phone"></i></div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-muted">9:10 PM</span>
+                  <p class="text-body mb-1"><b>Cristina Danny </b> invited to join <b> Meeting.</b></p>
+                  <span class="text-muted">Daily scrum meeting time</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </ng-scrollbar>
+      <div class="dropdown-divider"></div>
+      <div class="text-center py-2">
+        <a class="link-primary">View all</a>
+      </div>
+    </div>
+  </li>
+  <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
+    <a class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
+      <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar me-2" />
+      <span class="f-w-600">John Doe</span>
+    </a>
+    <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
+      <div class="dropdown-header">
+        <div class="d-flex mb-1">
+          <div class="flex-shrink-0">
+            <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar wid-35" />
+          </div>
+          <div class="flex-grow-1 ms-3 text-start">
+            <h6 class="mb-0">JWT User</h6>
+            <span>UI/UX Designer</span>
+          </div>
+          <a href="javascript:" class="bg-transparent"><i class="d-flex f-20" antIcon theme="outline" type="logout"></i></a>
+        </div>
+      </div>
+      <ul ngbNav #nav="ngbNav" class="nav drp-tabs nav-fill nav-tabs">
+        <li ngbNavItem="1">
+          <a ngbNavLink><i antIcon theme="outline" type="user" class="me-2"></i> Profile</a>
+          <ng-template ngbNavContent>
+            @for (task of profile; track task) {
+              <div>
+                <a class="dropdown-item">
+                  <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
+                  <span>{{ task.title }}</span>
+                </a>
+              </div>
+            }
+            <div>
+              <a class="dropdown-item">
+                <i class="text-muted" antIcon theme="outline" type="logout"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </ng-template>
+        </li>
+        <li ngbNavItem="2">
+          <a ngbNavLink><i class="me-2" antIcon theme="outline" type="setting"></i> Setting</a>
+          <ng-template ngbNavContent>
+            @for (task of setting; track task) {
+              <div>
+                <a class="dropdown-item">
+                  <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
+                  <span>{{ task.title }}</span>
+                </a>
+              </div>
+            }
+          </ng-template>
+        </li>
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+    </div>
+  </li>
+</ul>

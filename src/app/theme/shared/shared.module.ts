@@ -10,6 +10,7 @@ import { CardComponent } from './components/card/card.component';
 
 // third party
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { IconModule } from '@ant-design/icons-angular';
 
 // bootstrap import
 import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,7 +26,8 @@ import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@
     NgbModule,
     NgbCollapseModule,
     NgScrollbarModule,
-    CardComponent
+    CardComponent,
+    IconModule
   ],
   exports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@
     NgbNavModule,
     NgbCollapseModule,
     NgScrollbarModule,
-    CardComponent
+    CardComponent,
+    IconModule
   ],
   declarations: [SpinnerComponent]
 })

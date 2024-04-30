@@ -1,0 +1,18 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  font: {
+    size: 18px;
+    weight: 600;
+  }
+  width: 48px;
+  height: 48px;
+
+  &.avatar-s {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

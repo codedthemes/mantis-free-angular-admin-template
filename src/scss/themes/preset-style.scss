@@ -1,0 +1,87 @@
+@import '../settings/color-variables.scss';
+
+:root {
+  @each $name, $value in $preset-colors {
+    $pc-primary: map-get($value, 'primary');
+    $color-rgb: to-rgb($pc-primary);
+    --bs-blue: #{$pc-primary};
+    --bs-primary-rgb: #{$color-rgb};
+  }
+}
+
+.pc-sidebar {
+  .coded-inner-navbar {
+    > app-nav-group {
+      > app-nav-collapse {
+        .coded-hasmenu {
+          &.active,
+          &:focus,
+          &:hover {
+            > a {
+              background: rgba(var(--bs-primary-rgb), 0.1);
+            }
+
+            &.coded-trigger {
+              > a {
+                color: var(--bs-blue);
+                background: none;
+              }
+
+              .coded-submenu {
+                > app-nav-item {
+                  li {
+                    &.active,
+                    &:focus,
+                    &:hover {
+                      > a {
+                        background: rgba(var(--bs-primary-rgb), 0.1);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .coded-submenu > app-nav-item li {
+          &.active {
+            > a {
+              background: rgba(var(--bs-primary-rgb), 0.1);
+              color: var(--bs-blue);
+
+              &:before {
+                background: var(--bs-blue);
+              }
+            }
+          }
+        }
+      }
+      > app-nav-item {
+        li {
+          &.nav-item {
+            &.active,
+            &:focus,
+            &:hover {
+              background: rgba(var(--bs-primary-rgb), 0.1);
+            }
+
+            &.active {
+              > a {
+                color: var(--bs-blue);
+
+                .coded-micon {
+                  color: var(--bs-blue);
+                }
+              }
+
+              &:before {
+                background: var(--bs-blue);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

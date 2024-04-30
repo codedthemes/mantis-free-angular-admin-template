@@ -1,5 +1,5 @@
 // Angular import
-import { Component, Input } from '@angular/core';
+import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,15 +11,48 @@ import { CommonModule } from '@angular/common';
 })
 export class CardComponent {
   // public props
-  @Input() cardTitle: string;
-  @Input() cardClass!: string;
-  @Input() blockClass!: string;
-  @Input() headerClass!: string;
-  @Input() hidHeader: boolean;
+  /**
+   * Title of card. It will be visible at left side of card header
+   */
+  @Input() cardTitle!: string;
 
-  // Constructor
-  constructor() {
-    this.hidHeader = false;
-    this.cardTitle = 'Card Title';
-  }
+  /**
+   * Class to be applied at card level
+   */
+  @Input() cardClass!: string;
+
+  /**
+   * To hide content from card
+   */
+  @Input() showContent = true;
+
+  /**
+   * Class to be applied at card content.
+   */
+  @Input() blockClass!: string;
+
+  /**
+   * Class to be applied on card header
+   */
+  @Input() headerClass!: string;
+
+  /**
+   * To hide header from card
+   */
+  @Input() showHeader = true;
+
+  /**
+   * padding around card content. default in px
+   */
+  @Input() padding = 20; // set default to 24 px
+
+  /**
+   * Template reference of header actions on custom header
+   */
+  @ContentChild('headerOptionsTemplate') headerOptionsTemplate!: TemplateRef<ElementRef>;
+
+  /**
+   * Template reference of header actions besides title at left
+   */
+  @ContentChild('headerTitleTemplate') headerTitleTemplate!: TemplateRef<ElementRef>;
 }

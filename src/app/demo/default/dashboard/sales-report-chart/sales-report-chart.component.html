@@ -1,0 +1,21 @@
+<h5 class="mb-3">Sales Report</h5>
+<div class="card">
+  <div class="card-body">
+    <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
+    <h3 class="mb-0">$7,650</h3>
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [legend]="chartOptions.legend"
+        [xaxis]="chartOptions.xaxis"
+        [colors]="chartOptions.colors"
+        [stroke]="chartOptions.stroke"
+        [grid]="chartOptions.grid"
+        [plotOptions]="chartOptions.plotOptions"
+        [tooltip]="chartOptions.tooltip"
+      ></apx-chart>
+    </div>
+  </div>
+</div>

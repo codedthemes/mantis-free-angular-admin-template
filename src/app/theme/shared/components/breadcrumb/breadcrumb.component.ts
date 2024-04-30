@@ -1,30 +1,40 @@
-// Angular import
+// Angular Import
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule, Event } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 // project import
-import { NavigationItem, NavigationItems } from 'src/app/theme/layouts/admin/navigation/navigation';
+import { NavigationItem, NavigationItems } from 'src/app/theme/layouts/admin-layout/navigation/navigation';
+
+// icons
+import { IconModule, IconService } from '@ant-design/icons-angular';
+import { GlobalOutline, NodeExpandOutline } from '@ant-design/icons-angular/icons';
 
 interface titleType {
   // eslint-disable-next-line
-  url: string | boolean | any;
+  url: any;
   title: string;
   breadcrumbs: unknown;
   type: string;
+  link?: string | undefined;
+  description?: string | undefined;
+  path?: string | undefined;
 }
 
 @Component({
   selector: 'app-breadcrumb',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconModule],
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent {
   // public props
   @Input() type: string;
+  @Input() dashboard = true;
+  @Input() Component = false;
+
   navigations: NavigationItem[];
   ComponentNavigations: NavigationItem[];
   breadcrumbList: Array<string> = [];
@@ -34,11 +44,13 @@ export class BreadcrumbComponent {
   // constructor
   constructor(
     private route: Router,
-    private titleService: Title
+    private titleService: Title,
+    private iconService: IconService
   ) {
     this.navigations = NavigationItems;
     this.type = 'theme1';
     this.setBreadcrumb();
+    this.iconService.addIcon(...[GlobalOutline, NodeExpandOutline]);
   }
 
   // public method
@@ -48,7 +60,6 @@ export class BreadcrumbComponent {
         const activeLink = router.url;
         const breadcrumbList = this.filterNavigation(this.navigations, activeLink);
         this.navigationList = breadcrumbList;
-        this.componentList = this.filterNavigation(this.ComponentNavigations, activeLink);
         const title = breadcrumbList[breadcrumbList.length - 1]?.title || 'Welcome';
         this.titleService.setTitle(title + ' | Mantis  Angular Admin Template');
       }
@@ -62,6 +73,9 @@ export class BreadcrumbComponent {
           {
             url: 'url' in navItem ? navItem.url : false,
             title: navItem.title,
+            link: navItem.link,
+            description: navItem.description,
+            path: navItem.path,
             breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
             type: navItem.type
           }
@@ -74,6 +88,9 @@ export class BreadcrumbComponent {
           breadcrumbList.unshift({
             url: 'url' in navItem ? navItem.url : false,
             title: navItem.title,
+            link: navItem.link,
+            path: navItem.path,
+            description: navItem.description,
             breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
             type: navItem.type
           });
