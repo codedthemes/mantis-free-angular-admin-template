@@ -1,5 +1,5 @@
 // angular import
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 
 // project import
 import { SharedModule } from 'src/app/theme/shared/shared.module';
@@ -26,6 +26,13 @@ export class NavBarComponent {
   constructor() {
     this.windowWidth = window.innerWidth;
     this.navCollapsedMob = false;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  // eslint-disable-next-line
+  onResize(event: any): void {
+    this.windowWidth = event.target.innerWidth;
+    this.navCollapseMob();
   }
 
   // public method
