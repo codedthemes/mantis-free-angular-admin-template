@@ -7,11 +7,13 @@
           {{ analytic.amount }}
           <span class="badge {{ analytic.background }} border {{ analytic.border }} ">
             <i antIcon type="{{ analytic.icon }}" theme="outline"></i>
-            {{ analytic.percentage }}</span
-          >
+            {{ analytic.percentage }}
+          </span>
         </h4>
         <p class="mb-0 text-muted text-sm">
-          You made an extra <span class="{{ analytic.color }}">{{ analytic.number }}</span> this year
+          You made an extra
+          <span class="{{ analytic.color }}">{{ analytic.number }}</span>
+          this year
         </p>
       </app-card>
     </div>
@@ -40,13 +42,16 @@
           <tbody>
             @for (order of recentOrder; track order) {
               <tr>
-                <td
-                  ><a href="javascript:" class="text-muted">{{ order.id }}</a></td
-                >
+                <td>
+                  <a href="javascript:" class="text-muted">{{ order.id }}</a>
+                </td>
                 <td>{{ order.name }}</td>
-                <td
-                  ><span class="d-block"><i class="badge-circle {{ order.status_type }} f-10 m-r-5"></i>{{ order.status }}</span></td
-                >
+                <td>
+                  <span class="d-block">
+                    <i class="badge-circle {{ order.status_type }} f-10 m-r-5"></i>
+                    {{ order.status }}
+                  </span>
+                </td>
                 <td class="text-end">{{ order.quantity }}</td>
                 <td class="text-end">{{ order.amount }}</td>
               </tr>
