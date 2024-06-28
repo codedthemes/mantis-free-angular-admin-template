@@ -30,5 +30,20 @@ export class AdminComponent {
     } else {
       this.navCollapsedMob = !this.navCollapsedMob;
     }
+    if (document.querySelector('app-navigation.pc-sidebar')?.classList.contains('navbar-collapsed')) {
+      document.querySelector('app-navigation.pc-sidebar')?.classList.remove('navbar-collapsed');
+    }
+  }
+
+  handleKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.closeMenu();
+    }
+  }
+
+  closeMenu() {
+    if (document.querySelector('app-navigation.pc-sidebar')?.classList.contains('mob-open')) {
+      document.querySelector('app-navigation.pc-sidebar')?.classList.remove('mob-open');
+    }
   }
 }

@@ -20,12 +20,16 @@
       </div>
     </div>
   </div>
+  <div class="pc-menu-overlay" (click)="closeMenu()" (keydown)="handleKeyDown($event)" tabindex="0"></div>
 </div>
 <footer class="pc-footer">
   <div class="footer-wrapper container-fluid">
     <div class="row">
       <div class="col my-1">
-        <p class="m-0"> Copyright &copy; <a href="https://codedthemes.com" target="_blank">CodedThemes</a> </p>
+        <p class="m-0">
+          Copyright &copy;
+          <a href="https://codedthemes.com" target="_blank">CodedThemes</a>
+        </p>
       </div>
       <div class="col-auto my-1">
         <ul class="list-inline footer-link mb-0">
