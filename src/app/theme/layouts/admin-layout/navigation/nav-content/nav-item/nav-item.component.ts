@@ -9,7 +9,6 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 @Component({
   selector: 'app-nav-item',
-  standalone: true,
   imports: [CommonModule, SharedModule, RouterModule],
   templateUrl: './nav-item.component.html',
   styleUrls: ['./nav-item.component.scss']

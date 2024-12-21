@@ -1,5 +1,5 @@
 // Angular Import
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule, Event } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 import { NavigationItem, NavigationItems } from 'src/app/theme/layouts/admin-layout/navigation/navigation';
 
 // icons
-import { IconModule, IconService } from '@ant-design/icons-angular';
+import { IconService } from '@ant-design/icons-angular';
 import { GlobalOutline, NodeExpandOutline } from '@ant-design/icons-angular/icons';
 
 interface titleType {
@@ -24,16 +24,19 @@ interface titleType {
 
 @Component({
   selector: 'app-breadcrumb',
-  standalone: true,
-  imports: [CommonModule, RouterModule, IconModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent {
+  private route = inject(Router);
+  private titleService = inject(Title);
+  private iconService = inject(IconService);
+
   // public props
   @Input() type: string;
-  @Input() dashboard = true;
-  @Input() Component = false;
+  dashboard = input(true);
+  Component = input(false);
 
   navigations: NavigationItem[];
   ComponentNavigations: NavigationItem[];
@@ -42,11 +45,7 @@ export class BreadcrumbComponent {
   componentList!: titleType[];
 
   // constructor
-  constructor(
-    private route: Router,
-    private titleService: Title,
-    private iconService: IconService
-  ) {
+  constructor() {
     this.navigations = NavigationItems;
     this.type = 'theme1';
     this.setBreadcrumb();
@@ -82,7 +81,7 @@ export class BreadcrumbComponent {
         ];
       }
       if ((navItem.type === 'group' || navItem.type === 'collapse') && 'children' in navItem) {
-        // eslint-disable-next-line
+         
         const breadcrumbList = this.filterNavigation(navItem.children!, activeLink);
         if (breadcrumbList.length > 0) {
           breadcrumbList.unshift({

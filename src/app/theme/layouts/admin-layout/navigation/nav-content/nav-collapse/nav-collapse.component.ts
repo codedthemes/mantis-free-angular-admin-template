@@ -1,5 +1,5 @@
 // Angular import
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -11,7 +11,6 @@ import { NavItemComponent } from '../nav-item/nav-item.component';
 
 @Component({
   selector: 'app-nav-collapse',
-  standalone: true,
   imports: [CommonModule, SharedModule, RouterModule, NavItemComponent],
   templateUrl: './nav-collapse.component.html',
   styleUrls: ['./nav-collapse.component.scss'],
@@ -29,7 +28,7 @@ export class NavCollapseComponent {
   // public props
 
   // Compact Menu in use For Sub Child Open in sidebar menu
-  @Output() showCollapseItem: EventEmitter<object> = new EventEmitter();
+  showCollapseItem = output();
 
   // all Version Get Item(Component Name Take)
   @Input() item!: NavigationItem;
@@ -75,7 +74,7 @@ export class NavCollapseComponent {
   }
 
   // for Compact Menu
-  subMenuCollapse(item: object) {
+  subMenuCollapse(item: void) {
     this.showCollapseItem.emit(item);
   }
 }

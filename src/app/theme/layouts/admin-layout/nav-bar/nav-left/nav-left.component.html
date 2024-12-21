@@ -4,11 +4,11 @@
       href="javascript:"
       title="click to menu collapse"
       class="pc-head-link ms-0"
-      [ngClass]="{ on: navCollapsed }"
+      [ngClass]="{ on: navCollapsed() }"
       id="sidebar-hide mobile-collapse"
       (click)="navCollapse()"
     >
-      @if (navCollapsed === true) {
+      @if (navCollapsed() === true) {
         <i antIcon type="menu-unfold" theme="outline"></i>
       } @else {
         <i antIcon type="menu-fold" theme="outline"></i>

@@ -1,5 +1,5 @@
 // Angular import
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, inject, output } from '@angular/core';
 import { CommonModule, Location, LocationStrategy } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -7,9 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NavigationItem, NavigationItems } from '../navigation';
 import { environment } from 'src/environments/environment';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
-import { NavCollapseComponent } from './nav-collapse/nav-collapse.component';
 import { NavGroupComponent } from './nav-group/nav-group.component';
-import { NavItemComponent } from './nav-item/nav-item.component';
 
 // icon
 import { IconService } from '@ant-design/icons-angular';
@@ -27,14 +25,17 @@ import {
 
 @Component({
   selector: 'app-nav-content',
-  standalone: true,
-  imports: [SharedModule, CommonModule, RouterModule, NavCollapseComponent, NavGroupComponent, NavItemComponent],
+  imports: [SharedModule, CommonModule, RouterModule, NavGroupComponent],
   templateUrl: './nav-content.component.html',
   styleUrls: ['./nav-content.component.scss']
 })
 export class NavContentComponent implements OnInit {
+  private location = inject(Location);
+  private locationStrategy = inject(LocationStrategy);
+  private iconService = inject(IconService);
+
   // public props
-  @Output() NavCollapsedMob: EventEmitter<string> = new EventEmitter();
+  NavCollapsedMob = output();
 
   navigations: NavigationItem[];
 
@@ -46,11 +47,7 @@ export class NavContentComponent implements OnInit {
   windowWidth = window.innerWidth;
 
   // Constructor
-  constructor(
-    private location: Location,
-    private locationStrategy: LocationStrategy,
-    private iconService: IconService
-  ) {
+  constructor() {
     this.iconService.addIcon(
       ...[
         DashboardOutline,
