@@ -4,21 +4,23 @@ import { CommonModule } from '@angular/common';
 
 // project import
 import tableData from 'src/fake-data/default-data.json';
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
 import { MonthlyBarChartComponent } from 'src/app/theme/shared/apexchart/monthly-bar-chart/monthly-bar-chart.component';
 import { IncomeOverviewChartComponent } from 'src/app/theme/shared/apexchart/income-overview-chart/income-overview-chart.component';
 import { AnalyticsChartComponent } from 'src/app/theme/shared/apexchart/analytics-chart/analytics-chart.component';
 import { SalesReportChartComponent } from 'src/app/theme/shared/apexchart/sales-report-chart/sales-report-chart.component';
 
 // icons
-import { IconService } from '@ant-design/icons-angular';
+import { IconService, IconDirective } from '@ant-design/icons-angular';
 import { FallOutline, GiftOutline, MessageOutline, RiseOutline, SettingOutline } from '@ant-design/icons-angular/icons';
+import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 
 @Component({
   selector: 'app-default',
   imports: [
     CommonModule,
-    SharedModule,
+    CardComponent,
+    IconDirective,
     MonthlyBarChartComponent,
     IncomeOverviewChartComponent,
     AnalyticsChartComponent,

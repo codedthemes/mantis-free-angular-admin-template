@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 // project import
 import { NavigationItem, NavigationItems } from '../navigation';
 import { environment } from 'src/environments/environment';
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
 import { NavGroupComponent } from './nav-group/nav-group.component';
 
 // icon
@@ -22,10 +22,11 @@ import {
   BgColorsOutline,
   AntDesignOutline
 } from '@ant-design/icons-angular/icons';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-nav-content',
-  imports: [SharedModule, CommonModule, RouterModule, NavGroupComponent],
+  imports: [CommonModule, RouterModule, NavGroupComponent, NgScrollbarModule],
   templateUrl: './nav-content.component.html',
   styleUrls: ['./nav-content.component.scss']
 })

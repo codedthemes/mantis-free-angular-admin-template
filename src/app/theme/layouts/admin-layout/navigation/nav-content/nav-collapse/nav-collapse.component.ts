@@ -6,12 +6,13 @@ import { RouterModule } from '@angular/router';
 
 // project import
 import { NavigationItem } from '../../navigation';
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
 import { NavItemComponent } from '../nav-item/nav-item.component';
+import { IconDirective } from '@ant-design/icons-angular';
 
 @Component({
   selector: 'app-nav-collapse',
-  imports: [CommonModule, SharedModule, RouterModule, NavItemComponent],
+  imports: [CommonModule, IconDirective, RouterModule, NavItemComponent],
   templateUrl: './nav-collapse.component.html',
   styleUrls: ['./nav-collapse.component.scss'],
   animations: [

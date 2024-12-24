@@ -2,44 +2,20 @@
 import { Component, OnInit, viewChild } from '@angular/core';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 // third party
-import {
-  NgApexchartsModule,
-  ApexChart,
-  ChartComponent,
-  ApexDataLabels,
-  ApexAxisChartSeries,
-  ApexStroke,
-  ApexXAxis,
-  ApexYAxis,
-  ApexTheme,
-  ApexGrid
-} from 'ng-apexcharts';
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  xaxis: ApexXAxis;
-  colors: string[];
-  stroke: ApexStroke;
-  yaxis: ApexYAxis;
-  grid: ApexGrid;
-  theme: ApexTheme;
-};
+import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-monthly-bar-chart',
-  imports: [SharedModule, NgApexchartsModule],
+  imports: [NgApexchartsModule],
   templateUrl: './monthly-bar-chart.component.html',
   styleUrl: './monthly-bar-chart.component.scss'
 })
 export class MonthlyBarChartComponent implements OnInit {
   // public props
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ChartOptions>;
+  chartOptions!: Partial<ApexOptions>;
 
   // life cycle hook
   ngOnInit() {

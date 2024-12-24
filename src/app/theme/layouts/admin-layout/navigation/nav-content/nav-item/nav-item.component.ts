@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router';
 
 // Project import
 import { NavigationItem } from '../../navigation';
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
+import { IconDirective } from '@ant-design/icons-angular';
 
 @Component({
   selector: 'app-nav-item',
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, IconDirective, RouterModule],
   templateUrl: './nav-item.component.html',
   styleUrls: ['./nav-item.component.scss']
 })

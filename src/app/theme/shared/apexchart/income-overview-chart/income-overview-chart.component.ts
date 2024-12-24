@@ -2,46 +2,21 @@
 import { Component, OnInit, viewChild } from '@angular/core';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 // third party
-import {
-  NgApexchartsModule,
-  ChartComponent,
-  ApexChart,
-  ApexAxisChartSeries,
-  ApexDataLabels,
-  ApexPlotOptions,
-  ApexXAxis,
-  ApexYAxis,
-  ApexStroke,
-  ApexGrid,
-  ApexTooltip
-} from 'ng-apexcharts';
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  xaxis: ApexXAxis;
-  colors: string[];
-  stroke: ApexStroke;
-  grid: ApexGrid;
-  yaxis: ApexYAxis;
-  tooltip: ApexTooltip;
-};
+import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
+import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 
 @Component({
   selector: 'app-income-overview-chart',
-  imports: [SharedModule, NgApexchartsModule],
+  imports: [CardComponent, NgApexchartsModule],
   templateUrl: './income-overview-chart.component.html',
   styleUrl: './income-overview-chart.component.scss'
 })
 export class IncomeOverviewChartComponent implements OnInit {
   // public props
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ChartOptions>;
+  chartOptions!: Partial<ApexOptions>;
 
   // life cycle hook
   ngOnInit() {

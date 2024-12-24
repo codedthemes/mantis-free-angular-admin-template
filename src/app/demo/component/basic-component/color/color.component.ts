@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
+import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 
 @Component({
   selector: 'app-color',
-  imports: [SharedModule],
+  imports: [CardComponent],
   templateUrl: './color.component.html',
   styleUrl: './color.component.scss'
 })

@@ -2,47 +2,19 @@
 import { Component, viewChild } from '@angular/core';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 // third party
-import {
-  NgApexchartsModule,
-  ChartComponent,
-  ApexChart,
-  ApexAxisChartSeries,
-  ApexPlotOptions,
-  ApexXAxis,
-  ApexYAxis,
-  ApexStroke,
-  ApexGrid,
-  ApexTooltip,
-  ApexLegend,
-  ApexDataLabels
-} from 'ng-apexcharts';
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  plotOptions: ApexPlotOptions;
-  dataLabels: ApexDataLabels;
-  legend: ApexLegend;
-  xaxis: ApexXAxis;
-  colors: string[];
-  stroke: ApexStroke;
-  grid: ApexGrid;
-  yaxis: ApexYAxis;
-  tooltip: ApexTooltip;
-};
+import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-sales-report-chart',
-  imports: [SharedModule, NgApexchartsModule],
+  imports: [NgApexchartsModule],
   templateUrl: './sales-report-chart.component.html',
   styleUrl: './sales-report-chart.component.scss'
 })
 export class SalesReportChartComponent {
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ChartOptions>;
+  chartOptions!: Partial<ApexOptions>;
 
   constructor() {
     this.chartOptions = {

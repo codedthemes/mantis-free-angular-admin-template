@@ -3,12 +3,9 @@ import { Component, inject, input, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
-
-// third party
 
 // icon
-import { IconService } from '@ant-design/icons-angular';
+import { IconService, IconDirective } from '@ant-design/icons-angular';
 import {
   BellOutline,
   SettingOutline,
@@ -28,10 +25,12 @@ import {
   ArrowRightOutline,
   GithubOutline
 } from '@ant-design/icons-angular/icons';
+import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-nav-right',
-  imports: [SharedModule, RouterModule],
+  imports: [IconDirective, RouterModule, NgScrollbarModule, NgbNavModule, NgbDropdownModule],
   templateUrl: './nav-right.component.html',
   styleUrls: ['./nav-right.component.scss']
 })

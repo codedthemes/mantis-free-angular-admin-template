@@ -1,16 +1,16 @@
 // Angular import
+import { CommonModule } from '@angular/common';
 import { Component, inject, input, output } from '@angular/core';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 // icons
-import { IconService } from '@ant-design/icons-angular';
+import { IconService, IconDirective } from '@ant-design/icons-angular';
 import { MenuUnfoldOutline, MenuFoldOutline, SearchOutline } from '@ant-design/icons-angular/icons';
 
 @Component({
   selector: 'app-nav-left',
-  imports: [SharedModule],
+  imports: [IconDirective, CommonModule],
   templateUrl: './nav-left.component.html',
   styleUrls: ['./nav-left.component.scss']
 })

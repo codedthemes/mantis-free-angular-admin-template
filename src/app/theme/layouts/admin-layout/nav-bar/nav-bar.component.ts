@@ -1,14 +1,14 @@
 // angular import
-import { Component, HostListener, output } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 // project import
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
 import { NavLeftComponent } from './nav-left/nav-left.component';
 import { NavRightComponent } from './nav-right/nav-right.component';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [SharedModule, NavLeftComponent, NavRightComponent],
+  imports: [NavLeftComponent, NavRightComponent],
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
@@ -17,21 +17,14 @@ export class NavBarComponent {
   NavCollapse = output();
   NavCollapsedMob = output();
 
-  navCollapsed;
+  navCollapsed: boolean;
   windowWidth: number;
-  navCollapsedMob;
+  navCollapsedMob: boolean;
 
   // Constructor
   constructor() {
     this.windowWidth = window.innerWidth;
     this.navCollapsedMob = false;
-  }
-
-  @HostListener('window:resize', ['$event'])
-  // eslint-disable-next-line
-  onResize(event: any): void {
-    this.windowWidth = event.target.innerWidth;
-    this.navCollapseMob();
   }
 
   // public method
