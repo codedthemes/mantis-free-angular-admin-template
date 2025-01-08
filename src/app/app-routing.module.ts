@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Project import
 import { AdminComponent } from './theme/layouts/admin-layout/admin-layout.component';
-import { GuestComponent } from './theme/layouts/guest/guest.component';
+import { GuestLayoutComponent } from './theme/layouts/guest-layout/guest-layout.component';
 
 const routes: Routes = [
   {
@@ -18,33 +18,34 @@ const routes: Routes = [
       },
       {
         path: 'dashboard/default',
-        loadComponent: () => import('./demo/default/dashboard/dashboard.component').then((c) => c.DefaultComponent)
+        loadComponent: () => import('./demo/dashboard/default/default.component').then((c) => c.DefaultComponent)
       },
       {
         path: 'typography',
-        loadComponent: () => import('./demo/ui-component/typography/typography.component')
+        loadComponent: () => import('./demo/component/basic-component/color/color.component').then((c) => c.ColorComponent)
       },
       {
         path: 'color',
-        loadComponent: () => import('./demo/ui-component/ui-color/ui-color.component')
+        loadComponent: () => import('./demo/component/basic-component/typography/typography.component').then((c) => c.TypographyComponent)
       },
       {
         path: 'sample-page',
-        loadComponent: () => import('./demo/other/sample-page/sample-page.component')
+        loadComponent: () => import('./demo/others/sample-page/sample-page.component').then((c) => c.SamplePageComponent)
       }
     ]
   },
   {
     path: '',
-    component: GuestComponent,
+    component: GuestLayoutComponent,
     children: [
       {
         path: 'login',
-        loadComponent: () => import('./demo/authentication/login/login.component')
+        loadComponent: () => import('./demo/pages/authentication/auth-login/auth-login.component').then((c) => c.AuthLoginComponent)
       },
       {
         path: 'register',
-        loadComponent: () => import('./demo/authentication/register/register.component')
+        loadComponent: () =>
+          import('./demo/pages/authentication/auth-register/auth-register.component').then((c) => c.AuthRegisterComponent)
       }
     ]
   }

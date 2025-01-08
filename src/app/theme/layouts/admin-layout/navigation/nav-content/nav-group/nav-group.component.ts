@@ -1,28 +1,26 @@
 // Angular import
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, inject, input } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 
 // project import
 import { NavigationItem } from '../../navigation';
-import { SharedModule } from 'src/app/theme/shared/shared.module';
+
 import { NavCollapseComponent } from '../nav-collapse/nav-collapse.component';
 import { NavItemComponent } from '../nav-item/nav-item.component';
 
 @Component({
   selector: 'app-nav-group',
-  standalone: true,
-  imports: [CommonModule, SharedModule, NavCollapseComponent, NavItemComponent],
+  imports: [CommonModule, NavCollapseComponent, NavItemComponent],
   templateUrl: './nav-group.component.html',
   styleUrls: ['./nav-group.component.scss']
 })
 export class NavGroupComponent implements OnInit {
+  private location = inject(Location);
+
   // public props
 
   // All Version in Group Name
-  @Input() item!: NavigationItem;
-
-  // Constructor
-  constructor(private location: Location) {}
+  item = input.required<NavigationItem>();
 
   // Life cycle events
   ngOnInit() {

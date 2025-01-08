@@ -4,14 +4,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // Project import
-import { SharedModule } from '../../shared/shared.module';
+
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ConfigurationComponent } from './configuration/configuration.component';
+import { BreadcrumbComponent } from 'src/app/theme/shared/components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-admin',
-  standalone: true,
-  imports: [CommonModule, SharedModule, NavigationComponent, NavBarComponent, RouterModule],
+  imports: [CommonModule, BreadcrumbComponent, NavigationComponent, NavBarComponent, RouterModule, ConfigurationComponent],
   templateUrl: './admin-layout.component.html',
   styleUrls: ['./admin-layout.component.scss']
 })

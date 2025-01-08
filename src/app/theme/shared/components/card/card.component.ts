@@ -1,5 +1,5 @@
 // Angular import
-import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angular/core';
+import { Component, ContentChild, ElementRef, TemplateRef, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,37 +14,37 @@ export class CardComponent {
   /**
    * Title of card. It will be visible at left side of card header
    */
-  @Input() cardTitle!: string;
+  cardTitle = input<string>();
 
   /**
    * Class to be applied at card level
    */
-  @Input() cardClass!: string;
+  cardClass = input<string>();
 
   /**
    * To hide content from card
    */
-  @Input() showContent = true;
+  showContent = input(true);
 
   /**
    * Class to be applied at card content.
    */
-  @Input() blockClass!: string;
+  blockClass = input<string>();
 
   /**
    * Class to be applied on card header
    */
-  @Input() headerClass!: string;
+  headerClass = input<string>();
 
   /**
    * To hide header from card
    */
-  @Input() showHeader = true;
+  showHeader = input(true);
 
   /**
    * padding around card content. default in px
    */
-  @Input() padding = 20; // set default to 24 px
+  padding = input(20); // set default to 24 px
 
   /**
    * Template reference of header actions on custom header

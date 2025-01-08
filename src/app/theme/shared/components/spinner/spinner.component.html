@@ -1,9 +1,9 @@
 @if (isSpinnerVisible) {
   <div id="http-loader">
     <div class="loader-bg">
-      @if (spinner === Spinkit.skLine) {
-        <div class="sk-line-material" [class.colored]="!backgroundColor">
-          <div class="sk-child sk-bounce1" [style.background-color]="backgroundColor"></div>
+      @if (spinner() === Spinkit.skLine) {
+        <div class="sk-line-material" [class.colored]="!backgroundColor()">
+          <div class="sk-child sk-bounce1" [style.background-color]="backgroundColor()"></div>
         </div>
       }
     </div>

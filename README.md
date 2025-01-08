@@ -12,15 +12,15 @@ Mantis is a free angular admin dashboard template built with Angular and latest 
 
 [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) of Mantis Angular Dashboard template contains features like TypeScript, Apps, Authentication Methods (i.e. JWT), Advance Components, Form Plugins, Layouts, Widgets, and many more.
 
-| [Mantis Free](https://mantisdashboard.io/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)            |
-| ------------------------------------------------------- | :------------------------------------------------------------------------------- |
-| **9** Demo pages                                        | **45+** demo pages                                                               |
-| -                                                       | ✓ Multi-language                                                                 |
-| -                                                       | ✓ Dark/Light Mode 🌓                                                             |
-| -                                                       | ✓ TypeScript version                                                             |
-| -                                                       | ✓ 6+ color Options                                                               |
-| -                                                       | ✓ RTL                                                                            |
-| -                                                       | ✓ [More components](https://mantisdashboard.io/angular/default/components/basic/alert) |
+| [Mantis Free](https://mantisdashboard.io/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium)        |
+| ------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **9** Demo pages                                        | **45+** demo pages                                                                                                                                            |
+| -                                                       | ✓ Multi-language                                                                                                                                              |
+| -                                                       | ✓ Dark/Light Mode 🌓                                                                                                                                          |
+| -                                                       | ✓ TypeScript version                                                                                                                                          |
+| -                                                       | ✓ 6+ color Options                                                                                                                                            |
+| -                                                       | ✓ RTL                                                                                                                                                         |
+| -                                                       | ✓ [More components](https://mantisdashboard.io/angular/default/components/basic/alert)                                                                        |
 | ✓ MIT License                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) |
 
 ## Why Mantis?
@@ -93,7 +93,7 @@ yarn start
 ## Technology Stack
 
 - Bootstrap 5
-- Angular 17
+- Angular 19
 
 ## Author
 
