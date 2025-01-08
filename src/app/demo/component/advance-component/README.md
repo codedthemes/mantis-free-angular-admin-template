@@ -1,32 +1,47 @@
-# Admin Panel Demo
+**Note:** *This README file is maintained to ensure the product structure aligns with the Pro version, making migration to Pro seamless when you choose to upgrade. This alignment aims to provide a smoother experience during the upgrade, especially regarding directory structure. You may notice these files and folders appearing throughout the project where they are part of the Pro version. While this might feel slightly inconvenient, it is intended to simplify your migration process and provide assistance. If these files are unnecessary for your use case, you can easily remove them.*
 
-This is a demo of the admin panel for the CodedThemes Angular 19 Admin Template.
+Please continue reading below to explore the features of the Pro version:
 
-The demo is a fully functional admin panel that showcases the features of the template. It includes a variety of pages and components, including:
+# Mantis Admin Panel - Unlock Premium Features with the Pro Version
 
-- Dashboard
-- Users
-- Products
-- Settings
-- Profile
-- Login
-- Register
-- Forgot Password
+Elevate your project with the Pro Version of the <b>Mantis Admin Panel!</b> Built to cater to modern web applications, the Pro version is loaded with advanced features, intuitive design elements, and dynamic tools that ensure seamless functionality.
 
-The demo also includes a variety of custom components, including:
+This page (folder) is a sneak peek into the premium features available in <b>version 2.0.0</b>. Upgrade to the Pro version to unlock exclusive pages and components that will take your project to the next level.
 
-- Sidebar
-- Navbar
-- Breadcrumbs
-- Cards
-- Tables
-- Forms
-- Charts
-- Maps
-- Notifications
+## Included in the Pro Version:
 
-The demo is built using the latest version of Angular and is fully responsive, meaning it will work on a variety of devices and screen sizes.
+[🚀 Dashboards](https://mantisdashboard.io/angular/default/dashboard/default) : Advanced dashboards with real-time insights and data visualizations for actionable metrics.
 
-## Running the Demo
+[📦 Widgets](https://mantisdashboard.io/angular/default/widget/statistics) : A curated library of pre-built widgets for enhanced functionality and faster development.
 
-To run the demo, simply clone the repository and run `npm install` followed by `ng serve`. The demo will be available at `http://localhost:4200/`.
+[⚙️ Admin Panel](https://mantisdashboard.io/angular/default/online-course/dashboard) : Fully responsive, user-friendly admin panels for efficient and seamless management.
+
+[🔧 Components](https://mantisdashboard.io/angular/default/components/basic/button) : A rich collection of reusable and customizable UI components.
+
+[🚀 Advanced Components](https://mantisdashboard.io/angular/default/components/advance/sweet-alert) : Sophisticated and innovative tools to enhance the overall design and functionality of your application.
+
+[📝 Forms](https://mantisdashboard.io/angular/default/form/form-basic) : Dynamic and customizable forms with advanced validation features for a smooth user experience.
+
+[📊 Tables](https://mantisdashboard.io/angular/default/bootstrap-table/basic-table) : Structured, interactive tables with sorting, filtering, and pagination options.
+
+[📈 Charts](https://mantisdashboard.io/angular/default/apex-chart) : Beautifully designed charts powered by modern data visualization libraries.
+
+[🔒 Authentication](https://codedthemes.com/demos/admin-templates/gradient-able/angular/stage/auth/register) : Secure pages for login, registration, and password recovery, ensuring robust user management.
+
+[🛒 E-commerce App](https://mantisdashboard.io/angular/default/e-commerce/product) : A complete e-commerce management system for handling products, inventory, and transactions.
+
+[💬 Chat Messages](https://mantisdashboard.io/angular/default/chat) : An integrated chat system to enhance communication within your application.
+
+[👤 User Profile](https://mantisdashboard.io/angular/default/user/user-profile) : A sleek and customizable user profile page for managing user details and settings.
+
+## Why Upgrade to the Pro Version?
+
+🚀 <b>Advanced Features</b> : Access premium components and tools designed for modern, high-end projects. <br/><br/>
+⚡ <b>Faster Development</b> : Pre-designed pages, widgets, and features help you save time and effort. <br/><br/>
+📱 <b>Fully Responsive Design</b> : Enjoy a flawless experience across desktops, tablets, and smartphones. <br/><br/>
+🛠 <b>Developer-Friendly</b> : Modular code, clear documentation, and well-structured components make customization a breeze. <br/><br/>
+🎨 <b>Customization-Ready</b> : Personalize every aspect of your project with ease to match your branding needs.
+
+## Get Started with the Pro Version!
+
+👉 [Explore the Pro version now](https://codedthemes.com/item/mantis-angular-admin-template/) - and supercharge your development experience!
