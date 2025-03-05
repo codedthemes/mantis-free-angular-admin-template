@@ -25,6 +25,7 @@ Mantis has Ant Design principal on top of the Material UI React component librar
 - [Documentation](#documentation)
 - [Browser support](#browser-support)
 - [Technology Stack](#technology-stack)
+- [Mantis Figma UI Kit](#mantis-figma-ui-kit)
 - [Other Technologies](#other-technologies)
 - 💰[Save more with Big Bundle](#save-more-with-big-bundle)💰
 - [More Angular Dashboard Templates](#more-angular-dashboard-templates)
@@ -100,6 +101,16 @@ The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) o
 
 - Bootstrap 5
 - Angular 19
+
+## Mantis Figma UI Kit
+<div>
+  <a href="https://codedthemes.com/item/berry-free-figma-ui-kit/">
+    <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Free_Mantis.png" width="450" alt="Figma Free">
+  </a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://codedthemes.com/item/berry-figma-ui-kit/">
+    <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Pro_Mantis.png" width="450" alt="Figma Pro">
+  </a>
+</div>
 
 ## Other Technologies 
 | Technology | Free | Pro |
