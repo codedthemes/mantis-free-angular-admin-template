@@ -3,14 +3,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/master/LICENSE)
 [![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/mantis-free-angular-admin-template)](https://github.com/codedthemes/mantis-free-angular-admin-template/)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?style=flat-square&logo=github)](https://codedthemes.com/item/mantis-angular-free-admin-template/)
+[![Join Discord](https://img.shields.io/badge/Join-Discord-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.com/invite/p2E2WhCb6s)
 
-Mantis is a free angular admin dashboard template built with Angular and latest Bootstrap 5. It is meant to provide the best possible User Experience with highly customizable feature-rich pages. It is a complete Dashboard Template that has easy and intuitive responsive design whether it is viewed on retina screens or laptops.
+Mantis is a free Angular admin dashboard template built with Angular and latest Bootstrap 5. It is meant to provide the best possible User Experience with highly customizable feature-rich pages. It is a complete Dashboard Template that has easy and intuitive responsive design whether it is viewed on retina screens or laptops.
 
 ### Name Derived From Nature
 
-Mantis Logo is inspired from the insect name - 'Mantises' as they have triangular heads with flexible Necks. Also, the name is derived from two popular UI frameworks, Material UI and Ant Design (M-Ant-is).
+Mantis Logo is inspired from the insect name - 'Mantises' as they have triangular heads with flexible Necks. Also, the name is derived from two popular UI frameworks, Bootstrap and Ant Design (M-Ant-is).
 
-Mantis has Ant Design principal on top of the Material UI React component library.
 
 ✨ Support us! If you like this theme, click the ⭐ (Top right) and let it shine
 
@@ -60,7 +61,7 @@ yarn start
 
 - Mantis Free 
     - [Live Preview](https://mantisdashboard.io/angular/free/) 
-    - [Download](https://github.com/codedthemes/mantis-free-angular-admin-template)
+    - [Download](https://codedthemes.com/item/mantis-angular-free-admin-template/)
 - Mantis Pro 
     - [Live Preview](https://mantisdashboard.io/angular/default) 
     - [Download](https://codedthemes.com/item/mantis-angular-admin-template/)
@@ -88,7 +89,7 @@ The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) o
 | -                                                     | ✓ 6+ color Options           |
 | -                                                     | ✓ RTL                                                                                                                                                          |
 | -                                                     | ✓ [More components](https://mantisdashboard.io/angular/default/components/basic/alert)                                                                                     |
-| ✓ MIT License                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) |
+| ✓ [MIT License](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/master/LICENSE)                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) |
 
 ## Documentation
 
@@ -127,9 +128,9 @@ The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) o
 
 | Dashboard | FREE | PRO | 
 | ----- | ---- | ---- |
-| <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/logos/Berry%20with%20name.png"  height="30" style="display:inline-block; vertical-align:middle;"> | [**Free**](https://codedthemes.com/item/berry-mui-free-react-admin-template/) | [**Pro**](https://codedthemes.com/item/berry-material-react-admin-template/)</span>|
-| <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/logos/Datta%20with%20name.png" height="30" style="display:inline-block; vertical-align:middle;">  | [**Free**](https://codedthemes.com/item/datta-able-bootstrap-lite/) | [**Pro**](https://codedthemes.com/item/datta-able-bootstrap-admin-template/)</span>|
-| <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/logos/Gradient%20with%20name.png" height="30" style="display:inline-block; vertical-align:middle;"> | [**Free**](https://codedthemes.com/item/gradient-able-bootstrap-lite/) | [**Pro**](https://codedthemes.com/item/gradient-able-admin-template/)</span>|
+| <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/logos/Berry%20with%20name.png"  height="30" style="display:inline-block; vertical-align:middle;"> | [**Free**](https://codedthemes.com/item/berry-angular-free-admin-template/) | [**Pro**](https://codedthemes.com/item/berry-angular-admin-dashboard-template/)</span>|
+| <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/logos/Datta%20with%20name.png" height="30" style="display:inline-block; vertical-align:middle;">  | [**Free**](https://codedthemes.com/item/datta-able-angular-lite/) | [**Pro**](https://codedthemes.com/item/datta-able-angular/)</span>|
+| <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/logos/Gradient%20with%20name.png" height="30" style="display:inline-block; vertical-align:middle;"> | [**Free**](https://codedthemes.com/item/gradient-able-angular-free-admin-template/) | [**Pro**](https://codedthemes.com/item/gradient-able-angular-admin-template/)</span>|
 
 ## Issues
 
