@@ -5,7 +5,7 @@
     </a>
   </li>
   <li class="dropdown pc-h-item" ngbDropdown>
-    <a class="pc-head-link dropdown-toggle arrow-none me-0 bg-gray-200" data-bs-toggle="dropdown" ngbDropdownToggle>
+    <a href="javascript:" class="pc-head-link dropdown-toggle arrow-none me-0 bg-gray-200" data-bs-toggle="dropdown" ngbDropdownToggle>
       <i antIcon type="bell" theme="outline"></i>
       <span class="badge bg-primary pc-h-badge">3</span>
     </a>
@@ -90,7 +90,7 @@
     </div>
   </li>
   <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
-    <a class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
+    <a href="javascript:" class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
       <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar me-2" />
       <span class="f-w-600">John Doe</span>
     </a>
@@ -116,18 +116,12 @@
           <ng-template ngbNavContent>
             @for (task of profile; track task) {
               <div>
-                <a class="dropdown-item">
+                <a href="javascript:" class="dropdown-item">
                   <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
                   <span>{{ task.title }}</span>
                 </a>
               </div>
             }
-            <div>
-              <a class="dropdown-item">
-                <i class="text-muted" antIcon theme="outline" type="logout"></i>
-                <span>Logout</span>
-              </a>
-            </div>
           </ng-template>
         </li>
         <li ngbNavItem="2">
@@ -138,7 +132,7 @@
           <ng-template ngbNavContent>
             @for (task of setting; track task) {
               <div>
-                <a class="dropdown-item">
+                <a href="javascript:" class="dropdown-item">
                   <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
                   <span>{{ task.title }}</span>
                 </a>
