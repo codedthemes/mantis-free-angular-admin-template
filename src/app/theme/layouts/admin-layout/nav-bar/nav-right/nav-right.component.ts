@@ -83,6 +83,10 @@ export class NavRightComponent {
     {
       icon: 'wallet',
       title: 'Billing'
+    },
+    {
+      icon: 'logout',
+      title: 'Logout'
     }
   ];
 

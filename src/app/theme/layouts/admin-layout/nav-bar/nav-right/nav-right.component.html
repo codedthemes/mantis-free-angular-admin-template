@@ -5,7 +5,7 @@
     </a>
   </li>
   <li class="dropdown pc-h-item" ngbDropdown>
-    <a class="pc-head-link dropdown-toggle arrow-none me-0 bg-gray-200" data-bs-toggle="dropdown" ngbDropdownToggle>
+    <a href="javascript:" class="pc-head-link dropdown-toggle arrow-none me-0 bg-gray-200" data-bs-toggle="dropdown" ngbDropdownToggle>
       <i antIcon type="bell" theme="outline"></i>
       <span class="badge bg-primary pc-h-badge">3</span>
     </a>
@@ -14,9 +14,9 @@
         <h5 class="m-0">Notification</h5>
         <a class="bg-transparent"><i class="text-success d-flex f-20" antIcon theme="outline" type="check-circle"></i></a>
       </div>
-      <div class="dropdown-divider"></div>
-      <ng-scrollbar style="min-height: 300px" visibility="hover">
-        <div class="dropdown-header px-0 text-wrap header-notification-scroll">
+      <div class="dropdown-divider mb-0"></div>
+      <ng-scrollbar style="min-height: 280px" visibility="hover">
+        <div class="dropdown-header p-0 text-wrap header-notification-scroll">
           <div class="list-group list-group-flush w-100">
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
@@ -83,14 +83,14 @@
           </div>
         </div>
       </ng-scrollbar>
-      <div class="dropdown-divider"></div>
+      <div class="dropdown-divider mt-0"></div>
       <div class="text-center py-2">
-        <a class="link-primary">View all</a>
+        <a href="javascript:" class="link-primary">View all</a>
       </div>
     </div>
   </li>
   <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
-    <a class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
+    <a href="javascript:" class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
       <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar me-2" />
       <span class="f-w-600">John Doe</span>
     </a>
@@ -116,18 +116,12 @@
           <ng-template ngbNavContent>
             @for (task of profile; track task) {
               <div>
-                <a class="dropdown-item">
+                <a href="javascript:" class="dropdown-item">
                   <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
                   <span>{{ task.title }}</span>
                 </a>
               </div>
             }
-            <div>
-              <a class="dropdown-item">
-                <i class="text-muted" antIcon theme="outline" type="logout"></i>
-                <span>Logout</span>
-              </a>
-            </div>
           </ng-template>
         </li>
         <li ngbNavItem="2">
@@ -138,7 +132,7 @@
           <ng-template ngbNavContent>
             @for (task of setting; track task) {
               <div>
-                <a class="dropdown-item">
+                <a href="javascript:" class="dropdown-item">
                   <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
                   <span>{{ task.title }}</span>
                 </a>

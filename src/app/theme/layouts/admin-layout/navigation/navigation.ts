@@ -87,8 +87,8 @@ export const NavigationItems: NavigationItem[] = [
         icon: 'bg-colors'
       },
       {
-        id: 'tabler',
-        title: 'Tabler',
+        id: 'ant-icons',
+        title: 'Ant Icons',
         type: 'item',
         classes: 'nav-item',
         url: 'https://ant.design/components/icon',

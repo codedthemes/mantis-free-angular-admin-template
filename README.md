@@ -101,7 +101,7 @@ The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) o
 ## Technology Stack
 
 - Bootstrap 5
-- Angular 19
+- Angular 20
 
 ## Mantis Figma UI Kit
 <div>
