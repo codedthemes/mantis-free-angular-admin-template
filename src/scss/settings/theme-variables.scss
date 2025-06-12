@@ -24,10 +24,6 @@
 
   // card
   --pc-card-box-shadow: none;
-
-  // horizontal menu
-  --pc-header-submenu-background: #{$white};
-  --pc-header-submenu-color: #{$gray-600};
 }
 
 $header-height: 60px;
@@ -36,9 +32,6 @@ $sidebar-collapsed-width: 60px;
 $sidebar-collapsed-active-width: 300px;
 $sidebar-tab-width: 75px;
 $sidebar-tab-navbar-width: 320px;
-
-// horizontal menu
-$topbar-height: 60px;
 
 $soft-bg-level: -90%;
 
