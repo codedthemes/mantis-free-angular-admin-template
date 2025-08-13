@@ -1,4 +1,4 @@
-# Mantis Free Angular Bootstrap Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20Mantis%20Angular%20-%20The%20most%20Beautiful%20Bootstrap%20Designed%20Admin%20Dashboard%20Template%20&url=https://mantisdashboard.io&via=codedthemes&hashtags=angular,webdev,developers,javascript)
+# Mantis Free Angular Bootstrap Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20Mantis%20Angular%20-%20The%20most%20Beautiful%20Bootstrap%20Designed%20Admin%20Dashboard%20Template%20&url=https://mantisdashboard.com&via=codedthemes&hashtags=angular,webdev,developers,javascript)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/master/LICENSE)
@@ -60,10 +60,10 @@ yarn start
 ## Download
 
 - Mantis Free 
-    - [Live Preview](https://mantisdashboard.io/angular/free/) 
+    - [Live Preview](https://mantisdashboard.com/angular/free/) 
     - [Download](https://codedthemes.com/item/mantis-angular-free-admin-template/)
 - Mantis Pro 
-    - [Live Preview](https://mantisdashboard.io/angular/default) 
+    - [Live Preview](https://mantisdashboard.com/angular/default) 
     - [Download](https://codedthemes.com/item/mantis-angular-admin-template/)
       
 ## Why Mantis? 
@@ -80,7 +80,7 @@ Mantis offers everything you need to create dashboards. We have included the fol
 ## What's included in Premium Version?
 The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) of Mantis Angular Dashboard template contains features like TypeScript, Apps, Authentication Methods (i.e. JWT), Advance Components, Form Plugins, Layouts, Widgets, and many more.
 
-| [Mantis Free](https://mantisdashboard.io/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/) |
+| [Mantis Free](https://mantisdashboard.com/angular/free/) | [Mantis](https://codedthemes.com/item/mantis-angular-admin-template/) |
 | ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **9** Demo pages                                      | **45+** demo pages                                                                                                                                             |
 | -                                                     | ✓ Multi-language                                                                                                                                               |
@@ -88,7 +88,7 @@ The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) o
 | -                                                     | ✓ TypeScript version                                                                                                                                           |
 | -                                                     | ✓ 6+ color Options           |
 | -                                                     | ✓ RTL                                                                                                                                                          |
-| -                                                     | ✓ [More components](https://mantisdashboard.io/angular/default/components/basic/alert)                                                                                     |
+| -                                                     | ✓ [More components](https://mantisdashboard.com/angular/default/components/basic/alert)                                                                                     |
 | ✓ [MIT License](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/master/LICENSE)                                           | ✓ [Pro License](https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium) |
 
 ## Documentation

@@ -10,29 +10,29 @@ This page (folder) is a sneak peek into the premium features available in <b>ver
 
 ## Included in the Pro Version:
 
-[🚀 Dashboards](https://mantisdashboard.io/angular/default/dashboard/default) : Advanced dashboards with real-time insights and data visualizations for actionable metrics.
+[🚀 Dashboards](https://mantisdashboard.com/angular/default/dashboard/default) : Advanced dashboards with real-time insights and data visualizations for actionable metrics.
 
-[📦 Widgets](https://mantisdashboard.io/angular/default/widget/statistics) : A curated library of pre-built widgets for enhanced functionality and faster development.
+[📦 Widgets](https://mantisdashboard.com/angular/default/widget/statistics) : A curated library of pre-built widgets for enhanced functionality and faster development.
 
-[⚙️ Admin Panel](https://mantisdashboard.io/angular/default/online-course/dashboard) : Fully responsive, user-friendly admin panels for efficient and seamless management.
+[⚙️ Admin Panel](https://mantisdashboard.com/angular/default/online-course/dashboard) : Fully responsive, user-friendly admin panels for efficient and seamless management.
 
-[🔧 Components](https://mantisdashboard.io/angular/default/components/basic/button) : A rich collection of reusable and customizable UI components.
+[🔧 Components](https://mantisdashboard.com/angular/default/components/basic/button) : A rich collection of reusable and customizable UI components.
 
-[🚀 Advanced Components](https://mantisdashboard.io/angular/default/components/advance/sweet-alert) : Sophisticated and innovative tools to enhance the overall design and functionality of your application.
+[🚀 Advanced Components](https://mantisdashboard.com/angular/default/components/advance/sweet-alert) : Sophisticated and innovative tools to enhance the overall design and functionality of your application.
 
-[📝 Forms](https://mantisdashboard.io/angular/default/form/form-basic) : Dynamic and customizable forms with advanced validation features for a smooth user experience.
+[📝 Forms](https://mantisdashboard.com/angular/default/form/form-basic) : Dynamic and customizable forms with advanced validation features for a smooth user experience.
 
-[📊 Tables](https://mantisdashboard.io/angular/default/bootstrap-table/basic-table) : Structured, interactive tables with sorting, filtering, and pagination options.
+[📊 Tables](https://mantisdashboard.com/angular/default/bootstrap-table/basic-table) : Structured, interactive tables with sorting, filtering, and pagination options.
 
-[📈 Charts](https://mantisdashboard.io/angular/default/apex-chart) : Beautifully designed charts powered by modern data visualization libraries.
+[📈 Charts](https://mantisdashboard.com/angular/default/apex-chart) : Beautifully designed charts powered by modern data visualization libraries.
 
 [🔒 Authentication](https://codedthemes.com/demos/admin-templates/gradient-able/angular/stage/auth/register) : Secure pages for login, registration, and password recovery, ensuring robust user management.
 
-[🛒 E-commerce App](https://mantisdashboard.io/angular/default/e-commerce/product) : A complete e-commerce management system for handling products, inventory, and transactions.
+[🛒 E-commerce App](https://mantisdashboard.com/angular/default/e-commerce/product) : A complete e-commerce management system for handling products, inventory, and transactions.
 
-[💬 Chat Messages](https://mantisdashboard.io/angular/default/chat) : An integrated chat system to enhance communication within your application.
+[💬 Chat Messages](https://mantisdashboard.com/angular/default/chat) : An integrated chat system to enhance communication within your application.
 
-[👤 User Profile](https://mantisdashboard.io/angular/default/user/user-profile) : A sleek and customizable user profile page for managing user details and settings.
+[👤 User Profile](https://mantisdashboard.com/angular/default/user/user-profile) : A sleek and customizable user profile page for managing user details and settings.
 
 ## Why Upgrade to the Pro Version?
 
