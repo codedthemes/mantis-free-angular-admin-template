@@ -6,11 +6,11 @@
 [![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?style=flat-square&logo=github)](https://codedthemes.com/item/mantis-angular-free-admin-template/)
 [![Join Discord](https://img.shields.io/badge/Join-Discord-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.com/invite/p2E2WhCb6s)
 
-Mantis is a free Angular admin dashboard template built with Angular and latest Bootstrap 5. It is meant to provide the best possible User Experience with highly customizable feature-rich pages. It is a complete Dashboard Template that has easy and intuitive responsive design whether it is viewed on retina screens or laptops.
+Mantis is a free Angular admin dashboard template built with Angular and the latest Bootstrap 5. It is meant to provide the best possible User Experience with highly customizable, feature-rich pages. It is a comprehensive dashboard template featuring an easy-to-use and intuitive responsive design, suitable for viewing on both retina screens and laptops.
 
 ### Name Derived From Nature
 
-Mantis Logo is inspired from the insect name - 'Mantises' as they have triangular heads with flexible Necks. Also, the name is derived from two popular UI frameworks, Bootstrap and Ant Design (M-Ant-is).
+The Mantis Logo is inspired by the insect name 'Mantises', as they have triangular heads with flexible Necks. Also, the name is derived from two popular UI frameworks, Material UI and Ant Design (M-Ant-is).
 
 
 ✨ Support us! If you like this theme, click the ⭐ (Top right) and let it shine
@@ -39,7 +39,7 @@ Mantis Logo is inspired from the insect name - 'Mantises' as they have triangula
 
 ## Getting Started
 
-1. Clone from Github
+1. Clone from GitHub
 
 ```
 git clone https://github.com/codedthemes/mantis-free-angular-admin-template.git
@@ -72,7 +72,7 @@ Mantis offers everything you need to create dashboards. We have included the fol
 
 - Modern aesthetics UI design
 - Bootstrap components
-- Fully Responsive, all modern browser supported
+- Fully Responsive, all modern browsers supported
 - Easy to use code structure
 - Flexible & High-Performance code
 - Easy Documentation Guide
