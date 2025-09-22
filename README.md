@@ -10,7 +10,7 @@ Mantis is a free Angular admin dashboard template built with Angular and the lat
 
 ### Name Derived From Nature
 
-The Mantis Logo is inspired by the insect name 'Mantises', as they have triangular heads with flexible Necks. Also, the name is derived from two popular UI frameworks, Material UI and Ant Design (M-Ant-is).
+The Mantis Logo is inspired by the insect name 'Mantises', as they have triangular heads with flexible Necks. Also, the name is derived from two popular design systems, Material and Ant Design (M-Ant-is).
 
 
 ✨ Support us! If you like this theme, click the ⭐ (Top right) and let it shine
