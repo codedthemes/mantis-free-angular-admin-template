@@ -1,7 +1,6 @@
 <ul class="list-unstyled">
   <li class="pc-h-item pc-sidebar-collapse">
     <a
-      href="javascript:"
       title="click to menu collapse"
       class="pc-head-link ms-0"
       [ngClass]="{ on: navCollapsed() }"
@@ -16,12 +15,12 @@
     </a>
   </li>
   <li class="pc-h-item pc-sidebar-popup">
-    <a href="javascript:" class="pc-head-link ms-0" id="mobile-collapse1" (click)="this.NavCollapsedMob.emit()">
+    <a class="pc-head-link ms-0" id="mobile-collapse1" (click)="navCollapsedMob()">
       <i antIcon type="menu-fold" theme="outline"></i>
     </a>
   </li>
   <li class="dropdown pc-h-item d-inline-flex d-md-none" ngbDropdown>
-    <a href="javascript:" class="pc-head-link dropdown-toggle arrow-none m-0" ngbDropdownToggle>
+    <a class="pc-head-link dropdown-toggle arrow-none m-0" ngbDropdownToggle>
       <i class="ti ti-search"></i>
     </a>
     <div class="dropdown-menu dropdowm-menu-end pc-h-dropdown drp-search" ngbDropdownMenu>

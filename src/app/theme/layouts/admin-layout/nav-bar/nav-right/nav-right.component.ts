@@ -1,11 +1,14 @@
 // angular import
-import { Component, inject, input, output } from '@angular/core';
+import { Component, output, inject, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 // project import
+import { SharedModule } from 'src/app/theme/shared/shared.module';
+
+// third party
 
 // icon
-import { IconService, IconDirective } from '@ant-design/icons-angular';
+import { IconService } from '@ant-design/icons-angular';
 import {
   BellOutline,
   SettingOutline,
@@ -25,23 +28,24 @@ import {
   ArrowRightOutline,
   GithubOutline
 } from '@ant-design/icons-angular/icons';
-import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgScrollbarModule } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-nav-right',
-  imports: [IconDirective, RouterModule, NgScrollbarModule, NgbNavModule, NgbDropdownModule],
+  imports: [SharedModule, RouterModule],
   templateUrl: './nav-right.component.html',
   styleUrls: ['./nav-right.component.scss']
 })
 export class NavRightComponent {
   private iconService = inject(IconService);
 
+  // public props
   styleSelectorToggle = input<boolean>();
-  Customize = output();
+  readonly Customize = output();
   windowWidth: number;
   screenFull: boolean = true;
+  direction: string = 'ltr';
 
+  // constructor
   constructor() {
     this.windowWidth = window.innerWidth;
     this.iconService.addIcon(
@@ -52,6 +56,7 @@ export class NavRightComponent {
         SettingOutline,
         PhoneOutline,
         LogoutOutline,
+        EditOutline,
         UserOutline,
         EditOutline,
         ProfileOutline,
