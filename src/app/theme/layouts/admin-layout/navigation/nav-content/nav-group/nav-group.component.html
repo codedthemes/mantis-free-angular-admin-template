@@ -1,10 +1,10 @@
-<li class="nav-item coded-menu-caption">
+<li class="nav-item coded-menu-caption" [ngClass]="item().classes">
   <label>{{ item().title }}</label>
 </li>
-@for (item of item().children; track item) {
-  @if (item.type === 'collapse') {
-    <app-nav-collapse [item]="item"></app-nav-collapse>
-  } @else if (item.type === 'item') {
-    <app-nav-item [item]="item"></app-nav-item>
+@for (items of item().children; track items) {
+  @if (items.type === 'collapse') {
+    <app-nav-collapse [item]="items" />
+  } @else if (items.type === 'item') {
+    <app-nav-item [item]="items" />
   }
 }
