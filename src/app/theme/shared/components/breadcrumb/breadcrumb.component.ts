@@ -39,7 +39,7 @@ export class BreadcrumbComponent {
   Component = input(false);
 
   navigations: NavigationItem[];
-  ComponentNavigations: NavigationItem[];
+  ComponentNavigations: NavigationItem[]=[];
   breadcrumbList: Array<string> = [];
   navigationList!: titleType[];
   componentList!: titleType[];
