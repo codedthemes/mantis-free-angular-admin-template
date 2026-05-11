@@ -1,8 +1,10 @@
+@use "sass:map";
 /**  =====================
       Generic-class css start
 ========================== **/
 /*====== Padding , Margin css starts ======*/
 $i: 0;
+
 @while $i<=50 {
   .p {
     &-#{$i} {
@@ -47,29 +49,38 @@ $i: 0;
       margin-right: #{$i}px;
     }
   }
+
   $i: $i + 5;
 }
+
 /*====== Padding , Margin css ends ======*/
 /*====== Font-size css starts ======*/
 $i: 6;
+
 @while $i<=80 {
   .f-#{$i} {
     font-size: #{$i}px;
   }
+
   $i: $i + 2;
 }
+
 /*====== Font-size css ends ======*/
 /*====== Font-weight css starts ======*/
 $i: 100;
+
 @while $i<=900 {
   .f-w-#{$i} {
     font-weight: #{$i};
   }
+
   $i: $i + 100;
 }
+
 /*====== Font-weight css ends ======*/
 /*====== width, Height css starts ======*/
 $i: 10;
+
 @while $i<=150 {
   .wid-#{$i} {
     width: #{$i}px;
@@ -78,26 +89,33 @@ $i: 10;
   .hei-#{$i} {
     height: #{$i}px;
   }
+
   $i: $i + 5;
 }
+
 /*====== width, Height css ends ======*/
 /*====== border-width css starts ======*/
 $i: 1;
+
 @while $i<=8 {
   .b-wid-#{$i} {
     border-width: #{$i}px;
   }
+
   $i: $i + 1;
 }
+
 /*====== border-width css ends ======*/
 /*====== background starts ======*/
 
 .text-header {
   color: var(--bs-heading-color);
 }
+
 .bg-body {
   background: var(--bs-body-bg);
 }
+
 @each $color, $value in $theme-colors {
   .bg-light-#{$color} {
     background: shift-color($value, $soft-bg-level);
@@ -114,10 +132,12 @@ $i: 1;
       background-color: $value;
     }
   }
+
   .text-hover-#{$color}:hover {
     color: $value !important;
   }
 }
+
 /*====== background ends ======*/
 /*====== border color css starts ======*/
 @each $color, $value in $theme-colors {
@@ -137,6 +157,7 @@ $i: 1;
     fill: $value;
   }
 }
+
 /*====== border color css ends ======*/
 /*====== text-color, background color css starts ======*/
 
@@ -146,8 +167,7 @@ $i: 1;
 
 /*====== more bootstrap colors start ======*/
 $more-colors: (
-  'blue': (
-    100: $blue-100,
+  'blue': (100: $blue-100,
     200: $blue-200,
     300: $blue-300,
     400: $blue-400,
@@ -155,10 +175,8 @@ $more-colors: (
     600: $blue-600,
     700: $blue-700,
     800: $blue-800,
-    900: $blue-900
-  ),
-  'gray': (
-    100: $gray-100,
+    900: $blue-900 ),
+  'gray': (100: $gray-100,
     200: $gray-200,
     300: $gray-300,
     400: $gray-400,
@@ -166,19 +184,23 @@ $more-colors: (
     600: $gray-600,
     700: $gray-700,
     800: $gray-800,
-    900: $gray-900
-  )
+    900: $gray-900 )
 );
+
 @each $name, $value in $more-colors {
   $i: 100;
+
   @while $i<=900 {
     .bg-#{$name}-#{$i} {
-      background: map-get($value, $i);
+      background: map.get($value, $i);
     }
+
     .text-#{$name}-#{$i} {
-      color: map-get($value, $i);
+      color: map.get($value, $i);
     }
+
     $i: $i + 100;
   }
 }
+
 /*====== more bootstrap colors end ======*/
