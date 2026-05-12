@@ -1,8 +1,6 @@
-// Angular Import
-import { Component, Input, inject, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// Angular import
+import { Component, input, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, Event } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 // project import
 import { NavigationItem, NavigationItems } from 'src/app/theme/layouts/admin-layout/navigation/navigation';
@@ -12,8 +10,7 @@ import { IconService } from '@ant-design/icons-angular';
 import { GlobalOutline, NodeExpandOutline } from '@ant-design/icons-angular/icons';
 
 interface titleType {
-  // eslint-disable-next-line
-  url: any;
+  url: string | boolean | undefined;
   title: string;
   breadcrumbs: unknown;
   type: string;
@@ -24,22 +21,22 @@ interface titleType {
 
 @Component({
   selector: 'app-breadcrumb',
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './breadcrumb.component.html',
-  styleUrls: ['./breadcrumb.component.scss']
+  styleUrl: './breadcrumb.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BreadcrumbComponent {
   private route = inject(Router);
-  private titleService = inject(Title);
   private iconService = inject(IconService);
+  private cdr = inject(ChangeDetectorRef);
 
   // public props
-  @Input() type: string;
-  dashboard = input(true);
-  Component = input(false);
+  type = input<string>('theme1');
+  readonly dashboard = input(true);
+  readonly Component = input(false);
 
   navigations: NavigationItem[];
-  ComponentNavigations: NavigationItem[]=[];
   breadcrumbList: Array<string> = [];
   navigationList!: titleType[];
   componentList!: titleType[];
@@ -47,55 +44,61 @@ export class BreadcrumbComponent {
   // constructor
   constructor() {
     this.navigations = NavigationItems;
-    this.type = 'theme1';
     this.setBreadcrumb();
     this.iconService.addIcon(...[GlobalOutline, NodeExpandOutline]);
   }
 
   // public method
   setBreadcrumb() {
+    // Process the current route immediately on initial load
+    this.updateBreadcrumb(this.route.url);
+
+    // Subscribe to future navigation events
     this.route.events.subscribe((router: Event) => {
       if (router instanceof NavigationEnd) {
-        const activeLink = router.url;
-        const breadcrumbList = this.filterNavigation(this.navigations, activeLink);
-        this.navigationList = breadcrumbList;
-        const title = breadcrumbList[breadcrumbList.length - 1]?.title || 'Welcome';
-        this.titleService.setTitle(title + ' | Mantis  Angular Admin Template');
+        this.updateBreadcrumb(router.url);
       }
     });
   }
 
-  filterNavigation(navItems: NavigationItem[], activeLink: string): titleType[] {
+  updateBreadcrumb(activeLink: string) {
+    const activeItem = this.filterNavigation(this.navigations, activeLink);
+
+    // Clear previous values to avoid showing stale data
+    this.navigationList = [];
+
+    // Prioritize componentItem over activeItem when both exist
+    // Component navigation has richer data (description, path, link)
+    if (activeItem) {
+      this.navigationList = [activeItem];
+    }
+    this.cdr.markForCheck();
+  }
+
+  filterNavigation(navItems: NavigationItem[], activeLink: string): titleType | null {
     for (const navItem of navItems) {
       if (navItem.type === 'item' && 'url' in navItem && navItem.url === activeLink) {
-        return [
-          {
-            url: 'url' in navItem ? navItem.url : false,
-            title: navItem.title,
-            link: navItem.link,
-            description: navItem.description,
-            path: navItem.path,
-            breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
-            type: navItem.type
-          }
-        ];
+        return {
+          url: navItem.url || true,
+          title: navItem.title,
+          link: navItem.link,
+          description: navItem.description,
+          path: navItem.path,
+          breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
+          type: navItem.type
+        };
       }
       if ((navItem.type === 'group' || navItem.type === 'collapse') && 'children' in navItem) {
-        const breadcrumbList = this.filterNavigation(navItem.children!, activeLink);
-        if (breadcrumbList.length > 0) {
-          breadcrumbList.unshift({
-            url: 'url' in navItem ? navItem.url : false,
-            title: navItem.title,
-            link: navItem.link,
-            path: navItem.path,
-            description: navItem.description,
-            breadcrumbs: 'breadcrumbs' in navItem ? navItem.breadcrumbs : true,
-            type: navItem.type
-          });
-          return breadcrumbList;
+        const activeItem = this.filterNavigation(navItem.children!, activeLink);
+        if (activeItem) {
+          return activeItem; // Return the child if found
         }
       }
     }
-    return [];
+    return null; // Return null if no active item matches
+  }
+
+  isLink(url: string | boolean | undefined): url is string {
+    return typeof url === 'string';
   }
 }

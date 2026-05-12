@@ -1,43 +1,38 @@
 @for (breadcrumb of navigationList; track breadcrumb; let last = $last) {
-  @if (last && breadcrumb.breadcrumbs !== false) {
-    <div class="page-header">
-      <div class="page-block">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item">
-                @if (type === 'theme2') {
-                  <a [routerLink]="['/dashboard/analytics/']" title="Home" class="home"><i class="feather icon-home"></i></a>
-                }
-                @if (type === 'theme1') {
-                  <a [routerLink]="['/dashboard/analytics/']" class="home">Home</a>
-                }
-              </li>
-              @for (breadcrumb of navigationList; track breadcrumb) {
-                @if (breadcrumb.url !== false) {
-                  <li class="breadcrumb-item">
-                    <a [routerLink]="breadcrumb.url" class="f-14 f-w-600">{{ breadcrumb.title }}</a>
-                  </li>
-                }
-                @if (breadcrumb.url === false && breadcrumb.type !== 'group') {
-                  <li class="breadcrumb-item">
-                    <a href="javascript:void(0)">{{ breadcrumb.title }}</a>
-                  </li>
-                }
-              }
-            </ul>
-          </div>
-          <div class="col-md-12">
-            <div class="page-header-title">
-              @for (breadcrumb of navigationList; track breadcrumb; let last = $last) {
-                @if (last) {
-                  <h2 class="mb-0 f-w-600 mt-2">{{ breadcrumb.title }}</h2>
-                }
-              }
-            </div>
-          </div>
+@if (last && breadcrumb.breadcrumbs !== false) {
+<div class="page-header">
+  <div class="page-block">
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/']" class="home">Home</a>
+          </li>
+          @for (breadcrumb of navigationList; track breadcrumb) {
+          @if (isLink(breadcrumb.url)) {
+          <li class="breadcrumb-item">
+            <a [routerLink]="breadcrumb.url" class="f-14 f-w-600">{{ breadcrumb.title }}</a>
+          </li>
+          }
+          @if (breadcrumb.url === true && breadcrumb.type !== 'group') {
+          <li class="breadcrumb-item">
+            <a href="javascript:void(0)">{{ breadcrumb.title }}</a>
+          </li>
+          }
+          }
+        </ul>
+      </div>
+      <div class="col-md-12">
+        <div class="page-header-title">
+          @for (breadcrumb of navigationList; track breadcrumb; let last = $last) {
+          @if (last) {
+          <h2 class="mb-0 f-w-600 mt-2">{{ breadcrumb.title }}</h2>
+          }
+          }
         </div>
       </div>
     </div>
-  }
+  </div>
+</div>
+}
 }
