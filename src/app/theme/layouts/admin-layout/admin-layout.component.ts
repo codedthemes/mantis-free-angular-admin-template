@@ -20,7 +20,7 @@ export class AdminLayout {
   private layoutState = inject(LayoutStateService);
 
   // public props
-  navCollapsed: boolean;
+  navCollapsed!: boolean;
   windowWidth: number;
 
   // Constructor
