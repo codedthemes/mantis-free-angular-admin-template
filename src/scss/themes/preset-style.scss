@@ -85,4 +85,12 @@
       }
     }
   }
+
+  ng-scrollbar {
+    --scrollbar-thumb-color: #{$gray-500};
+    .track-inner {
+      background: transparent;
+      --scrollbar-track-shape: 4px;
+    }
+  }
 }
