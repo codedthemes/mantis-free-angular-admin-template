@@ -1,3 +1,5 @@
+@use '../node_modules/bootstrap/scss/functions' as *;
+
 // =======================================
 //   List of variables for Preset color
 // =======================================
@@ -37,8 +39,6 @@ $blue-800: shade-color($blue, 60%);
 $blue-900: shade-color($blue, 80%);
 
 $preset-colors: (
-  preset-1: (
-    primary: #1890ff
-  )
+  preset-1: (primary: #1890ff)
 );
 $dark-bg-color: #121212;

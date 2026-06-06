@@ -1,11 +1,12 @@
 // Angular import
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // Project import
 import { NavigationItem } from '../../navigation';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
+import { LayoutStateService } from 'src/app/theme/shared/service/layout-state.service';
 
 @Component({
   selector: 'app-nav-item',
@@ -14,6 +15,9 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
   styleUrls: ['./nav-item.component.scss']
 })
 export class NavItemComponent {
+
+  private layoutState = inject(LayoutStateService);
+
   // public props
   readonly item = input.required<NavigationItem>();
 
@@ -47,7 +51,7 @@ export class NavItemComponent {
       }
     }
     if ((document.querySelector('app-navigation.pc-sidebar') as HTMLDivElement).classList.contains('mob-open')) {
-      (document.querySelector('app-navigation.pc-sidebar') as HTMLDivElement).classList.remove('mob-open');
+     this.layoutState.closeNavCollapsedMob(); 
     }
   }
 }
