@@ -15,15 +15,14 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "allowedCommonJsDependencies": [
               "bezier-easing",
               "apexcharts"
             ],
             "outputPath": {
-              "base": "dist",
-              "browser": ""
+              "base": "dist"
             },
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -40,14 +39,15 @@
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": [
-                ".",
+                "src",
                 "node_modules"
               ],
               "sass": {
                 "silenceDeprecations": [
-                  "color-functions",
+                  "import",
                   "global-builtin",
-                  "import"
+                  "color-functions",
+                  "if-function"
                 ]
               }
             }
@@ -82,7 +82,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "mantis-free-version:build:production"
@@ -94,7 +94,7 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
             "buildTarget": "mantis-free-version:build"
           }

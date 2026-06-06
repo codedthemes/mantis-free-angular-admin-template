@@ -32,9 +32,8 @@ The Mantis Logo is inspired by the insect name 'Mantises', as they have triangul
 - [More Angular Dashboard Templates](#more-angular-dashboard-templates)
 - [Issues?](#issues)
 - [License](#license)
-- [Contributor](#contributor)   
+- [Community and Support](#communtiy-and-support) 
 - [Useful Resources](#useful-resources)
-- [Community](#community)
 - [Follow us](#follow-us)
 
 ## Getting Started
@@ -101,17 +100,13 @@ The [Pro version](https://codedthemes.com/item/mantis-angular-admin-template/) o
 ## Technology Stack
 
 - Bootstrap 5
-- Angular 21
+- Angular 22
 
 ## Mantis Figma UI Kit
-<div>
-  <a href="https://codedthemes.com/item/mantis-free-figma-ui-kit/">
-    <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Free_Mantis.png" width="450" alt="Figma Free">
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://codedthemes.com/item/mantis-figma-ui-kit/">
-    <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Pro_Mantis.png" width="450" alt="Figma Pro">
-  </a>
-</div>
+
+ | FREE                                                                                                                                                                                                           | PRO                                                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="https://codedthemes.com/item/mantis-free-figma-ui-kit/" traget="_blank"><img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Free_Mantis.png" width="450" alt="Figma Free"></a> | <a href="https://codedthemes.com/item/mantis-figma-ui-kit/" traget="_blank"><img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Pro_Mantis.png" width="450" alt="Figma Pro"></a> |
 
 ## Other Technologies 
 | Technology | Free | Pro |
@@ -140,17 +135,11 @@ Please generate a [Github issue](https://github.com/codedthemes/mantis-free-angu
 - Licensed under [MIT](https://github.com/codedthemes/mantis-free-angular-admin-template/blob/master/LICENSE)
 - Copyright © [CodedThemes](https://codedthemes.com/)
 
-## Contributor
-
-**CodedThemes Team**
-- https://x.com/codedthemes
-- https://github.com/codedthemes
-
-**Rakesh Nakrani** 
-- https://x.com/rakesh_nakrani
-
-**Brijesh Dobariya**
-- https://x.com/dobaria_brijesh
+## Community and Support
+ 
+- **GitHub Discussion** - [Ask questions and share ideas](https://github.com/codedthemes/mantis-free-react-admin-template/discussions)
+- **X/Twitter** — [@codedthemes](https://x.com/codedthemes), [@rakesh_nakrani](https://x.com/rakesh_nakrani) [@dobaria_brijesh](https://x.com/dobaria_brijesh)
+- **Join Discord** – [Connect with the community](https://discord.com/invite/dW9cBZMJ)
 
 ## Useful Resources
 - [More Admin Templates From CodedThemes](https://codedthemes.com/item/category/admin-templates/)
@@ -159,11 +148,6 @@ Please generate a [Github issue](https://github.com/codedthemes/mantis-free-angu
 - [Figma UI Kits](https://codedthemes.com/item/category/templates/figma/)
 - [Affiliate Program](https://codedthemes.com/affiliate/)
 - [Blogs](https://blog.codedthemes.com/)
-
-## Community
-- 👥Follow [@codedthemes](https://x.com/codedthemes)
-- 🔗Join [Discord](https://discord.com/invite/p2E2WhCb6s)
-- 🔔Subscribe to [Codedtheme Blogs](https://blog.codedthemes.com/)
 
 ## Follow Us
 - [Twitter](https://twitter.com/codedthemes) 🐦
