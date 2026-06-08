@@ -1,5 +1,5 @@
 // Angular import
-import { Component, Input, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, input, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, Event } from '@angular/router';
 
 // Project import
@@ -10,7 +10,7 @@ import { IconService } from '@ant-design/icons-angular';
 import { GlobalOutline, NodeExpandOutline } from '@ant-design/icons-angular/icons';
 
 interface titleType {
-  url: string | undefined;
+  url: string | boolean | undefined;
   title: string;
   breadcrumbs: unknown;
   type: string;
@@ -31,10 +31,10 @@ export class BreadcrumbComponent {
   private iconService = inject(IconService);
   private cdr = inject(ChangeDetectorRef);
 
-  // Public props
-  @Input() type = 'theme1';
-  @Input() dashboard = true;
-  @Input() Component = false;
+  // public props
+  type = input<string>('theme1');
+  readonly dashboard = input(true);
+  readonly Component = input(false);
 
   navigations: NavigationItem[];
   breadcrumbList: Array<string> = [];
@@ -79,7 +79,7 @@ export class BreadcrumbComponent {
     for (const navItem of navItems) {
       if (navItem.type === 'item' && 'url' in navItem && navItem.url === activeLink) {
         return {
-          url: navItem.url,
+          url: navItem.url || true,
           title: navItem.title,
           link: navItem.link,
           description: navItem.description,
@@ -98,7 +98,7 @@ export class BreadcrumbComponent {
     return null; // Return null if no active item matches
   }
 
-  isLink(url: string | undefined): url is string {
+  isLink(url: string | boolean | undefined): url is string {
     return typeof url === 'string';
   }
 }

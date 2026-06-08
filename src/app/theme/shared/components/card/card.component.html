@@ -3,9 +3,9 @@
   <div class="card-header d-flex align-items-center justify-content-between" [ngClass]="headerClass()">
     <div>
       <h5>{{ cardTitle() }}</h5>
-      <ng-container *ngTemplateOutlet="headerTitleTemplate"></ng-container>
+      <ng-container *ngTemplateOutlet="headerTitleTemplate" />
     </div>
-    <ng-container *ngTemplateOutlet="headerOptionsTemplate"></ng-container>
+    <ng-container *ngTemplateOutlet="headerOptionsTemplate" />
   </div>
   }
   @if (showContent()) {

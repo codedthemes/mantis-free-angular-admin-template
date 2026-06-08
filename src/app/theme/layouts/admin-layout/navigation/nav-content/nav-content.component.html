@@ -4,7 +4,7 @@
     <ul class="nav coded-inner-navbar" (click)="fireOutClick()" (mouseleave)="navMob()">
       @for (item of navigations; track item) {
       @if (item.type === 'group') {
-      <app-nav-group [item]="item"></app-nav-group>
+      <app-nav-group [item]="item" />
       }
       }
     </ul>

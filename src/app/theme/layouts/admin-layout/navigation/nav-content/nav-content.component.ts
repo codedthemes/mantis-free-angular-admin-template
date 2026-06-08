@@ -1,6 +1,6 @@
 // Angular import
 import { Component, OnInit, inject, output } from '@angular/core';
-import { CommonModule, Location, LocationStrategy, DOCUMENT } from '@angular/common';
+import { CommonModule, Location, LocationStrategy } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // project import
@@ -31,7 +31,6 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
   styleUrls: ['./nav-content.component.scss']
 })
 export class NavContentComponent implements OnInit {
-  private document = inject<Document>(DOCUMENT);
   private location = inject(Location);
   private locationStrategy = inject(LocationStrategy);
   private iconService = inject(IconService);
@@ -69,7 +68,7 @@ export class NavContentComponent implements OnInit {
   // Life cycle events
   ngOnInit() {
     if (this.windowWidth < 1025) {
-      (this.document.querySelector('.coded-navbar') as HTMLDivElement)?.classList.add('menupos-static');
+      (document.querySelector('.coded-navbar') as HTMLDivElement)?.classList.add('menupos-static');
     }
   }
 
@@ -80,7 +79,7 @@ export class NavContentComponent implements OnInit {
       current_url = baseHref + this.location.path();
     }
     const link = "a.nav-link[ href='" + current_url + "' ]";
-    const ele = this.document.querySelector(link);
+    const ele = document.querySelector(link);
     if (ele !== null && ele !== undefined) {
       const parent = ele.parentElement;
       const up_parent = parent?.parentElement?.parentElement;
@@ -99,7 +98,7 @@ export class NavContentComponent implements OnInit {
   }
 
   navMob() {
-    if (this.windowWidth < 1025 && this.document.querySelector('app-navigation.coded-navbar')?.classList.contains('mob-open')) {
+    if (this.windowWidth < 1025 && document.querySelector('app-navigation.coded-navbar')?.classList.contains('mob-open')) {
       this.NavCollapsedMob.emit();
     }
   }

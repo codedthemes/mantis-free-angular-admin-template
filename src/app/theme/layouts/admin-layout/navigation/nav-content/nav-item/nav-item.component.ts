@@ -1,5 +1,5 @@
 // Angular import
-import { Component, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -15,11 +15,10 @@ import { LayoutStateService } from 'src/app/theme/shared/service/layout-state.se
   styleUrls: ['./nav-item.component.scss']
 })
 export class NavItemComponent {
-  // public props
-  @Input({ required: true }) item!: NavigationItem;
+  private layoutState = inject(LayoutStateService);
 
-  // eslint-disable-next-line @angular-eslint/prefer-inject
-  constructor(private layoutState: LayoutStateService) {}
+  // public props
+  readonly item = input.required<NavigationItem>();
 
   // public method
   closeOtherMenu(event: MouseEvent) {

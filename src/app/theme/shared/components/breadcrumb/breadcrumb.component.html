@@ -14,7 +14,7 @@
             <a [routerLink]="breadcrumb.url" class="f-14 f-w-600">{{ breadcrumb.title }}</a>
           </li>
           }
-          @if (!breadcrumb.url && breadcrumb.type !== 'group') {
+          @if (breadcrumb.url === true && breadcrumb.type !== 'group') {
           <li class="breadcrumb-item">
             <span class="f-14 f-w-600">{{ breadcrumb.title }}</span>
           </li>
