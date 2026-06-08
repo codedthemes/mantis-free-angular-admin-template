@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // =======================================
 //     List of variables for layout
 // =======================================
@@ -85,7 +87,7 @@ $success-bg-subtle: $green-100;
 $info-bg-subtle: $cyan-100;
 $warning-bg-subtle: $yellow-100;
 $danger-bg-subtle: $red-100;
-$light-bg-subtle: mix($gray-100, $white);
+$light-bg-subtle: color.mix($gray-100, $white);
 $dark-bg-subtle: $gray-400;
 
 $primary-border-subtle: $blue-200;
@@ -98,7 +100,5 @@ $light-border-subtle: $gray-200;
 $dark-border-subtle: $gray-500;
 
 $preset-colors: (
-  preset-1: (
-    primary: #1677ff
-  )
+  preset-1: (primary: #1677ff)
 );

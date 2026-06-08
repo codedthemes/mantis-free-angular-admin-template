@@ -15,11 +15,8 @@ import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
 export class MonthlyBarChartComponent implements OnInit {
   // public props
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ApexOptions>;
-
-  // life cycle hook
-  ngOnInit() {
-    document.querySelector('.chart-income.week')?.classList.add('active');
+  chartOptions: Partial<ApexOptions>;
+  constructor() {
     this.chartOptions = {
       chart: {
         height: 450,
@@ -70,7 +67,8 @@ export class MonthlyBarChartComponent implements OnInit {
         axisBorder: {
           show: true,
           color: '#f0f0f0'
-        }
+        },
+        tickAmount: 7
       },
       yaxis: {
         labels: {
@@ -87,6 +85,11 @@ export class MonthlyBarChartComponent implements OnInit {
         mode: 'light'
       }
     };
+  }
+
+  // life cycle hook
+  ngOnInit() {
+    document.querySelector('.chart-income.week')?.classList.add('active');
   }
 
   // public method

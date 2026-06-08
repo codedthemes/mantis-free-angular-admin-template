@@ -17,14 +17,13 @@ export class NavBarComponent {
   readonly NavCollapse = output();
   readonly NavCollapsedMob = output<void>();
 
-  navCollapsed;
+  navCollapsed = false;
   windowWidth: number;
-  navCollapsedMob;
+  navCollapsedMob = false;
 
   // Constructor
   constructor() {
     this.windowWidth = window.innerWidth;
-    this.navCollapsedMob = false;
   }
 
   // public method

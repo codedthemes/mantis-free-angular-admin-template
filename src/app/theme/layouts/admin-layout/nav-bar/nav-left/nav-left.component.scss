@@ -1,1 +1,30 @@
-// This file is intentionally left empty to allow customers to add custom CSS if needed.
+.search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--pc-header-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: var(--bs-primary);
+  }
+
+  .search-icon {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  .search-shortcut {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bs-gray-300);
+    padding: 0px 4px;
+    border-radius: 4px;
+    color: var(--bs-secondary);
+  }
+}

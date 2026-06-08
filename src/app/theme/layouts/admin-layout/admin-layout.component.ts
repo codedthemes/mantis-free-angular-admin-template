@@ -20,7 +20,7 @@ export class AdminLayout {
   private layoutState = inject(LayoutStateService);
 
   // public props
-  navCollapsed: boolean;
+  navCollapsed = false;
   windowWidth: number;
 
   // Constructor
@@ -49,4 +49,9 @@ export class AdminLayout {
   closeMenu() {
     this.layoutState.closeNavCollapsedMob();
   }
+
+  handleNavCollapse() {
+    this.navCollapsed = !this.navCollapsed;
+  }
 }
+

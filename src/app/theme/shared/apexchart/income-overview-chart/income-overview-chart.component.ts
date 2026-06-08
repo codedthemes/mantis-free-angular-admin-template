@@ -1,5 +1,5 @@
 // angular import
-import { Component, OnInit, viewChild } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 
 // project import
 
@@ -13,13 +13,11 @@ import { CardComponent } from 'src/app/theme/shared/components/card/card.compone
   templateUrl: './income-overview-chart.component.html',
   styleUrl: './income-overview-chart.component.scss'
 })
-export class IncomeOverviewChartComponent implements OnInit {
+export class IncomeOverviewChartComponent {
   // public props
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ApexOptions>;
-
-  // life cycle hook
-  ngOnInit() {
+  chartOptions: Partial<ApexOptions>;
+  constructor() {
     this.chartOptions = {
       chart: {
         type: 'bar',

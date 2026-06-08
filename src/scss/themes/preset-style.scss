@@ -1,8 +1,9 @@
+@use "sass:map";
 @import '../settings/color-variables.scss';
 
 :root {
   @each $name, $value in $preset-colors {
-    $pc-primary: map-get($value, 'primary');
+    $pc-primary: map.get($value, 'primary');
     $color-rgb: to-rgb($pc-primary);
     --bs-blue: #{$pc-primary};
     --bs-primary-rgb: #{$color-rgb};
@@ -82,6 +83,14 @@
           }
         }
       }
+    }
+  }
+
+  ng-scrollbar {
+    --scrollbar-thumb-color: #{$gray-200};
+    .track-inner {
+      background: transparent;
+      --scrollbar-track-shape: 4px;
     }
   }
 }

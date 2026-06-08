@@ -1,6 +1,7 @@
 // angular import
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 // project import
 import tableData from 'src/fake-data/default-data.json';
@@ -24,7 +25,8 @@ import { CardComponent } from 'src/app/theme/shared/components/card/card.compone
     MonthlyBarChartComponent,
     IncomeOverviewChartComponent,
     AnalyticsChartComponent,
-    SalesReportChartComponent
+    SalesReportChartComponent,
+    RouterLink
   ],
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.scss']

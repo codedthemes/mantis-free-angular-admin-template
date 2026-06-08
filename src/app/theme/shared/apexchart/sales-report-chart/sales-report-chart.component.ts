@@ -14,8 +14,7 @@ import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
 })
 export class SalesReportChartComponent {
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ApexOptions>;
-
+  chartOptions: Partial<ApexOptions>;
   constructor() {
     this.chartOptions = {
       chart: {

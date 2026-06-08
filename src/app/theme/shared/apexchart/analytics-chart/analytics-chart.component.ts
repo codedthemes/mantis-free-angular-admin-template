@@ -1,5 +1,6 @@
 // angular import
 import { Component, viewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 // project import
 
@@ -8,16 +9,14 @@ import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-analytics-chart',
-  imports: [NgApexchartsModule],
+  imports: [NgApexchartsModule, RouterLink],
   templateUrl: './analytics-chart.component.html',
   styleUrl: './analytics-chart.component.scss'
 })
 export class AnalyticsChartComponent {
   // public props
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ApexOptions>;
-
-  //  constructor
+  chartOptions: Partial<ApexOptions>;
   constructor() {
     this.chartOptions = {
       chart: {

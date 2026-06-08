@@ -2,7 +2,7 @@
   <div class="auth-wrapper v3">
     <div class="auth-form">
       <div class="auth-header">
-        <a href="javascript:"><img src="assets/images/logo-dark.svg" alt="logo img" /></a>
+        <a [routerLink]="['/']"><img src="assets/images/logo-dark.svg" alt="logo img" /></a>
       </div>
       <div class="card my-5">
         <div class="card-body">
@@ -38,9 +38,9 @@
           </div>
           <p class="mt-4 text-sm text-muted">
             By Signing up, you agree to our
-            <a href="javascript:" class="text-primary">Terms of Service</a>
+            <button type="button" class="btn btn-link text-primary p-0 text-decoration-none align-baseline" style="font-size: inherit; font-weight: inherit; line-height: inherit;">Terms of Service</button>
             and
-            <a href="javascript:" class="text-primary">Privacy Policy</a>
+            <button type="button" class="btn btn-link text-primary p-0 text-decoration-none align-baseline" style="font-size: inherit; font-weight: inherit; line-height: inherit;">Privacy Policy</button>
           </p>
           <div class="d-grid mt-3">
             <button type="button" class="btn btn-primary">Create Account</button>

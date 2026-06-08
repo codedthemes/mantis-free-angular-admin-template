@@ -1,17 +1,17 @@
 <!-- Vertical Layout -->
 <li class="nav-item coded-hasmenu" [routerLinkActive]="['active']">
-  <a [routerLinkActive]="['active']" href="javascript:" class="nav-link" (click)="navCollapse($event)">
-    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  <a [routerLinkActive]="['active']" class="nav-link" (click)="navCollapse($event)">
+    <ng-container *ngTemplateOutlet="itemContent" />
   </a>
-  <ng-container *ngTemplateOutlet="subMenuContent"></ng-container>
+  <ng-container *ngTemplateOutlet="subMenuContent" />
 </li>
 
 <!-- all layout common -->
 <ng-template #itemContent>
   @if (item().icon) {
-    <span class="coded-micon">
-      <i antIcon type="{{ item().icon }}" theme="outline"></i>
-    </span>
+  <span class="coded-micon">
+    <i antIcon type="{{ item().icon }}" theme="outline"></i>
+  </span>
   }
   <span class="coded-mtext">
     {{ item().title }}
@@ -20,11 +20,11 @@
 <ng-template #subMenuContent>
   <ul class="coded-submenu" [routerLinkActive]="['active']" [ngClass]="item().classes!">
     @for (items of item().children; track items) {
-      @if (items.type === 'item') {
-        <app-nav-item [item]="items"></app-nav-item>
-      } @else if (items.type === 'collapse') {
-        <app-nav-collapse [item]="items"></app-nav-collapse>
-      }
+    @if (items.type === 'item') {
+    <app-nav-item [item]="items" />
+    } @else if (items.type === 'collapse') {
+    <app-nav-collapse [item]="items" />
+    }
     }
   </ul>
 </ng-template>
