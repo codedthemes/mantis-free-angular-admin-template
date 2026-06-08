@@ -4,7 +4,7 @@ import { Component, OnInit, viewChild } from '@angular/core';
 // project import
 
 // third party
-import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
+import { NgApexchartsModule, ChartComponent } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-monthly-bar-chart',
@@ -15,78 +15,78 @@ import { NgApexchartsModule, ChartComponent, ApexOptions } from 'ng-apexcharts';
 export class MonthlyBarChartComponent implements OnInit {
   // public props
   chart = viewChild.required<ChartComponent>('chart');
-  chartOptions!: Partial<ApexOptions>;
+  chartOptions = {
+    chart: {
+      height: 450,
+      type: 'area' as const,
+      toolbar: {
+        show: false
+      },
+      background: 'transparent'
+    },
+    dataLabels: {
+      enabled: false
+    },
+    colors: ['#1677ff', '#0050b3'],
+    series: [
+      {
+        name: 'Page Views',
+        data: [0, 86, 28, 115, 48, 210, 136]
+      },
+      {
+        name: 'Sessions',
+        data: [0, 43, 14, 56, 24, 105, 68]
+      }
+    ],
+    stroke: {
+      curve: 'smooth' as const,
+      width: 2
+    },
+    xaxis: {
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: {
+        style: {
+          colors: [
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c',
+            '#8c8c8c'
+          ]
+        }
+      },
+      axisBorder: {
+        show: true,
+        color: '#f0f0f0'
+      },
+      tickAmount: 7 as number | undefined
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: ['#8c8c8c']
+        }
+      }
+    },
+    grid: {
+      strokeDashArray: 0,
+      borderColor: '#f5f5f5'
+    },
+    theme: {
+      mode: 'light' as const
+    }
+  };
 
   // life cycle hook
   ngOnInit() {
     document.querySelector('.chart-income.week')?.classList.add('active');
-    this.chartOptions = {
-      chart: {
-        height: 450,
-        type: 'area',
-        toolbar: {
-          show: false
-        },
-        background: 'transparent'
-      },
-      dataLabels: {
-        enabled: false
-      },
-      colors: ['#1677ff', '#0050b3'],
-      series: [
-        {
-          name: 'Page Views',
-          data: [0, 86, 28, 115, 48, 210, 136]
-        },
-        {
-          name: 'Sessions',
-          data: [0, 43, 14, 56, 24, 105, 68]
-        }
-      ],
-      stroke: {
-        curve: 'smooth',
-        width: 2
-      },
-      xaxis: {
-        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        labels: {
-          style: {
-            colors: [
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c',
-              '#8c8c8c'
-            ]
-          }
-        },
-        axisBorder: {
-          show: true,
-          color: '#f0f0f0'
-        }
-      },
-      yaxis: {
-        labels: {
-          style: {
-            colors: ['#8c8c8c']
-          }
-        }
-      },
-      grid: {
-        strokeDashArray: 0,
-        borderColor: '#f5f5f5'
-      },
-      theme: {
-        mode: 'light'
-      }
-    };
   }
 
   // public method

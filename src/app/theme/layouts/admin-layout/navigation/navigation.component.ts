@@ -1,15 +1,15 @@
 // Angular import
 import { Component, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 // project import
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { NavContentComponent } from './nav-content/nav-content.component';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
-  imports: [SharedModule, NavContentComponent, CommonModule,RouterLink],
+  imports: [SharedModule, NavContentComponent, CommonModule, RouterLink],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })

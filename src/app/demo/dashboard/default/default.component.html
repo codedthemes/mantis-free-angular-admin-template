@@ -43,7 +43,7 @@
             @for (order of recentOrder; track order) {
               <tr>
                 <td>
-                  <a href="javascript:void(0)" class="text-muted">{{ order.id }}</a>
+                  <a [routerLink]="[]" class="text-muted">{{ order.id }}</a>
                 </td>
                 <td>{{ order.name }}</td>
                 <td>
@@ -73,7 +73,7 @@
     <div class="card">
       <div class="list-group list-group-flush">
         @for (history of transaction; track history) {
-          <a href="javascript:void(0)" class="list-group-item list-group-item-action px-3">
+          <a [routerLink]="[]" class="list-group-item list-group-item-action px-3">
             <div class="d-flex">
               <div class="flex-shrink-0">
                 <div class="avatar avatar-s rounded-circle {{ history.background }}">

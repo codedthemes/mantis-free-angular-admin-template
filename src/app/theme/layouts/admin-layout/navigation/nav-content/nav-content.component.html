@@ -3,9 +3,9 @@
   <div class="navbar-content">
     <ul class="nav coded-inner-navbar" (click)="fireOutClick()" (mouseleave)="navMob()">
       @for (item of navigations; track item) {
-        @if (item.type === 'group') {
-          <app-nav-group [item]="item" />
-        }
+      @if (item.type === 'group') {
+      <app-nav-group [item]="item"></app-nav-group>
+      }
       }
     </ul>
     <div class="m-4 mb-0">
@@ -18,11 +18,8 @@
               <span class="text-muted">Checkout pro features</span>
             </div>
             <div class="m-t-20 text-center">
-              <a
-                href="https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium"
-                target="_blank"
-                class="btn btn-primary text-white"
-              >
+              <a href="https://codedthemes.com/item/mantis-angular-admin-template/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium"
+                target="_blank" class="btn btn-primary text-white">
                 Pro
               </a>
             </div>

@@ -1,5 +1,5 @@
 // Angular import
-import { Component, inject, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -15,11 +15,11 @@ import { LayoutStateService } from 'src/app/theme/shared/service/layout-state.se
   styleUrls: ['./nav-item.component.scss']
 })
 export class NavItemComponent {
-
-  private layoutState = inject(LayoutStateService);
-
   // public props
-  readonly item = input.required<NavigationItem>();
+  @Input({ required: true }) item!: NavigationItem;
+
+  // eslint-disable-next-line @angular-eslint/prefer-inject
+  constructor(private layoutState: LayoutStateService) {}
 
   // public method
   closeOtherMenu(event: MouseEvent) {
@@ -51,7 +51,7 @@ export class NavItemComponent {
       }
     }
     if ((document.querySelector('app-navigation.pc-sidebar') as HTMLDivElement).classList.contains('mob-open')) {
-     this.layoutState.closeNavCollapsedMob(); 
+      this.layoutState.closeNavCollapsedMob();
     }
   }
 }

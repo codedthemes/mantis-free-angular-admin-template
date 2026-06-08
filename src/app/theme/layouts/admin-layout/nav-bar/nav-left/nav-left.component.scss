@@ -27,7 +27,7 @@
     border-radius: 4px;
     color: var(--bs-secondary);
 
-    ::ng-deep .mantis-dark & {
+    :host-context(.mantis-dark) & {
       background: var(--bs-gray-700) !important;
     }
   }

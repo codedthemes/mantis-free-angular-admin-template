@@ -1,16 +1,16 @@
 // Angular import
-import { Component, input, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, Event } from '@angular/router';
 
-// project import
+// Project import
 import { NavigationItem, NavigationItems } from 'src/app/theme/layouts/admin-layout/navigation/navigation';
 
-// icons
+// Icons
 import { IconService } from '@ant-design/icons-angular';
 import { GlobalOutline, NodeExpandOutline } from '@ant-design/icons-angular/icons';
 
 interface titleType {
-  url: string | boolean | undefined;
+  url: string | undefined;
   title: string;
   breadcrumbs: unknown;
   type: string;
@@ -31,24 +31,24 @@ export class BreadcrumbComponent {
   private iconService = inject(IconService);
   private cdr = inject(ChangeDetectorRef);
 
-  // public props
-  type = input<string>('theme1');
-  readonly dashboard = input(true);
-  readonly Component = input(false);
+  // Public props
+  @Input() type = 'theme1';
+  @Input() dashboard = true;
+  @Input() Component = false;
 
   navigations: NavigationItem[];
   breadcrumbList: Array<string> = [];
   navigationList!: titleType[];
   componentList!: titleType[];
 
-  // constructor
+  // Constructor
   constructor() {
     this.navigations = NavigationItems;
     this.setBreadcrumb();
     this.iconService.addIcon(...[GlobalOutline, NodeExpandOutline]);
   }
 
-  // public method
+  // Public method
   setBreadcrumb() {
     // Process the current route immediately on initial load
     this.updateBreadcrumb(this.route.url);
@@ -79,7 +79,7 @@ export class BreadcrumbComponent {
     for (const navItem of navItems) {
       if (navItem.type === 'item' && 'url' in navItem && navItem.url === activeLink) {
         return {
-          url: navItem.url || true,
+          url: navItem.url,
           title: navItem.title,
           link: navItem.link,
           description: navItem.description,
@@ -98,7 +98,7 @@ export class BreadcrumbComponent {
     return null; // Return null if no active item matches
   }
 
-  isLink(url: string | boolean | undefined): url is string {
+  isLink(url: string | undefined): url is string {
     return typeof url === 'string';
   }
 }
